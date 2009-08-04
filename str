@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+open(SECT, "ls *section*|") || die "Couldn't run ls : $!\n";
+
+while ($filename = <SECT>)
+   {
+     $_ = $filename;
+     s/.*section3_(.*)/$1/;
+     $newf = $_;
+     print $newf, $filename;
+     chop($filename);
+     `cp $filename $newf`;
+   }
+    

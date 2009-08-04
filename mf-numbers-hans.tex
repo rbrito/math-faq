@@ -1,0 +1,273 @@
+
+%\newcommand{\N}{\mbox{\boldmath\(N\)}}
+%\newcommand{\Z}{\mbox{\boldmath\(Z\)}}
+%\newcommand{\Q}{\mbox{\boldmath\(Q\)}}
+%\newcommand{\R}{\mbox{\boldmath\(R\)}}
+%\newcommand{\C}{\mbox{\boldmath\(C\)}}
+
+\section{What are numbers?}
+
+\subsection{Introduction}
+
+Informally:
+\begin{itemize}
+\item $\N = \{0,1,\ldots\}$ or $\N = \{1,2,\ldots\}$ \\
+      Wether $0$ is in $\N$ depends on where you live and what is your field
+      of interest. At the informal level it is a religious topic.
+\item $\Z = \{\ldots,-1,0,1,\ldots\}$
+\item $\Q = \{p/q | p, q \in \Z \mbox{ and } q \neq 0\}$
+\item $\R = \{d_0.d_1d_2\ldots | d_0 \in \Z \mbox{ and } 0 \leq d_i \leq 9
+      \mbox{ for } i>0\}$
+\item $\C = \{a+b \cdot i | a, b \in \R \mbox{ and } i^2 = -1\}$
+\end{itemize}
+
+\subsection{Construction of the Number System}
+
+% Credit: mmcadams@cco.caltech.edu (Matt McAdams) 951209
+%         main stream --> mainstream
+Formally (following the mainstream in math) the numbers are constructed
+from scratch out of the axioms of Zermelo Fraenkel set theory (a.k.a.\ ZF set
+theory) [Enderton77, Henle86, Hrbacek84]. The only things that can be derived
+from the axioms are sets with the empty set at the bottom of the hierarchy.
+This will mean that any number is a set (it is the only thing you can derive
+from the axioms). It doesn't mean that you always have to use set notation
+when you use numbers: just introduce the numerals as an abbreviation of the
+formal counterparts.
+% Credit: aaron@mmml.demon.co.uk (Aaron Turner) 950330
+%         He suggested numerals as an alternative for ``informal'' numbers.
+
+% Credit: mcknighl@ix.netcom.com (Lawrence McKnight) 941104
+%         He asked to add rationales to the constructions.
+The construction starts with $\N$ and algebraically speaking, $\N$ with its
+operations and order is quite a weak structure. In the following constructions
+the structures will be strengthen one step at the time: $\Z$ will be an
+integral domain, $\Q$ will be a field, for the field $\R$ the order will be
+made complete, and field $\C$ will be made algebraically complete.
+% Credit: aaron@mmml.demon.co.uk (Aaron Turner) 950330
+%         He asked for a brief explanation. This is as for as I'll go:
+%
+% [Is there a volunteer in the crowd who likes to write a section that
+% explains these structures and concepts?]
+%
+% Yep, there is: andrea.depaoli@mail.esrin.esa.it (Andy de Paoli) 951102
+% So these lines are removed and Andy's part is added by Alex to the FAQ.
+
+Before we start, first some notational stuff:
+\begin{itemize}
+\item a pair $(a,b) = \{\{a\},\{a,b\}\}$,
+\item an equivalence class $[a] = \{b | a \equiv b\}$,
+\item the successor of $a$ is $s(a) = a \cup \{a\}$.
+\end{itemize}
+% Credit: aaron@mmml.demon.co.uk (Aaron Turner) 950330
+%         He liked to put a little more stress on the fact that other
+%         definitions are possible (although this is the de facto one.
+Although the previous notations and the constructions that follow are the de
+facto standard ones, there are different definitions possible.
+
+\subsection{Construction of \sl $N$}
+
+\begin{itemize}
+\item $\{\} \in \N$
+\item if $a \in \N$ then $s(a) \in \N$
+\item $\N$ is the smallest possible set such that the preceding rules hold.
+\end{itemize}
+Informally $n=\{0,\ldots,n-1\}$ (thus $0=\{\}$, $1=\{0\}$, $2=\{0,1\}$,
+$3=\{0,1,2\}$). We will refer to the elements of $\N$ by giving them a
+subscript $_n$. The relation $<_n$ on $\N$ is defined as: $a_n <_n b_n$ iff
+$a_n \in b_n$. We can define $+_n$ as follows:
+\begin{itemize}
+\item $a_n +_n 0_n = a_n$
+\item $a_n +_n s(b_n) = s(a_n +_n b_n)$
+\end{itemize}
+Define $*_n$ as:
+\begin{itemize}
+\item $a_n *_n 0_n = 0_n$
+\item $a_n *_n s(b_n) = (a_n *_n b_n) +_n a_n$
+\end{itemize}
+
+\subsection{Construction of \sl Z}
+
+We define an equivalence relation on $\N \times \N$: $(a_n,b_n) \equiv_z
+(c_n,d_n)$ iff $a_n +_n d_n = c_n +_n b_n$. Note that $\equiv_z$
+``simulates'' a subtraction in $\N$. $\Z = \{[(a_n,b_n)]_z | a_n, b_n \in
+\N\}$. We will refer to the elements of $\Z$ by giving them a subscript $_z$.
+The elements of $\N$ can be embedded as follows: $embed_n: \N \rightarrow \Z$
+such that $embed_n(a_n) = [(a_n,0_n)]_z$. Furthermore we can define:
+\begin{itemize}
+\item $[(a_n,b_n)]_z <_z [(c_n,d_n)]_z$ iff $a_n +_n d_n <_n c_n +_n b_n$
+\item $[(a_n,b_n)]_z +_z [(c_n,d_n)]_z = [(a_n +_n c_n, b_n +_n d_n)]_z$
+\item $[(a_n,b_n)]_z *_z [(c_n,d_n)]_z =$ \\
+      $[\left((a_n *_n c_n) +_n (b_n *_n d_n), (a_n *_n d_n) +_n (c_n *_n
+      b_n)\right)]_z$
+\end{itemize}
+
+\subsection{Construction of \sl Q}
+
+We define an equivalence relation on $\Z \times (\Z \backslash \{0_z\})$:
+$(a_z,b_z) \equiv_q (c_z,d_z)$ iff $a_z *_z d_z = c_z *_z b_z$. Note that
+$\equiv_q$ ``simulates'' a division in $\Z$. $\Q = \{[(a_z,b_z)]_q | a_z \in
+\Z \mbox{ and } b_z \in \Z \backslash \{0_z\}\}$. We will refer to the
+elements of $\Q$ by giving them a subscript $_q$. The elements of $\Z$ can be
+embedded as follows: $embed_z: \Z \rightarrow \Q$ such that $embed_z(a_z) =
+[(a_z,1_z)]_q$. Furthermore we can define:
+\begin{itemize}
+\item $[(a_z,b_z)]_q <_q [(c_z,d_z)]_q$ iff $a_z *_z d_z <_z c_z *_z b_z$ \\
+      when $0_z <_z b_z \mbox{ and } 0_z <_z d_z$
+\item $[(a_z,b_z)]_q +_q [(c_z,d_z)]_q = [\left((a_z *_z d_z) +_z (c_z *_z
+      b_z), b_z *_z d_z\right)]_q$
+\item $[(a_z,b_z)]_q *_q [(c_z,d_z)]_q = [(a_z *_z c_z, b_z *_z d_z)]_q$
+\end{itemize}
+
+\subsection{Construction of \sl R}
+
+The construction of $\R$ is different (and more awkward to understand) because
+we must ensure that the cardinality of $\R$ is greater than that of $\Q$. \\
+Set $c$ is a {\em Dedekind cut} iff
+\begin{itemize}
+\item $\{\} \subset c \subset \Q$ (strict inclusions!)
+\item $c$ is {\em closed downward}: \\
+      if $a_q \in c$ \mbox{ and } $b_q <_q a_q$ then $b_q \in c$
+\item $c$ has no {\em largest element}: \\
+      there isn't an element $a_q \in c$ such that $b_q <_q a_q$ for all $b_q
+      \neq a_q \in c$
+\end{itemize}
+You can think of a cut as taking a pair of scissors and cutting $\Q$ in two
+parts such that one part contains all the small numbers and the other part
+contains all large numbers. If the part with the small numbers was cut in such
+a way that it doesn't have a largest element, it is called a Dedekind cut.
+$\R = \{c | c \mbox{ is a Dedekind cut}\}$. We will refer to the elements of
+$\R$ by giving them a subscript $_r$. The elements of $\Q$ can be embedded as
+follows: $embed_q: \Q \rightarrow \R$ such that $embed_q(a_q) = \{b_q | b_q
+<_q a_q\}$. Furthermore we can define:
+\begin{itemize}
+\item $a_r <_r b_r$ iff $a_r \subset b_r$ (strict inclusion!)
+\item $a_r +_r b_r = \{c_q +_q d_q | c_q \in a_r \mbox{ and } d_q \in b_r\}$
+\item $-_r a_r = \\
+      \{b_q |$ there exists an $c_q \in \Q$ such that $b_q <_q c_q \mbox{ and
+      } (-1)_q *_q c_q \not\in a_r\}$
+\item $|a_r|_r = a_r \cup -_r a_r$
+\item $*_r$ is defined as:
+      \begin{itemize}
+      \item if not $a_r <_r 0_r$ and not $b_r <_r 0_r$ \\ then $a_r *_r b_r =
+            0_r \cup \{c_q *_q d_q | c_q \in a_r \mbox{ and } d_q \in b_r\}$
+      \item if $a_r <_r 0_r$ \mbox{ and } $b_r <_r 0_r$ then $a_r *_r b_r =
+            |a_r|_r *_r |b_r|_r$
+      \item otherwise $a_r *_r b_r = -_r (|a_r|_r *_r |b_r|_r)$
+  \end{itemize}
+\end{itemize}
+
+There exists an alternative definition of $\R$ using Cauchy sequences: a
+Cauchy sequence is a $s: \N \rightarrow \Q$ such that $s(i_n) +_q
+\left((-1)_q *_q s(j_n)\right)$ can be made arbitrary near to $0_q$ for all
+sufficiently large $i_n$ and $j_n$. We will define an equivalence relation
+$\equiv_r$ on the set of Cauchy sequences as: $r \equiv_r s$ iff $r(m_n) +_q
+\left((-1)_q *_q s(m_n)\right)$ can be made arbitrary close to $0_q$ for all
+sufficiently large $m_n$. $\R = \{ [s]_r | s \mbox{ is a Cauchy sequence}\}$.
+Note that this definition is close to ``decimal'' expansions.
+
+\subsection{Construction of \sl C}
+
+$\C = \R \times \R$. We will refer to the elements of $\C$ by giving them a
+subscript $_c$. The elements of $\R$ can be embedded as follows: $embed_r: \R
+\rightarrow \C$ such that $embed_r(a_r) = (a_r,0_r)$. Furthermore we can
+define:
+\begin{itemize}
+\item $(a_r,b_r) +_c (c_r,d_r) = (a_r +_r c_r, b_r +_r d_r$)
+\item $(a_r,b_r) *_c (c_r,d_r) = \left((a_r *_r c_r) +_r -_r (b_r * d_r),
+      (a_r *_r d_r) +_r (b_r *_r c_r)\right)$
+\end{itemize}
+
+There exists an elegant alternative definition using ideals. To be a bit
+sloppy: $\C = \R[x] / <(x *_r x) +_r 1_r>$, i.e.\ $\C$ is the resulting
+quotient ring of factoring ideal $<(x *_r x) +_r 1_r>$ out of the ring
+$\R[x]$ of polynomials over $\R$. The sloppy part is that we need to define
+concepts like quotient ring, ideal, and ring of polynomials. Note that this
+definition is close to working with $i^2=-1$: $(x *_r x) +_r 1_r = 0_r$ can be
+rewritten as $(x *_r x) = (-1)_r$.
+
+\subsection{Rounding things up}
+
+At this moment we don't have that $\N$ is a subset of $\Z$, $\Z$ of $\Q$,
+etc. But we can get the inclusions if we look at the embedded copies of $\N$,
+$\Z$, etc. Let
+\begin{itemize}
+\item $\N' = \mbox{ ran } embed_r \circ embed_q \circ embed_z \circ embed_n$
+\item $\Z' = \mbox{ ran } embed_r \circ embed_q \circ embed_z$
+\item $\Q' = \mbox{ ran } embed_r \circ embed_q$
+\item $\R' = \mbox{ ran } embed_r$
+\end{itemize}
+For these sets we have $\N' \subseteq \Z' \subseteq \Q' \subseteq \R'
+\subseteq \C$. Furthermore these sets have all the properties that the
+``informal'' numbers have.
+
+\subsection{What's next?}
+
+Well, for some of the more alien parts of math we can extend this standard
+number system with some exotic types of numbers. To name a few:
+\begin{itemize}
+\item Cardinals and ordinals \\
+      % credit: edgar@math.ohio-state.edu (Gerald Edgar) 941104
+      %         He asked to add cardinals and ordinals.
+      Both are numbers in ZF set theory [Enderton77, Henle86, Hrbacek84] and
+      so they are sets as well. Cardinals are numbers that represent the
+      sizes of sets, and ordinals are numbers that represent well ordered
+      sets. Finite cardinals and ordinals are the same as the natural
+      numbers. Cardinals, ordinals, and their arithmetic get interesting and
+      ``tricky'' in the case of infinite sets.
+\item Hyperreals \\
+      These numbers are constructed by means of ultrafilters [Henle86] and
+      they are used in non-standard analysis. With hyperreals you can treat
+      numbers like Leibnitz and Newton did by using infinitesimals.
+\item Quaternions and octonions \\
+      Normally these are constructed by algebraic means (like the alternative
+      $\C$ definition that uses ideals) [Shapiro75, Dixon94]. Quaternions are
+      used to model rotations in 3 dimensions. Octonions, a.k.a.\ Cayley
+      numbers, are just esoteric artifacts :-). Well, if you know where they
+      are used for, feel free to contribute to the FAQ.
+      % Credit: jpb@iris85.biosym.com (Jan Bielawski) 950501
+      %         Added the aka for octonions.
+\item Miscellaneous \\
+      Just to name some others: algebraic numbers [Shapiro75], $p$-adic
+      numbers [Shapiro75], and surreal numbers (a.k.a.\ Conway
+      numbers) [Conway76].
+      % Credit: aaron@mmml.demon.co.uk (Aaron Turner) 950330
+      %         He asked to include Conway numbers. I've added the first two.
+      % Credit: jpb@iris85.biosym.com (Jan Bielawski) 950501
+      %         Added the "reverse" aka for Conway numbers.
+      % Credit: jpb@iris85.biosym.com (Jan Bielawski) 950502
+      %         Added reference to Conway. I gave the other ones.
+\end{itemize}
+Cardinals and ordinals are commonly used in math. Most mortals won't
+encounter (let alone use) hyperreals, quaternions, and octonions.
+
+\Ref
+
+\book{J.H. Conway.}
+     {On Numbers and Games, L.M.S. Monographs, vol. 6.}
+     {Academic Press, 1976.}
+     % Credit: jpb@iris85.biosym.com (Jan Bielawski) 950502
+     %         He supplied this reference.
+
+\book{H.B. Enderton.}
+     {Elements of Set Theory.}
+     {Academic Press, 1977.}
+
+\book{G.M. Dixon.}
+     {Division Algebras; Octonions, Quaternions, Complex Numbers and the
+     Algebraic Design of Physics.}
+     {Kluwer Academic, 1994.}
+
+\book{J.M. Henle.}
+     {An Outline of Set Theory.}
+     {Springer Verlag, 1986.}
+
+\book{K. Hrbacek and T. Jech.}
+     {Introduction to Set Theory.}
+     {M. Dekker Inc., 1984.}
+
+\book{L. Shapiro.}
+     {Introduction to Abstract Algebra.}
+     {McGraw-Hill, 1975.}
+
+%\end{document}
+

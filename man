@@ -1,0 +1,49 @@
+NAME
+     mathTeX2text - converts (La)TeX mathematics to a ASCII human 
+                    readable format
+
+
+SYNOPSIS
+     mathTeX2text
+
+DESCRIPTION
+     MathTeX2text reads from standard input a set of LaTeX text, it 
+     produces as in the standard output a list of equations in human
+     readable format with one math equation per line. 
+
+EXAMPLES
+
+       % ./mathTeX2text
+     
+       Input: 
+
+       A related conjecture from Euler
+       \[ x^n + y^n + z^n = c^n \mbox{ has no solution if n is} \geq 4 \]
+       Noam Elkies gave a counterexample, namely $2682440^4 + 15365639^4 +
+       18796760^4 = 20615673^4$.
+       Next, a discussion on  $\lim_{x\rightarrow \infty} f(x)^{f(x)}$.
+       
+       Output: 
+
+       x^n + y^n + z^n = c^n has no solution if n is >= 4
+       2682440^4 + 15365639^4 + 18796760^4 = 20615673^4
+       lim_(x --> oo) f(x)^(f(x))
+
+BUGS
+
+     It has no diagnostics. If anything goes wrong it just aborts. 
+     MathTeX2text also assumes math mode delimiters in the input file
+     are balanced. At this time it does not handle newtheorem 
+     environments. This capability will be added to a future release.
+     It was written with latex2html in mind. Standalone performance
+     may be wobbly.
+
+AUTHOR
+     Alex Lopez-Ortiz (C) 1995
+     Department of Computer Science
+     University of Waterloo
+     Permission to freely copy and modify this man page and accompanying
+     program for non-commercial purposes is given, provided this message
+     appears and modifications are properly attributed.
+
+

@@ -1,0 +1,389 @@
+
+
+\section{Prime Numbers}
+    
+\subsection{Largest known Mersenne prime}
+
+ Mersenne primes are primes of the form $2^p-1$. For $2^p-1$ to be prime
+    we must have that $p$ is prime. 
+
+
+ $2^{6972593}-1$ is prime. It was discovered in 1999.
+
+	
+\subsection{Largest known prime}
+
+The largest known prime is the Mersenne prime described above.
+    The largest known non-Mersenne prime, is $391581*2^{216193}-1$,
+    discovered by Brown, Noll, Parady, Smith, Smith, and Zarantonello. 
+
+   Throughout history, the largest known prime has almost always been
+    a Mersenne prime; the period between Brown et al's discovery in 
+    August 1989 and Slowinski \&\ Gage's in March 1992 is one of the few 
+    exceptions.
+
+%From: Bill Stewart <billstewart@mail.att.net> 
+%Date: Mon, 06 Jan 1997 00:15:11 -0800 
+You can help find more primes. For more information see:
+The Great Internet Mersenne Prime Search home page
+on http://www.mersenne.org 
+
+\Ref
+
+\article{Brown, Noll, Parady, Smith, Smith, and Zarantonello.}{Letter 
+to the editor.}{American Mathematical Monthly,}{vol. 97, 1990, p. 214.}
+	
+\subsection{Largest known twin primes}
+
+% From: Karl-Heinz Indlekofer <k-heinz@mathematik.uni-paderborn.de>
+% From: "Chris K. Caldwell" <caldwell@UTM.Edu>
+% Date: Wed, 8 Nov 1995 10:32:59 +0100
+
+The two largest known twin primes are $361700055 * 2^39020 \pm 1$.
+with 11755 digits, found by Lifchitz in 1999.
+%From Warut Roonguthai <kamala@chulkn.car.chula.ac.th>
+%Date: Sat, 30 Dec 1995 23:07:07 +0700 (BKK)
+%They are also the first known gigantic twin primes (primes with at 
+%least 10,000 digits).
+	
+%Recent record holders are:
+%
+%\begin{itemize}
+%From: Harvey Dubner <70372.1170@compuserve.com> via
+%		 Warut Roonguthai <kamala@chulkn.car.chula.ac.th>
+%Date: Thu, 7 Dec 1995 15:42:55 +0700 (BKK)
+%\item $190116*3003*10^{5120} \pm 1$, with 5129 digits, by Harvey Dubner.
+%\item $697053813 * 2^{16352} \pm 1$, with 4932 digits, found by Indlekofer 
+%and Ja'rai in 1994.
+%\item $1691232 * 1001 * 10^{4020} \pm 1$  with 4030 digits, found by H. Dubner.
+%\item $4650828 * 1001 * 10^{3429}\pm 1$.  Found by H. Dubner as well.
+%\end{itemize}
+ 
+ Same as Harvey Dubner above. 
+The two largest Sophie Germain primes (i.e. $p$ and $2p+1$ are both primes)
+are $p=2687145 * 3003 * 10^{5072} - 1$ and $q=2p + 1$, found by Harvey
+Dubner, in October 3, 1995. 
+
+%   $  p = 157324389 * 2^{16352} - 1 $ and $p = 470943129 * 2^{16352} - 1$,
+%with 4932 digits each, also found by Indlekofer and Jarai, in 1994-1995.
+
+
+\Ref
+
+    \article{B. K. Parady and J. F. Smith and S. E. Zarantonello,
+    Smith, Noll and Brown.}{ Largest known twin primes.}
+   { Mathematics of Computation,}{ vol.55, 1990, pp. 381-382. }
+
+
+\subsection{Largest Fermat number with known factorization}
+
+ $ F_{11} = (2^{2^{11}}) + 1$ which was  factored by Brent \& Morain in
+    1988. $F_9 = (2^{2^9}) + 1 = 2^{512} + 1$ was factored by 
+    A.K. Lenstra, H.W. Lenstra Jr., M.S. Manasse \& J.M. Pollard
+    in 1990. %The factorization for $F_{10}$ is not  known.  
+    $F_{10}$ was factored by Richard Brent who found a 40-digit factor 
+    of $2^{1024} + 1$ on October 20, 1995. The cofactor is
+   a 252 digit number, which is not so easy to factor. Luckily, 
+   this number was also prime.
+
+
+
+\subsection{Algorithms to factor integer numbers}
+
+There are several known algorithms that have subexponential estimated 
+    running time, to mention just a few:
+
+\begin{itemize}
+\item Continued fraction algorithm.
+        \item Quadratic sieve algorithm.
+        \item Class Group method.
+        \item Elliptic curve algorithm.
+        \item Number field sieve.
+        \item Dixon's random squares algorithm.
+        \item Valle's two-thirds algorithm.
+        \item Seysen's class group algorithm.
+\end{itemize}
+
+
+\Ref
+
+   \article{A.K. Lenstra, H.W. Lenstra Jr.}{Algorithms in Number Theory.}
+    {J. van Leeuwen (ed.), Handbook of Theoretical Computer 
+    Science, Volume A: Algorithms and Complexity}{ Elsevier, pp. 
+    673-715, 1990.}
+
+\subsection{Primality Testing}
+
+The problem of primality testing and factorization are two distinct
+problems. If we concentrate on primality testing, we never need to know
+the actual factors. The only question to be answered is "is the number
+in question prime or composite."
+
+
+Wilson's Theorem: The integer $p$ is prime if and only if
+$(p-1)!$ is congruent to $-1 (mod p)$
+
+Since there is no known method for rapidly computing $(N-1)! (mod N)$ in,
+say, $\log N$ steps, so Wilson's characterization of primes is of no
+practical value to the testing of the primality of $N$.
+
+
+There are many different primality tests and they can be classified in
+at least three different ways:
+
+\begin{enumerate}
+\item Tests for numbers of special forms \\
+           versus \\
+   Tests for generic numbers
+\item Tests with full justification \\
+           versus\\
+   Tests with justification based on conjectures
+\item Deterministic tests\\
+           versus \\
+   Probabilistic or Monte Carlo tests
+\end{enumerate}
+
+{\bf Miller's Test}
+
+In 1976, G. L. Miller proposed a primality test, which was justified
+using a generalized form of Riemann's hypothesis.
+
+
+{\bf The APR Test}
+
+The primality test devised by L. M. Adleman, C. Pomerance and R. S.
+Rumely (1983), also known as the APR test, represents a breakthrough
+because:
+
+\begin{enumerate}
+\item It is applicable to arbitrary natural numbers N, without requiring
+the knowledge of factors of $N - 1$ or $N + 1$.
+\item The running time $t(N)$ is almost polynomial.
+\item The test is justified rigorously, and for the first time ever in
+this domain, it is necessary to appeal to deep results in the theory of
+algebraic numbers; it involves calculations with roots of unity and the
+general reciprocity law for the power residue symbol.
+\end{enumerate}
+
+The running time of the APR is at the present the world record for a
+deterministic primality test.
+
+Soon afterwards, H. Cohen \& A. K. Lenstra (1984) modified the APR test,
+making it more flexible, using Gauss sums in the proof (instead of the
+reciprocity law), and having the new test programmed for practical
+applications. It was the first primality test in existence that can
+routinely handle numbers of up 100 decimal digits, and it does so in
+about 45 seconds.
+
+
+{\bf Monte Carlo methods}
+
+Ribenboim mentions three Monte Carlo tests, due to R. Baillie \&
+Wagstaff, Jr. (1980), R. Solovay \& V. Strassen (1977), and M. O. Rabin
+(1976, 1980).
+
+
+{\bf Elliptic Curves Primality Proving, ECPP}
+
+ECPP stands for "Elliptic Curves and Primality Proving". The algorithm
+is described in:
+
+\begin{verbatim}
+    A. O. L. Atkin and F. Morain
+    "Elliptic curves and primality proving"
+    To appear.
+\end{verbatim}
+
+It is a deterministic algorithm that gives a certificate of primality
+for numbers that can be as large as 10**1000 (one thousand).
+
+References 
+
+\begin{verbatim}
+[1] A. O. L. Atkin and F. Morain
+    "Elliptic curves and primality proving"
+    To appear in Math. Comp.
+
+\end{verbatim}
+% Lieven Marchand <mal@bewoner.dma.be>
+
+\begin{verbatim}
+[2] F. Morain
+    "Courbes elliptiques et tests de primalite'"
+    The`se, Universite' de Lyon I, 1990.
+    Available at:
+http://lix.polytechnique.fr/~morain/english-index.html
+\end{verbatim}
+
+This subsection is copyright (C) 1995. Harry J. Smith, HJSmith@ix.netcom.com. 
+
+\subsection{List of record numbers}
+
+  Chris Caldwell (caldwell@utm.edu) maintains a list called "The Largest
+   Known Primes."  Some of the ways to get this list are:
+
+\begin{verbatim}
+    web:     http://www.utm.edu/research/primes/largest.html
+    ftp:     math.utm.edu, directory /pub/math/primes
+\end{verbatim}
+   Finger primes@math.utm.edu for a few record primes and the current
+   ways to get the lists.  He would like to know of any new titanic
+   primes (over 1000 digits) so that he can add them to his list.
+
+
+
+
+
+\subsection{What is the current status on Mersenne primes?}
+
+The following Mersenne primes are known.
+
+
+\bigskip
+\bigskip
+\hspace{2cm}
+\begin{tabular}{|r|r|r|l|} \hline
+
+{Number} & {$p$} & {Year}& {Discoverer} \\ \hline
+
+     1-4 &   2,3,5,7      &             pre-1500 &\\
+     5   &      13        &                1461 & Anonymous \\
+     6-7 &      17,19        &             1588 & Cataldi\\
+     8   &       31          &             1750 & Euler\\
+     9   &       61          &             1883 & I.M. Pervushin\\
+    10   &       89          &             1911 & Powers\\
+    11   &       107         &             1914 & Powers\\
+    12   &       127         &             1876 & Lucas\\
+    13-14&       521,607     &             1952 & Robinson\\
+    15-17&       1279,2203,2281  &         1952 & R. M. Robinson\\
+    18   &       3217            &         1957 & Riesel\\
+    19-20&       4253,4423       &         1961 & Hurwitz \& Selfridge \\
+    21-23&       9689,9941,11213 &         1963 & Gillies\\
+    24   &       19937           &         1971 & Tuckerman\\
+    25   &       21701           &         1978 & Noll \& Nickel\\
+    26   &       23209           &         1979 & Noll\\
+    27   &       44497           &         1979 & Slowinski \& Nelson\\
+    28   &       86243           &         1982 & Slowinski\\
+    29   &       110503          &         1988 & Colquitt \& Welsh\\
+    30   &       132049          &         1983 & Slowinski\\
+    31   &       216091          &         1985 & Slowinski\\
+    32   &       756839          &         1992 & Slowinski \& Gage\\
+    33  &       859433          &         1994 & Slowinski \& Gage\\
+    34  &      1257787          &         1996 & Slowinski \& Gage \\
+    35  &      1398269          &         1996 & Armengaud, Woltman, et. al.\\
+    36  &      2976221          &         1997 & Spence, Woltman, et. al.\\
+    37 & 	3021377		&		1998 & Clarkson, Woltman, Kurowski, GIMPS \\
+    38? & 	6972593		&		1999 & Nayan Hajratwala, GIMPS \\
+\hline    
+\end{tabular}
+
+
+\bigskip
+\bigskip
+
+    The way to determine if $2^p-1$ is prime is to use the Lucas-Lehmer 
+    test:
+
+\begin{verbatim}
+      Lucas_Lehmer_Test(p):
+         u := 4
+         for i from 3 to p do
+            u := u^2-2 mod 2^p-1
+         od
+         if u == 0 then
+            2^p-1 is prime
+         else
+            2^p-1 is composite
+         fi
+\end{verbatim}
+
+  All exponents less than 1,481,800 have now been tested at least once.
+
+
+\Ref
+
+\book{An introduction to the theory of numbers.}{G.H. Hardy, E.M. Wright.}
+{Fifth edition, 1979, Oxford.}
+ 
+
+
+\subsection{Formulae to compute prime numbers}
+
+
+     There is no polynomial which gives all the prime numbers. This is
+     a simple exercise to prove.
+
+\noindent There is no non-constant polynomial that only takes on prime values.
+      The proof is simple enough that an high school student could probably
+      discover it.  See, for example, Ribenboim's book {\it The Book of Prime
+      Number Records.}
+
+     Note, however, by the work of Jones, Sato, Wada, and Wiens, there 
+     {\it is} a
+     polynomial in 26 variables such that the set of primes coincides with
+     the set of {\it positive} values taken by this polynomial.  See Ribenboim,
+     pp. 147-150.
+
+     But most people would object to the term ``formula" restricted to mean
+     polynomial.  Can we not use summation signs, factorial, and the floor
+     function in our ``formula"?  If so, then indeed, there {\it are} formulas
+     for the prime numbers.  Some of them are listed below.
+
+     A reasonable interpretation of
+     the word ``formula" is simply ``Turing machine that halts on all inputs".
+     Under this interpretation, there certainly are halting Turing machines
+     which compute the $n$-th prime number.  However, nobody knows how to
+     compute the $n$-th prime in time polynomial in $\log n$.  That's still
+     an open question.
+
+     Herb Wilf has addressed the question, ``What is a formula?" in his
+     article, ``What is an answer?" which appeared in the
+     American Mathematical Monthly, 89 (1982), 289-292.  He draws a
+     distinction between ``formula" and ``good formula".  Anyone who claims
+     ``there is no formula for the prime numbers" should read this article.
+
+     Here are just a few articles that discuss ``formulas" for primes.  Almost
+     all of these do {\bf not} require computation of the primes ahead of time.
+     Most of them rely on standard mathematical functions such as summation,
+     factorial, greatest integer function, etc.
+
+
+\Ref
+
+       \article{C. Isenkrahe.}{}{Math. Annalen}{53 (1900), 42-44.}
+
+      \article{W. H. Mills.}{}{Bulletin of the American Mathematical Society}{
+53 (1947), 604.}
+
+       \article{L. Moser.}{}{Mathematics Magazine}{23 (1950), 163-164.}
+
+       \article{E. M. Wright.}{}{American Mathematical Monthly}{58 (1951), 616-618.  (Correction,
+      59 (1952), 99.)}
+
+       \article{E. M. Wright.}{}{Journal of the London Mathematical
+        Society}{29 (1954), 63-71.}
+
+       \article{B. R. Srinivasan.}{}{Journal of the Indian Mathematical Society}{25 (1961), 33-39.}
+
+       \article{C. P. Willans.}{}{Mathematics Gazette}{48 (1964), 413-415.}
+
+       \article{V. C. Harris.}{}{Nordisk Mat. Tidskr.}{17 (1969), 82.}
+
+       \article{U. Dudley.}{}{American Mathematical Monthly}{76 (1969), 23-28.}
+
+       \article{C. Vanden Eynden.}{}{American Mathematical Monthly}
+         {79 (1972), 625.}
+
+       \article{S. W. Golomb.}{}{American Mathematical Monthly}
+{81 (1974), 752-754.}
+
+\medskip
+     
+
+       \book{Algorithmic Number Theory.}{J.O. Shallit, E. Bach.}
+{(to be published,
+       MIT Press).}
+\book{A Course in Computational
+Algebraic Number Theory.}{Henri Cohen.}{ Springer-Verlag, Graduate
+Texts in Math, 1993.}
+

@@ -1,0 +1,218 @@
+\section{How to compute digits of $\pi$?}
+
+
+    Symbolic Computation software such as {\it Maple} or {\it Mathematica}
+    can compute 10,000 digits of $\pi$ in a blink,
+    and another 20,000-1,000,000 digits overnight (range depends
+    on hardware platform).
+
+    It is possible to retrieve 1.25+ million digits of $\pi$ via anonymous
+    ftp from the site wuarchive.wustl.edu, in the files pi.doc.Z and
+    pi.dat.Z which reside in subdirectory doc/misc/pi.
+    New York's Chudnovsky brothers have computed 2 billion digits of $\pi$
+    on a homebrew computer.
+
+The current record is held by Yasumasa Kanada and Daisuke Takahashi 
+from the University of Tokyo
+with 51 billion digits of $\pi$ (51,539,600,000 decimal
+digits to be precise).
+
+Nick Johnson-Hill has an interesting page of $\pi$ 
+trivia at: http://www.users.globalnet.co.uk/~nickjh/Pi.htm
+
+
+%Modification date: Sept 4, 1995.
+%
+%From: "Antreas P. Hatzipolakis" <xpolakis@athena.compulink.gr>
+%Date: Sun, 3 Sep 1995 15:50:24 -0400
+%
+%The new (June 95) world record for decimals of pi is: 3,221,220,000 digits.
+%Please visit the site: ftp://www.cc.u-tokyo.ac.jp/
+%
+%
+%    The new record for the number of digits of $\pi$ is 3,221,220,000 digits,
+%which are available at
+%\begin{verbatim}
+% ftp://www.cc.u-tokyo.ac.jp/
+%end{verbatim}
+
+
+%Modification date: Sept 6, 1995
+%
+%From: kanada@pi.cc.u-tokyo.ac.jp (Yasumasa KANADA)
+%Newsgroups: sci.math,sci.math.symbolic
+%Subject: New world record of pi
+%Date: 6 Sep 1995 05:28:27 GMT
+The new record for the number of digits of $\pi$ is 4.29496 billion
+decimal digits of pi were calculated and verified by 28th August '95.
+
+ Related documents are available with anonymous ftp to www.cc.u-tokyo.ac.jp.
+\begin{verbatim}
+ ftp://www.cc.u-tokyo.ac.jp/
+\end{verbatim}
+
+This computations were made by Yasumasa Kanada, at the University of Tokyo.
+
+%Date: Fri, 24 Sep 1993 13:21:44 -0400
+%From: cohen@ceremab.u-bordeaux.fr (Henri Cohen)
+% The following text is from Henri
+
+
+    There are essentially 3 different methods to calculate $\pi$
+ to many decimals.
+
+\begin{enumerate}
+
+     \item One of the oldest is to use the power series expansion of
+     $atan(x)=x-x^3/3+x^5/5-\ldots$ together with formulas like
+     $\pi=16*atan(1/5)-4*atan(1/239)$. This gives about 1.4 decimals per term.
+
+     \item A second is to use formulas coming from Arithmetic-Geometric mean
+     computations. A beautiful compendium of such formulas is given in the
+     book $\pi$ and the AGM, (see references).
+      They have the advantage of converging
+     quadratically, i.e. you double the number of decimals per iteration.
+     For instance, to obtain 1 000 000 decimals, around 20 iterations are
+     sufficient. The disadvantage is that you need FFT type multiplication
+     to get a reasonable speed, and this is not so easy to program.
+
+     \item
+     A third one comes from the theory of complex multiplication of elliptic
+     curves, and was discovered by S. Ramanujan. This gives a number of
+     beautiful formulas, but the most useful was missed by Ramanujan and
+     discovered by the Chudnovsky's. It is the following (slightly modified
+     for ease of programming):
+
+     Set $k_1=545140134;$ $k_2=13591409;$ $k_3=640320;$ $k_4=100100025;$
+     $k_5=327843840;$ $k_6=53360;$
+
+     Then $\pi=\frac{k_6\sqrt{k_3}}{S}$, where
+
+     $$S=\sum_{n=0}^\infty (-1)^n\frac{(6n)!(k_2+nk_1)}{n!^3(3n)!(8k_4k_5)^n}$$
+
+     The great advantages of this formula are that
+
+     1) It converges linearly, but very fast (more than 14 decimal digits per
+     term).
+
+     2) The way it is written, all operations to compute S can be programmed
+     very simply. This is why the constant $8k_4k_5$ appearing in the
+     denominator has been written this way instead of 262537412640768000.
+     This is how the Chudnovsky's have computed several billion decimals.
+
+\end{enumerate}
+
+%From: jrv@mbunix.mitre.org (Jim Van Zandt)
+%Date: 7 Dec 1995 17:41:42 GMT
+%Newsgroups: sci.math
+
+%From: Robert Israel <israel@math.ubc.ca>
+%Date: Sun, 19 Nov 95 00:44:22 -0800
+%
+An interesting new method was recently proposed by David Bailey, 
+Peter Borwein and 
+Simon Plouffe. It can compute the $N$th  {\bf hexadecimal} digit of Pi
+efficiently without the previous $N-1$ digits. The method is based
+on the formula:
+
+\[ \pi = \sum_{i=0}^\infty {1 \over 16^i} \left(
+    {4 \over 8i+1} - {2 \over 8i+4} - {1 \over 8i+5} - {1 \over 8i+6}
+\right)
+\]
+
+in $O(N)$ time and $O(log N)$ space. (See references.)
+
+
+     The
+     following 160 character C program, written by Dik T. Winter at CWI,
+     computes $\pi$ to 800 decimal digits.
+
+     \begin{verbatim}
+     int a=10000,b,c=2800,d,e,f[2801],g;main(){for(;b-c;)f[b++]=a/5;
+     for(;d=0,g=c*2;c-=14,printf("%.4d",e+d/a),e=d%a)for(b=c;d+=f[b]*a,
+     f[b]=d%--g,d/=g--,--b;d*=b);}
+     \end{verbatim}
+
+
+
+\Ref
+
+    \article{P. B. Borwein, and D. H. Bailey.}{Ramanujan, Modular Equations,
+    and Approximations to $\pi$} {American Mathematical
+    Monthly,}{vol. 96, no. 3 (March 1989), p. 201-220.}
+
+    \article{D. H. Bailey, P. B. Borwein, and S. Plouffe.}{A New Formula for 
+    Picking off Pieces of Pi,}{Science News,} {v 148, p 279 (Oct 28, 1995).
+    also at http://www.cecm.sfu.ca/\~pborwein }
+
+\article{D. Bailey, P. Borwein and S. Plouffe.}{On the rapid computation of
+various polylogarithmic constants,}{ Math. Comp.}
+{ 66 (1997) 903-913; MR 98d:11165.}
+
+%\end{verbatim}}
+
+    \article{J.M. Borwein and P.B. Borwein.}
+    {The arithmetic-geometric mean and fast computation of elementary
+    functions.}
+    {SIAM Review,}{Vol. 26, 1984, pp. 351-366.}
+
+    \article{J.M. Borwein and P.B. Borwein.}
+    {More quadratically converging algorithms for $\pi$.}
+    {Mathematics of Computation,}{Vol. 46, 1986, pp. 247-253.}
+   \article
+    {Shlomo Breuer and Gideon Zwas}
+    {Mathematical-educational aspects of the computation of $\pi$}
+    {Int. J. Math. Educ. Sci. Technol.,}{Vol. 15, No. 2, 1984,
+    pp. 231-244.}
+
+    \article{David Chudnovsky and Gregory Chudnovsky.}
+    {The computation of classical constants.}{Columbia University,
+    Proc. Natl. Acad. Sci. USA,}{Vol. 86, 1989.}
+
+    %reference
+    % From: robert@cs.caltech.edu (Robert J. Harley)
+    % Date: Thu, 30 Mar 1995 17:36:32 -0500
+    % 
+    \book {Classical Constants and Functions: Computations and Continued
+    Fraction Expansions}
+    {D.V.Chudnovsky, G.V.Chudnovsky, H.Cohn, M.B.Nathanson, eds.}
+    {Number Theory, New York Seminar 1989-1990.}
+
+    \article{Y. Kanada and Y. Tamura.}
+    {Calculation of $\pi$ to 10,013,395 decimal places based on the
+    Gauss-Legendre algorithm and Gauss arctangent relation.}
+    {Computer Centre, University of Tokyo,}{1983.}
+
+    \article{Morris Newman and Daniel Shanks.}
+    {On a sequence arising in series for $\pi$.}
+    {Mathematics of computation,}{Vol. 42, No. 165, Jan 1984,
+    pp. 199-217.}
+
+    \article{E. Salamin.}
+    {Computation of $\pi$ using arithmetic-geometric mean.}
+    {Mathematics of Computation,}{Vol. 30, 1976, pp. 565-570}
+
+    \article{David Singmaster.}
+    {The legal values of $\pi$.}
+    {The Mathematical Intelligencer,}{Vol. 7, No. 2, 1985.}
+
+    \article{Stan Wagon.}
+    {Is $\pi$ normal?}
+    {The Mathematical Intelligencer,}{Vol. 7, No. 3, 1985.}
+
+\medskip
+
+    \book
+    {A history of $\pi$.}
+    {P. Beckman.}
+    {Golem Press, CO, 1971 (fourth edition 1977)}
+
+
+    \book
+    {$\pi$ and the AGM - a study in analytic number theory and
+    computational complexity.}
+    {J.M. Borwein and P.B. Borwein.}
+    {Wiley, New York, 1987.}
+
+
+

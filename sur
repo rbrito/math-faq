@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+open(SECT, "ls e*html|") || die "Couldn't run ls : $!\n";
+
+while ($filename = <SECT>)
+   {
+     @aa = split(/_|\./, $filename);
+     chop($filename);
+     $_ = $filename;
+     s/^e// ;
+     if ($#aa == 1)
+       { `mv $filename section3_$_` ; }
+     elsif ($#aa == 2)
+       { `mv $filename subsection3_$_`; }
+     elsif ($#aa == 3)
+       { `mv $filename subsubsection3_$_`; }
+   }
+    

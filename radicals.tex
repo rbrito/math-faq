@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage{graphicx}
+\title{\hspace*{-8mm}\underline{\bf Solving Polynomial Equations In One 
+Indeterminate With Radicals}}
+\date{}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.5in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+\newcommand\linear[2]{-\frac{#2}{#1}}
+\newcommand\quadratic[3]{\frac{-#2\pm\sqrt{#2^2-4#1#3}}{2#1}}
+\newcommand\cubic[4][(1)]{\frac{-#2+\sqrt[3]{\frac{9#1#2#3-27#1^2
+#4-2#2^3+\sqrt{(9#1#2#3-27#1^2#4-2#2^3)^2+4(3#1#3-#2^2)^3}}2}+
+\sqrt[3]{\frac{9#1#2#3-27#1^2#4-2#2^3-\sqrt{(9#1#2#3-27#1^2#4-
+2#2^3)^2+4(3#1#3-#2^2)^3}}2}}{3#1}}
+\newcommand\dsquared{
+\frac{
+3b^2-8ac+4a\sqrt[3]{
+\frac{27(ad^2+b^2e)+2c^3-9c(8ae+
+(3a-2)bd)+\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}
++4a\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd)
+-\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}}{12a^2}
+}
+\begin{document}
+\maketitle
+\vspace*{-20mm}
+\begin{description}
+\item[Degree $1$] Given the equation $ax+b=0$ with $a>0$,\footnote{Here
+and in other cases we can assume $a\not<0$ by dividing the equation by
+$-1$.} divide each side by $a$ to get $x+\frac ba=0$.\\
+Next subtract $-\frac ba$ from each side to finally get $x=\linear ab$.
+\item[Degree $2$] Given the equation $ax^2+bx+c=0$ with $a>0$, divide each
+side by $a$ to get $x^2+ \frac bax+\frac ca=0$.\\
+Next complete the square to get $\left(x+\frac b{2a}\right)^2+
+\frac ca=\frac{b^2}{4a^2}$. We need to assume $2\neq 0$.\\
+Now subtract $\frac ca$ from each 
+side and put the right hand side on a common denominator to get 
+$\left(x+\frac b{2a}\right)^2=\frac{b^2-4ac}{4a^2}$.\\
+Take square roots on each side to get $x+\frac b{2a}=\pm\frac{\sqrt{b^2-4ac}}
+{2a}$. Now subtract $  \frac b{2a}$ from each side to get 
+$x=\quadratic abc$.
+\item[Degree $3$] Given the equation $ax^3+bx^2+cx+d=0$ with 
+$a>0$, divide each side by $a$ to get $x^3+ \frac bax^2+\frac 
+cax+\frac da=0$.\\
+Next complete the cube to get $(x+\frac b{3a})^3
++\frac cax+\frac da=\frac{b^2}{3a^2}x+\frac{b^3}{27a^3}$, that is 
+to say 
+$(x+\frac b{3a})^3+\frac
+{3ac-b^2}{3a^2}(x+\frac b{3a})+\frac{27a^2d+2b^3-9abc}{27a^3}=0$.\\
+We need to assume $3\neq 0$.
+Write $x+\frac b{3a}=u+v$, with $uv=\frac {b^2-3ac}{9a^2}$ in 
+order to obtain $u^3+3uv(u+v)+v^3-3uv(u+v)+\frac{27a^2d+2b^3-9abc}
+{27a^3}=0$.\\
+That is, $u^3+v^3+\frac{27a^2d+2b^3-9abc}{27a^3}=0$, or, on multiplying by $u^3$ and using $uv=\frac {b^2-3ac}{9a^2},\ 
+u^6+\frac{27a^2d+2b^3-9abc}{27a^3}u^3+\left(\frac {b^2-3ac}{9a^2}
+\right)^3=0$.\\
+This enables us to obtain $u^3=\frac{\frac{9abc-27
+a^2d-2b^3}{27a^3}\pm\sqrt{\left(\frac{9abc-27a^2d-2b^3}{27a^3}
+\right)^2+4\left(\frac{3ac-b^2}{9a^2}\right)^3}}2$, assuming $2\neq 0$.\\
+We thus 
+obtain $u=\frac{\sqrt[3]{\frac{9abc-27a^2d-2b^3+\sqrt{(9abc-27a^2d
+-2b^3)^2+4(3ac-b^2)^3}}2}}{3a},\,v=\frac{\sqrt[3]{\frac{9abc-27a^2
+d-2b^3-\sqrt{(9abc-27a^2d-2b^3)^2+4(3ac-b^2)^3}}2}}{3a}$.\\ 
+For each of the three solutions to $u$, we take for $v$ the corresponding
+solution such that their product is $\frac {b^2-3ac}{9a^2}$. Then we obtain\\
+$x=\cubic[a]{b}{c}{d}$,  where the three possible cube roots for\\
+$u$ give three solutions for $x$.
+\item[Degree $4$] Given the equation $ax^4+bx^3+cx^2+dx+e=0$ with 
+$a\neq 0$, divide each side by $a$ to get\\
+$x^4+ \frac bax^3+\frac cax^2+\frac dax+\frac ea=0$. Now complete the
+tesseract to get 
+$\left(x+\frac b{4a}\right)^4+\frac{8ac-3b^2}{8a^2}x^2+\frac{16a^2
+d-b^3}{16a^3}x+\frac{256a^3e-b^4}{256a^4}=0$, or\\
+$\left(x+\frac b{4a}\right)^4+\frac{8ac-3b^2}{8a^2}\left(x+\frac b{4a}\right)^2+
+\frac{16a^2d+2b^3-8abc}{16a^3}\left(x+\frac b{4a}\right)+
+\frac{256a^3e-3b^4+16ab^2c-64a^2bd}{256a^4}=0$. Writing $y=x+
+\frac b{4a}$, this reduces to\\
+$y^4+\frac{8ac-3b^2}{8a^2}y^2+
+\frac{8a^2d+b^3-4abc}{8a^3}y+\frac{256a^3e-3b^4+16ab^2c-64a^2bd}
+{256a^4}=0$. We had to assume $2\neq 0$.
+If $8a^2d+b^3-4abc=0$, then $x=\left\{\begin{array}{l}-\frac
+b{4a}\pm\sqrt{\frac{\frac{3b^2-8ac}{8a^2}+\sqrt{\left(\frac{3b^2-8ac}{8a^2}
+\right)^2-4\left(\frac{256a^3e-3b^4+16ab^2c-64a^2bd}{256a^4}
+\right)}}2},\cr-\frac b{4a}\pm\sqrt{\frac{\frac{3b^2-8ac}{8a^2}-
+\sqrt{\left(\frac{3b^2-8ac}{8a^2}\right)^2-4\left(\frac{256a^3e-
+3b^4+16ab^2c-64a^2bd}{256a^4}\right)}}2}.\end{array}\right.$\\
+If not, we now factor this to get $(y^2+Dy+E)(y^2-Dy+F)=0$, where
+$E+F-D^2=\frac{8ac-3b^2}{8a^2},\,
+(F-E)D=\frac{8a^2d+b^3-4abc}{8a^3},\\
+EF=\frac{256a^3e-3b^4+16ab^2c-64a^2bd}{256a^4}$. It is immediately obvious that\\
+$64a^6D^6+(128a^5c-48a^4b^2)D^4
++(64a^4c^2+64a^4bd+12a^2b^4-64a^3b^2c-256a^5e)D^2\\
+{}\qquad+(64a^4bcd+8ab^4c-64a^4d^2-b^6-16a^2b^2c^2-16a^2b^3d)=0$, a cubic
+in
+$D^2$. 
+Thus we have, assuming $3\neq 0$,\\
+$D^2=
+\frac{
+3b^2-8ac+4a\sqrt[3]{
+\frac{27(ad^2+b^2e)+2c^3-9c(8ae+
+(3a-2)bd)+\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}}
+{12a^2}\\
+{}\qquad\qquad+\frac{4a\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd)
+-\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}}{12a^2}$.\\
+\newpage\noindent\vspace*{-13mm}\\
+\rotatebox[units=-360]{90}{\begin{minipage}{500pt}So $x=-\frac
+b{4a}\bigskip\\
+-\frac1{4a}\frac{\sqrt{3b^2-8ac+4a\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+
+(3a-2)bd)+\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}
++4a\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd)
+-\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}}}{\sqrt3}
+\bigskip\\
+\pm\frac1{4a}\sqrt{
+\begin{array}{l}
+\frac{6b^2-16ac-
+4a\left(\sqrt[3]{
+\frac{27(ad^2+b^2e)+2c^3-9c(8ae+
+(3a-2)bd)+\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}
++\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd)
+-\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}\right)}3
+\bigskip\cr
++\frac{2\sqrt3(8a^2d+b^3-4abc)}{
+\sqrt{3b^2-8ac+4a\left(\sqrt[3]{
+\frac{27(ad^2+b^2e)+2c^3-9c(8ae+
+(3a-2)bd)+\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}
++\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd)
+-\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}\right)}}
+\end{array}},\\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+\ \\
+-\frac b{4a}\bigskip\\
++\frac1{4a}\frac{\sqrt{3b^2-8ac+4a\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+
+(3a-2)bd)+\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}
++4a\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd)
+-\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}}}{\sqrt3}
+\bigskip\\
+\pm\frac1{4a}\sqrt{
+\begin{array}{l}
+\frac{6b^2-16ac-
+4a\left(\sqrt[3]{
+\frac{27(ad^2+b^2e)+2c^3-9c(8ae+
+(3a-2)bd)+\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}
++\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd)
+-\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}\right)}3
+\bigskip\cr
++\frac{2\sqrt3(4abc-8a^2d-b^3)}{
+\sqrt{3b^2-8ac+4a\left(\sqrt[3]{
+\frac{27(ad^2+b^2e)+2c^3-9c(8ae+
+(3a-2)bd)+\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}
++\sqrt[3]{\frac{27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd)
+-\sqrt{(27(ad^2+b^2e)+2c^3-9c(8ae+(3a-2)bd))^2+4(3bd-c^2-12ae)^3}}2}\right)}}.
+\end{array}}$\end{minipage}}
+\end{description}
+\end{document}

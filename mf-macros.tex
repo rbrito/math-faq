@@ -1,0 +1,62 @@
+
+\newlength{\addtextwidth}
+\newlength{\addtextheight}
+\setlength{\addtextwidth}{16.0cm}
+\setlength{\addtextheight}{22.3cm}
+\addtolength{\addtextwidth}{-\textwidth}
+\addtolength{\addtextheight}{-\textheight}
+
+\addtolength{\textheight}{\addtextheight}
+\addtolength{\textwidth}{\addtextwidth}
+\addtolength{\oddsidemargin}{-0.5\addtextwidth}
+\addtolength{\evensidemargin}{-0.5\addtextwidth}
+\addtolength{\topmargin}{-0.15\addtextheight}
+
+
+\newcommand{\book}[3]{\noindent{\sf #1} {\it #2} #3
+
+ \medskip
+
+}
+\newcommand{\article}[4]{\noindent{\it #1} {\bf #2} {\sf #3} #4
+
+\medskip
+
+}
+\newcommand{\PH}{P\!H}
+\newcommand{\Ref}{\bigskip \noindent {\large\bf References} \medskip }
+\newcommand{\Proof}{{\sc Proof}}
+\newcommand{\NP}{N\!P}
+\newcommand{\p}{\hspace{-0.90ex}.\hspace{0.90ex}}
+\newcommand{\qed}{\hfill $\Box$ \hspace{1.1ex}}
+\newcommand{\CC}[1]{}
+
+%\newcommand{\N}{\mbox{\boldmath\(N\)}}
+%\newcommand{\Z}{\mbox{\boldmath\(Z\)}}
+%\newcommand{\Q}{\mbox{\boldmath\(Q\)}}
+%\newcommand{\R}{\mbox{\boldmath\(R\)}}
+%\newcommand{\C}{\mbox{\boldmath\(C\)}}
+
+
+
+\newtheorem{defii}{Definition}
+\newtheorem{teo}{Theorem}
+\newtheorem{lema}{Lemma}
+\newtheorem{obs}{Observation}
+\newtheorem{coro}{Corollary}
+\newtheorem{conj}{Conjecture}
+\newtheorem{claim}{Claim}
+%\documentclass[psfig,12pt,fullpage,twoside,fancyheadings]{report}
+%\documentstyle[12pt,fullpage]{article}
+
+%\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{#1}} % remember chapter title
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+                                                % section number and title
+%\lhead[\fancyplain{}{\bf\thepage}]{\fancyplain{}{\bf\rightmark}}
+%\rhead[\fancyplain{}{\bf\leftmark}]{\fancyplain{}{\bf\thepage}}
+%\cfoot{}
+
+%\addtolength{\textheight}{-3.6in}
+%\addtolength{\voffset}{-0.5in}
+

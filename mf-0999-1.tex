@@ -1,0 +1,86 @@
+\subsection{Why is $0.9999\ldots = 1$?}
+
+In modern mathematics, the string of symbols $0.9999\ldots $ is understood to
+be a shorthand for ``the infinite sum  $9/10 + 9/100 + 9/1000 + \ldots$''.
+This in turn is shorthand for ``the limit of the sequence of real numbers
+$9/10$, $9/10 + 9/100$, $9/10 + 9/100 + 9/1000, \ldots$''. Using the
+well-known epsilon-delta definition of the limit (you can find it in any of
+the given references on analysis), one can easily show that this limit is $1$.
+The statement that $0.9999\ldots  = 1$ is simply an abbreviation of this fact.
+
+\[0.9999\ldots = \sum_{n=1}^{\infty}\frac{9}{10^n} =
+\lim_{m\rightarrow \infty}\sum_{n=1}^m\frac{9}{10^n}\]
+
+Choose $\varepsilon > 0$. Suppose $\delta = 1/-\log_{10} \varepsilon$, thus
+$\varepsilon = 10^{-1/\delta}$. For every $m>1/\delta$ we have that
+
+\[ \left| \sum_{n=1}^m \frac{9}{10^n} - 1 \right| = \frac{1}{10^m} <
+\frac{1}{10^{1/\delta}}=\varepsilon\]
+
+So by the $\varepsilon-\delta$ definition of the limit we have
+
+\[\lim_{m\rightarrow \infty}\sum_{n=1}^m\frac{9}{10^n}=1\]
+
+Not formal enough? In that case you need to go back to the construction of
+the number system. After you have constructed the reals (Cauchy sequences are
+well suited for this case, see [Shapiro75]), you can indeed verify that the
+preceding proof correctly shows $0.9999\ldots = 1$.
+
+An informal argument could be given by noticing that the following sequence
+of ``natural'' operations has as a consequence $0.9999\ldots = 1$. Therefore
+it's ``natural'' to assume $0.9999\ldots = 1$.
+
+\begin{eqnarray*}
+      x &=& 0.9999\ldots \\
+    10x &=& 10 \cdot 0.9999\ldots \\
+    10x &=& 9.9999\ldots \\
+10x - x &=& 9.9999\ldots - 0.9999\ldots \\
+     9x &=& 9 \\
+      x &=& 1 \\
+\end{eqnarray*}
+
+Thus $0.9999\ldots = 1$.
+
+% Credit: kdq@professor.jpl.nasa.gov (Kevin D. Quitt) 941107
+%         He gave the following argument.
+An even easier argument multiplies both sides of $0.3333\ldots = 1/3$ by $3$.
+The result is $0.9999\ldots = 3/3 = 1$.
+
+Another informal argument is to notice that all periodic numbers
+such as $0.46464646\ldots$ are equal to the period divided over the
+same number of $9$s. Thus $0.46464646\ldots=46/99$. Applying the
+same argument to $0.9999\ldots=9/9=1$.
+
+Although the three informal arguments might convince you that $0.9999\ldots =
+1$, they are not complete proofs. Basically, you need to prove that each step
+on the way is allowed and is correct. They are also ``clumsy'' ways to prove
+the equality since they go around the bush: proving $0.9999\ldots = 1$
+directly is much easier.
+
+You can even have that  while you are proving it the ``clumsy'' way, you get
+proof of the result in another way. For instance, in the first argument the
+first step is showing that $0.9999\ldots$ is real indeed. You can do this by
+giving the formal proof stated in the beginning of this FAQ question. But
+then you have $0.9999\ldots = 1$ as corollary. So the rest of the argument is
+irrelevant: you already proved what you wanted to prove.
+
+\Ref
+
+\book{R.V. Churchill and J.W. Brown.}
+     {Complex Variables and Applications.}
+     {$5^{th}$ ed., McGraw-Hill, 1990.}
+
+\book{E. Hewitt and K. Stromberg.}
+     {Real and Abstract Analysis.}
+     {Springer-Verlag, Berlin, 1965.}
+
+\book{W. Rudin.}
+     {Principles of Mathematical Analysis.}
+     {McGraw-Hill, 1976.}
+
+\book{L. Shapiro.}
+     {Introduction to Abstract Algebra.}
+     {McGraw-Hill, 1975.}
+
+\article{ F. Richman.}{ Is 0.999 = 1?,}{ Mathematics Magazine,}{ 72 (1999),
+404--408.}

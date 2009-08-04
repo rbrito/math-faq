@@ -1,0 +1,63 @@
+\section{Name for $f(x)^{f(x)}=x$}
+
+
+    Solving for $f$ one finds a ``continued fraction"-like answer
+
+
+               \begin{equation}
+            f(x) = \frac{\log x}{\log
+                     \frac{\log x}{\log
+                      \frac{\log x}{\log\ldots } } }
+\end{equation}
+
+
+ This question has been repeated here from time to time over the
+    years, and no one seems to have heard of any published work on it,
+    nor a published name for it. 
+
+%From: asimov@nas.nasa.gov (Daniel A. Asimov)
+%Date: Tue, 21 Nov 1995 13:50:24 -0800
+%comments on the name....
+
+This function is the inverse of $f(x)=x^x$. It might be argued that
+such description is good enough as far as mathematical names go: 
+"the inverse of the function $f(x)=x^x$" seems to be clear and succint.
+
+Another possible name is $lx(x)$. This comes from the fact that
+the inverse of $e^x$ is $ln(x)$ thus the inverse of $x^x$ could be
+named $lx(x)$.
+
+%From: asimov@nas.nasa.gov (Daniel A. Asimov)
+%Date: Tue, 21 Nov 1995 13:50:24 -0800
+%Dan claims it is. Check
+%What's more, it most certainly IS an analytic function
+%(away from the singularities of x^x, of course).  For example,
+%a branch of it is real analytic on the interval ((1/e)^(1/e), oo) in R,
+%and complex analytic on some neighborhood of that interval in C.
+
+
+
+It's not an analytic function.
+
+    The ``continued fraction" form for its numeric solution is highly
+    unstable in the region of its minimum at $1/e$ (because the graph is
+    quite flat there yet logarithmic approximation oscillates wildly),
+    although it converges fairly quickly elsewhere. To compute its value
+    near $1/e$, use the bisection method which gives good results. Bisection
+    in other regions converges much more slowly than the logarithmic
+    continued fraction form, so a hybrid of the two seems suitable.
+    Note that it's dual valued for the reals (and many valued complex
+    for negative reals).
+
+    A similar function is a built-in function in MAPLE called $W(x)$
+ or Lambert's $W$ function.
+    MAPLE considers a solution in terms of $W(x)$ as a closed form (like
+    the erf function). W is defined as $W(x)e^{W(x)}=x$.
+
+    Notice that $f(x) = exp(W(log(x)))$ is the solution to $f(x)^f(x)=x$
+
+    An extensive treatise on the known facts of Lambert's W function
+    is available for anonymous ftp at dragon.uwaterloo.ca at
+    /cs-archive/CS-93-03/W.ps.Z.
+
+
