@@ -1,170 +1,146 @@
 \section{What is $0^0$}
 
-  According to some Calculus textbooks, $0^0$ is an ``indeterminate
-    form''. When evaluating a limit of the form $0^0$, then you need
-    to know that limits of that form are called ``indeterminate forms'',
-    and that you need to use a special technique such as L'Hopital's
-    rule to evaluate them. Otherwise, $0^0=1$ seems to be the most
-    useful choice for $0^0$. This convention allows us to extend
-    definitions in different areas of mathematics that otherwise would
-    require treating 0 as a special case. Notice that $0^0$ is a
-    discontinuity of the function $x^y$. More importantly, keep
-    in mind that the value of a function and its limit need not be the
-    same thing, and functions need not be continous, if that serves
-    a purpose (see Dirac's delta).
+According to some Calculus textbooks, $0^0$ is an ``indeterminate
+form''. When evaluating a limit of the form $0^0$, then you need to know
+that limits of that form are called ``indeterminate forms'', and that
+you need to use a special technique such as L'Hopital's rule to evaluate
+them. Otherwise, $0^0=1$ seems to be the most useful choice for
+$0^0$. This convention allows us to extend definitions in different
+areas of mathematics that otherwise would require treating 0 as a
+special case. Notice that $0^0$ is a discontinuity of the function
+$x^y$. More importantly, keep in mind that the value of a function and
+its limit need not be the same thing, and functions need not be
+continous, if that serves a purpose (see Dirac's delta).
 
+This means that depending on the context where $0^0$ occurs, you might
+wish to substitute it with 1, indeterminate or undefined/nonexistent.
 
-    This means that depending on the context where $0^0$ occurs, you
-    might wish to substitute it with 1, indeterminate or
-    undefined/nonexistent.
+Some people feel that giving a value to a function with an essential
+discontinuity at a point, such as $x^y$ at $(0,0)$, is an inelegant
+patch and should not be done. Others point out correctly that in
+mathematics, usefulness and consistency are very important, and that
+under these parameters $0^0=1$ is the natural choice.
 
-    Some people feel that giving a value to a function with an
-    essential discontinuity at a point, such as $x^y$ at $(0,0)$, is
-    an inelegant patch and should not be done. Others point out
-    correctly that in mathematics, usefulness and consistency are
-    very important, and that under these parameters $0^0=1$ is
-    the natural choice.
+The following is a list of reasons why $0^0$ should be 1.
 
-    The following is a list of reasons why $0^0$ should be 1.
+Rotando \& Korn show that if $f$ and $g$ are real functions that vanish
+at the origin and are analytic at 0 (infinitely differentiable is not
+sufficient), then $f(x)^{g(x)}$ approaches 1 as $x$ approaches 0 from
+the right.
 
-    Rotando \& Korn show that if $f$ and $g$ are real functions that vanish
-    at the origin and are analytic at 0 (infinitely differentiable is
-    not sufficient), then $f(x)^{g(x)}$ approaches 1 as $x$ approaches 0 from
-    the right.
-
-    From Concrete Mathematics p.162 (R. Graham, D. Knuth, O. Patashnik):
+From Concrete Mathematics p.162 (R. Graham, D. Knuth, O. Patashnik):
 \begin{quote}
-    Some textbooks leave the quantity $0^0$ undefined, because the
-    functions $x^0$ and $0^x$ have different limiting values when $x$
-    decreases to 0. But this is a mistake. We must define
-       $x^0 = 1$ for all $x$,
-    if the binomial theorem is to be valid when $x=0$, $y=0$, and/or $x=-y$.
-    The theorem is too important to be arbitrarily restricted! By
-    contrast, the function $0^x$ is quite unimportant.
+  Some textbooks leave the quantity $0^0$ undefined, because the
+  functions $x^0$ and $0^x$ have different limiting values when $x$
+  decreases to 0. But this is a mistake. We must define $x^0 = 1$ for
+  all $x$, if the binomial theorem is to be valid when $x=0$, $y=0$,
+  and/or $x=-y$.  The theorem is too important to be arbitrarily
+  restricted! By contrast, the function $0^x$ is quite unimportant.
 \end{quote}
-   Published by Addison-Wesley, 2nd printing Dec, 1988.
+Published by Addison-Wesley, 2nd printing Dec, 1988.
 
-    As a rule of thumb, one can say that $0^0 = 1$, but $0.0^{0.0}$ is
-    undefined, meaning that when approaching from a different
-    direction there is no clearly predetermined value to assign to
-    $0.0^{0.0}$; but Kahan has argued that $0.0^{0.0}$ should be 1,
-    because if $f(x), g(x) \rightarrow 0$ as $x$ approaches some
-    limit, and $f(x)$ and $g(x)$ are analytic functions, then
-    $f(x)^g(x) \rightarrow 1$.
+As a rule of thumb, one can say that $0^0 = 1$, but $0.0^{0.0}$ is
+undefined, meaning that when approaching from a different direction
+there is no clearly predetermined value to assign to $0.0^{0.0}$; but
+Kahan has argued that $0.0^{0.0}$ should be 1, because if $f(x), g(x)
+\rightarrow 0$ as $x$ approaches some limit, and $f(x)$ and $g(x)$ are
+analytic functions, then $f(x)^g(x) \rightarrow 1$.
 
 
-    The discussion on $0^0$ is very old, Euler argues for $0^0=1$
-    since $a^0=1$ for $a \neq 0$. The controversy raged throughout the
-    nineteenth century, but was mainly conducted in the pages of the
 % correct name of Schlomiclh's by Edgar Fuss April, 1997
-    lesser journals: Grunert's Archiv and Schlomilch's Zeitschrift f\"ur 
-    Mathematik und Physik. Consensus has recently been built around 
-    setting the value of $0^0=1$.
+The discussion on $0^0$ is very old, Euler argues for $0^0=1$ since
+$a^0=1$ for $a \neq 0$. The controversy raged throughout the nineteenth
+century, but was mainly conducted in the pages of the lesser journals:
+Grunert's Archiv and Schlomilch's Zeitschrift f\"ur Mathematik und
+Physik. Consensus has recently been built around setting the value of
+$0^0=1$.
 
-    On a discussion of the use of the function $0^{0^x}$ by an Italian
-    mathematician named Guglielmo Libri.
+On a discussion of the use of the function $0^{0^x}$ by an Italian
+mathematician named Guglielmo Libri.
 
 \begin{quote}
-    [T]he paper [33] did produce several ripples in mathematical
-waters when
-    it originally appeared, because it stirred up a controversy about whether
-    $0^0$ is defined.  Most mathematicians agreed that $0^0 = 1$, but Cauchy 
-[5, page 70] had listed $0^0$ together with other expressions like $0/0$ and
-    $\infty-\infty$ in a table of undefined forms.  Libri's
-justification for
-    the equation $0^0 = 1$ was far from convincing, and a commentator
-who signed
-    his name simply ``S'' rose to the attack [45].  August M\"obius
-[36]
-    defended Libri, by presenting his former professor's reason for
-believing
-    that $0^0 = 1$ (basically a proof that $\lim_{x\rightarrow 0+} x^x
-= 1$).  M\"obius also
-    went further and presented a supposed proof that
-$\lim_{x\rightarrow 0+} f(x)^{g(x)}$
-    whenever $\lim_{x\rightarrow 0+} f(x) = lim_{x\rightarrow 0+} g(x)
-= 0$.  Of
- course ``S'' then
-    asked [3] whether M\"obius knew about functions such as $f(x) = e^{-1/x}$
-    and $g(x) = x$.  (And paper [36] was quietly omitted from the historical
-    record when the collected words of M\"obius were ultimately published.)
-    The debate stopped there, apparently with the conclusion that $0^0$ should
-    be undefined.
+  [T]he paper [33] did produce several ripples in mathematical waters
+  when it originally appeared, because it stirred up a controversy about
+  whether $0^0$ is defined.  Most mathematicians agreed that $0^0 = 1$,
+  but Cauchy [5, page 70] had listed $0^0$ together with other
+  expressions like $0/0$ and $\infty-\infty$ in a table of undefined
+  forms.  Libri's justification for the equation $0^0 = 1$ was far from
+  convincing, and a commentator who signed his name simply ``S'' rose to
+  the attack [45].  August M\"obius [36] defended Libri, by presenting
+  his former professor's reason for believing that $0^0 = 1$ (basically
+  a proof that $\lim_{x\rightarrow 0+} x^x = 1$).  M\"obius also went
+  further and presented a supposed proof that $\lim_{x\rightarrow 0+}
+  f(x)^{g(x)}$ whenever $\lim_{x\rightarrow 0+} f(x) = lim_{x\rightarrow
+    0+} g(x) = 0$.  Of course ``S'' then asked [3] whether M\"obius knew
+  about functions such as $f(x) = e^{-1/x}$ and $g(x) = x$.  (And paper
+  [36] was quietly omitted from the historical record when the collected
+  words of M\"obius were ultimately published.)  The debate stopped
+  there, apparently with the conclusion that $0^0$ should be undefined.
 
-    But no, no, ten thousand times no!  Anybody who wants the binomial theorem
-            $ (x+y)^n = \sum_{k=0}^n {n\choose k} x^k y^{n-k}$
-    to hold for at least one nonnegative integer $n$ {\it must} believe that
-    $0^0 = 1$, for we can plug in $x = 0$ and $y = 1$ to get 1 on the left and
-$0^0$ on
-    the right.
+  But no, no, ten thousand times no!  Anybody who wants the binomial
+  theorem $ (x+y)^n = \sum_{k=0}^n {n\choose k} x^k y^{n-k}$ to hold for
+  at least one nonnegative integer $n$ {\it must} believe that $0^0 =
+  1$, for we can plug in $x = 0$ and $y = 1$ to get 1 on the left and
+  $0^0$ on the right.
 
-    The number of mappings from the empty set to the empty set is $0^0$.
-    It {\it has} to be 1.
+  The number of mappings from the empty set to the empty set is $0^0$.
+  It {\it has} to be 1.
 
-    On the other hand, Cauchy had good reason to consider $0^0$ as an undefined
-    {\it limiting form}, in the sense that the limiting value of $f(x)^{g(x)}$ is
-    not known {\it a priori} when $f(x)$ and $g(x)$ approach 0 independently.  In
-    this much stronger sense, the value of $0^0$ is less defined than, say, the
-    value of $0+0$.  Both Cauchy and Libri were right, but Libri and his
-    defenders did not understand why truth was on their side.
+  On the other hand, Cauchy had good reason to consider $0^0$ as an
+  undefined {\it limiting form}, in the sense that the limiting value of
+  $f(x)^{g(x)}$ is not known {\it a priori} when $f(x)$ and $g(x)$
+  approach 0 independently.  In this much stronger sense, the value of
+  $0^0$ is less defined than, say, the value of $0+0$.  Both Cauchy and
+  Libri were right, but Libri and his defenders did not understand why
+  truth was on their side.
 
-    [3] \article{Anonymous and S$\ldots$}{Bemerkungen zu den Aufsatze 
-\"uberschrieben,
-    `Beweis der Gleichung $0^0 = 1$, nach J. F. Pfaff',}{im zweiten
-Hefte dieses
-    Bandes, S. 134, Journal f\"ur die reine und angewandte Mathematik,}{12
-    (1834), 292--294.}
+  [3] \article{Anonymous and S$\ldots$}{Bemerkungen zu den Aufsatze
+    \"uberschrieben, `Beweis der Gleichung $0^0 = 1$, nach
+    J. F. Pfaff',}{im zweiten Hefte dieses Bandes, S. 134, Journal f\"ur
+    die reine und angewandte Mathematik,}{12 (1834), 292--294.}
 
-    [5] \book{\OE uvres Compl\`etes.}{Augustin-Louis Cauchy.}{Cours
-d'Analyse de
-    l'Ecole Royale Polytechnique
-    (1821).  Series 2, volume 3.}
+  [5] \book{\OE uvres Compl\`etes.}{Augustin-Louis Cauchy.}{Cours
+    d'Analyse de l'Ecole Royale Polytechnique (1821).  Series 2, volume
+    3.}
 
-    [33]  \article{Guillaume Libri.}{M\'emoire sur les fonctions discontinues, 
-Journal
-    f\"ur die reine und angewandte Mathematik,}{}{10 (1833), 303--316.}
+  [33] \article{Guillaume Libri.}{M\'emoire sur les fonctions
+    discontinues, Journal f\"ur die reine und angewandte
+    Mathematik,}{}{10 (1833), 303--316.}
 
-    [36] \article{A. F. M\"obius.}{Beweis der Gleichung $0^0 = 1$, nach J. F.
-Pfaff.}
-    {Journal f\"ur die reine und angewandte Mathematik,}{}{12 (1834),
-134--136.}
+  [36] \article{A. F. M\"obius.}{Beweis der Gleichung $0^0 = 1$, nach
+    J. F.  Pfaff.}  {Journal f\"ur die reine und angewandte
+    Mathematik,}{}{12 (1834), 134--136.}
 
-    [45] \article{S$\ldots$}{Sur la valeur de $0^0$.}{Journal f\"ur die reine
-und  angewandte Mathematik 11,}{(1834), 272--273.}
-
+  [45] \article{S$\ldots$}{Sur la valeur de $0^0$.}{Journal f\"ur die
+    reine und angewandte Mathematik 11,}{(1834), 272--273.}
 \end{quote}
 
-    \Ref
+\Ref
 
-    \article{Knuth.}{Two notes on notation.}{(AMM 99 no. 5 (May 1992),}
-    {403--422).}
+\article{Knuth.}{Two notes on notation.}{(AMM 99 no. 5 (May 1992),}
+{403--422).}
 
-    \article{H. E. Vaughan.}{The expression '$0^0$'.}{Mathematics
-Teacher 63 (1970),}
-    {pp.111-112.}
+\article{H. E. Vaughan.}{The expression '$0^0$'.}{Mathematics Teacher 63
+  (1970),} {pp.111-112.}
 
 % John W. Loux
 % and  Bill Dubuque <wgd@martigny.ai.mit.edu>  
 
-    \article{Kahan, W.} {Branch Cuts for Complex Elementary Functions
-                 or Much Ado about Nothing's Sign Bit,}{The State of the Art in
-                 Numerical Analysis, editors A. Iserles and M. J. D. Powell, Clarendon
-                 Press, Oxford, pp. 165--212. }
-    \article{Louis M. Rotando and Henry Korn.}{The Indeterminate Form $0^0$.}
-    {Mathematics Magazine,}{Vol. 50, No. 1 (January 1977), pp. 41-42.}
+\article{Kahan, W.} {Branch Cuts for Complex Elementary Functions or
+  Much Ado about Nothing's Sign Bit,}{The State of the Art in Numerical
+  Analysis, editors A. Iserles and M. J. D. Powell, Clarendon Press,
+  Oxford, pp. 165--212. } \article{Louis M. Rotando and Henry Korn.}{The
+  Indeterminate Form $0^0$.}  {Mathematics Magazine,}{Vol. 50, No. 1
+  (January 1977), pp. 41-42.}
 
-    \article{L. J. Paige,.}{A note on indeterminate forms.}{American
-Mathematical
-    Monthly,}{61 (1954), 189-190; reprinted in the Mathematical
-    Association of America's 1969 volume, Selected Papers on Calculus,
-    pp. 210-211.}
+\article{L. J. Paige,.}{A note on indeterminate forms.}{American
+  Mathematical Monthly,}{61 (1954), 189-190; reprinted in the
+  Mathematical Association of America's 1969 volume, Selected Papers on
+  Calculus, pp. 210-211.}
 
-   \article{Baxley \& Hayashi.}{A note on indeterminate
-forms.}{American Mathematical
-    Monthly,}{85 (1978), pp. 484-486.}
+\article{Baxley \& Hayashi.}{A note on indeterminate forms.}{American
+  Mathematical Monthly,}{85 (1978), pp. 484-486.}
 
-
-    \article{\ }{Crimes and Misdemeanors in the Computer
-                 Algebra Trade.} {Notices of the American
-                 Mathematical Society,}{  September 1991, volume 38, number 7,
-           pp.778-785}
+\article{\ }{Crimes and Misdemeanors in the Computer Algebra Trade.}
+{Notices of the American Mathematical Society,}{ September 1991, volume
+  38, number 7, pp.778-785}

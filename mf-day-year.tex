@@ -1,29 +1,29 @@
- First a brief explanation: In the Gregorian Calendar, over a period
-    of four hundred years, there are 97 leap years and 303 normal years.
-    Each normal year, the day of January 1 advances by one; for each leap
-    year it advances by two.
+First a brief explanation: In the Gregorian Calendar, over a period of
+four hundred years, there are 97 leap years and 303 normal years.  Each
+normal year, the day of January 1 advances by one; for each leap year it
+advances by two.
 
-     \[   303 + 97 + 97 = 497 = 7 * 71 \]
+\[ 303 + 97 + 97 = 497 = 7 * 71 \]
 
-    As a result, January 1 year $N$ occurs on the same day of the week as
-    January 1 year $N + 400$.  Because the leap year pattern also recurs
-    with a four hundred year cycle, a simple table of four hundred
-    elements, and single modulus, suffices to determine the day of the
-    week (in the Gregorian Calendar), and does it much faster than all the
-    other algorithms proposed.  Also, each element takes (in principle)
-    only three bits; the entire table thus takes only 1200 bits; 
+As a result, January 1 year $N$ occurs on the same day of the week as
+January 1 year $N + 400$.  Because the leap year pattern also recurs
+with a four hundred year cycle, a simple table of four hundred elements,
+and single modulus, suffices to determine the day of the week (in the
+Gregorian Calendar), and does it much faster than all the other
+algorithms proposed.  Also, each element takes (in principle) only three
+bits; the entire table thus takes only 1200 bits;
     %Date: Mon, 20 Nov 1995 08:51:23 +0100
     %From: Juergen Weinelt <rzuw039@rz.uni-wuerzburg.de>
     %1200/8=150
     %
     %or 300 bytes; 
-    on many computers this will be less than the instructions to do
-    all the complicated calculations proposed for the other algorithms.
+on many computers this will be less than the instructions to do all the
+complicated calculations proposed for the other algorithms.
 
-    Incidental note: Because 7 does not divide 400, January 1 occurs more
-    frequently on some days than others!  Trick your friends!  In a cycle
-    of 400 years, January 1 and March 1 occur on the following days with
-    the following frequencies:
+Incidental note: Because 7 does not divide 400, January 1 occurs more
+frequently on some days than others!  Trick your friends!  In a cycle of
+400 years, January 1 and March 1 occur on the following days with the
+following frequencies:
 
 \begin{verbatim}
            Sun      Mon     Tue     Wed     Thu     Fri     Sat
@@ -31,83 +31,82 @@
     Mar 1: 58       56      58      56      58      57      57
 \end{verbatim}
 
-    Of interest is that (contrary to most initial guesses) the occurrence
-    is not maximally flat.
+Of interest is that (contrary to most initial guesses) the occurrence is
+not maximally flat.
 
     % I saw the article in the Gazette. I remember having seen this 
     % result before. AL-O
     % Also ray johnstone <ray@iinet.com.au> pointed it out on Tue, 11 Apr 1995
 
-    In the Mathematical Gazette, vol. 53,, pp.127-129, it is shown that 
-    the 13th of the month is more likely to be a Friday than any other
-    day.The author is a 13 year old S.R.Baxter.
+In the Mathematical Gazette, vol. 53,, pp.127-129, it is shown that the
+13th of the month is more likely to be a Friday than any other day.The
+author is a 13 year old S.R.Baxter.
 
+The Gregorian calendar was introduced in 1582 in parts of Europe; it was
+adopted in 1752 in Great Britain and its colonies, and on various dates
+in other countries.  It replaced the Julian Calendar which has a
+four-year cycle of leap years; after four years January 1 has advanced
+by five days.  Since 5 is relatively prime to 7, a table of $4 * 7 = 28$
+elements is necessary for the Julian Calendar.
 
-    The Gregorian calendar was introduced in 1582 in parts of Europe; it was
-    adopted in 1752 in Great Britain and its colonies, and on various dates
-    in other countries.  It replaced the Julian Calendar which has a four-year
-    cycle of leap years; after four years January 1 has advanced by five days.
-    Since 5 is relatively prime to 7, a table of $4 * 7 = 28$ elements is
-    necessary for the Julian Calendar.
+There is still a 3 day over 10,000 years error which the Gregorian
+calendar does not take into account.  At some time such a correction
+will have to be done but your software will probably not last that long!
 
-
-    There is still a 3 day over 10,000 years error which the Gregorian calendar
-    does not take into account.  At some time such a correction will have
-    to be done but your software will probably not last that long!
-
-    Here is a standard method suitable for mental computation:
+Here is a standard method suitable for mental computation:
 
 
 \begin{enumerate}
-        \item Take the last two digits of the year.
-        \item Divide by 4, discarding any fraction.
-        \item Add the day of the month.
-        \item Add the month's key value: JFM AMJ JAS OND
-                                         144 025 036 146
-        \item Subtract 1 for January or February of a leap year.
-        \item For a Gregorian date, add 0 for 1900's, 6 for 2000's,
-             4 for 1700's,
-           2 for 1800's; for other years, add or subtract multiples of 400.
-        \item For a Julian date, add 1 for 1700's, and 1 for every additional
-           century you go back.
-        \item Add the last two digits of the year.
-        \item Divide by 7 and take the remainder.
+  \item Take the last two digits of the year.
+  \item Divide by 4, discarding any fraction.
+  \item Add the day of the month.
+  \item Add the month's key value: JFM AMJ JAS OND
+                                   144 025 036 146
+  \item Subtract 1 for January or February of a leap year.
+  \item For a Gregorian date, add 0 for 1900's, 6 for 2000's, 4 for
+  1700's, 2 for 1800's; for other years, add or subtract multiples of
+  400.
+  \item For a Julian date, add 1 for 1700's, and 1 for every additional
+  century you go back.
+  \item Add the last two digits of the year.
+  \item Divide by 7 and take the remainder.
 \end{enumerate}
 
-        Now 1 is Sunday, the first day of the week, 2 is Monday, and so on.
+Now 1 is Sunday, the first day of the week, 2 is Monday, and so on.
 
-    The following formula, which is for the Gregorian calendar only, may be
-    more convenient for computer programming.  Note that in some programming
-    languages the remainder operation can yield a negative result if given
-    a negative operand, so mod 7 may not translate to a simple remainder.
-       \[ W = (k + \lfloor 2.6m - 0.2\rfloor - 2C + Y + \lfloor Y/4
-\rfloor + \lfloor C/4\rfloor) mod 7 \]
-           where $\lfloor\ \rfloor$  denotes the integer floor function,\\
-           $k$ is day (1 to 31)\\
-           $m$ is month (1 = March, ..., 10 = December, 11 = Jan, 12 = Feb)
-                         Treat Jan \& Feb as months of the preceding year\\
-           $C$ is century (1987 has $C$ = 19)\\
-           $Y$ is year    (1987 has $Y$ = 87 except $Y$ = 86 for Jan \& Feb)\\
-           $W$ is week day (0 = Sunday, ..., 6 = Saturday)\\
+The following formula, which is for the Gregorian calendar only, may be
+more convenient for computer programming.  Note that in some programming
+languages the remainder operation can yield a negative result if given a
+negative operand, so mod 7 may not translate to a simple remainder.
+\[
+W = (k + \lfloor 2.6m - 0.2\rfloor - 2C + Y + \lfloor Y/4 \rfloor +
+\lfloor C/4\rfloor) \bmod 7,
+\]
+where $\lfloor\ \rfloor$ denotes the integer floor function,\\
+$k$ is day (1 to 31)\\
+$m$ is month (1 = March, ..., 10 = December, 11 = Jan, 12 = Feb)
+Treat Jan \& Feb as months of the preceding year\\
+$C$ is century (1987 has $C$ = 19)\\
+$Y$ is year    (1987 has $Y$ = 87 except $Y$ = 86 for Jan \& Feb)\\
+$W$ is week day (0 = Sunday, ..., 6 = Saturday)\\
 
-    Here the century and 400 year corrections are built into the formula.
-    The $\lfloor 2.6m-0.2\rfloor$ term relates to the repetitive pattern that the 30-day
-    months show when March is taken as the first month.
+Here the century and 400 year corrections are built into the formula.
+The $\lfloor 2.6m-0.2\rfloor$ term relates to the repetitive pattern
+that the 30-day months show when March is taken as the first month.
 
-The following short C program works for a restricted range, it returns 0 for
-Monday, 1 for Tuesday, etc.
+The following short C program works for a restricted range, it returns 0
+for Monday, 1 for Tuesday, etc.
 
 \begin{verbatim}
 dow(m,d,y){y-=m<3;return(y+y/4-y/100+y/400+"-bed=pen+mad."[m]+d)%7;}
 \end{verbatim}
 
-The program appeared  was posted by
-\url{sakamoto@sm.sony.co.jp} (Tomohiko Sakamoto) on comp.lang.c on March
-10th, 1993.
+The program appeared was posted by \url{sakamoto@sm.sony.co.jp}
+(Tomohiko Sakamoto) on comp.lang.c on March 10th, 1993.
 
-A good mnemonic rule to help on the computation of the day of the week is
-as follows. In any given year the following days come on
-the same day of the week:
+A good mnemonic rule to help on the computation of the day of the week
+is as follows. In any given year the following days come on the same day
+of the week:
 
 \begin{verbatim}
 4/4
@@ -117,7 +116,8 @@ the same day of the week:
 12/12
 \end{verbatim}
 
-\noindent to remember the next four, remember that I work from 9--5 at a 7--11 so
+\noindent to remember the next four, remember that I work from 9--5 at a
+7--11 so
 
 \begin{verbatim}
 9/5
@@ -129,29 +129,29 @@ the same day of the week:
 \noindent and the last day of Feb.
 
 ``In 1995 they come on Tuesday. Every year this advances one other than
-leap-years which advance 2. Therefore for 1996 the day will be
-Thursday, and for 1997 it will be Friday. Therefore ordinarily every 4
-years it advances 5 days. There is a minor correction for the century
-since the century is a leap year iff the century is divisible by 4.
-Therefore 2000 is a leap year, but 1900, 1800, and 1700 were not.''
+leap-years which advance 2. Therefore for 1996 the day will be Thursday,
+and for 1997 it will be Friday. Therefore ordinarily every 4 years it
+advances 5 days. There is a minor correction for the century since the
+century is a leap year iff the century is divisible by 4.  Therefore
+2000 is a leap year, but 1900, 1800, and 1700 were not.''
 
 Even ignoring the pattern over for a period of years this is still
 useful since you can generally figure out what day of the week a given
 date is on faster than someone else can look it up with a calender if
 the calender is not right there. (A useful skill that.)
 
+\Ref
 
-    \Ref
+\book{Winning Ways for your mathematical plays.}{Elwyn R. Berlekamp,
+  John H. Conway, and Richard K. Guy} {London ; Toronto : Academic
+  Press, 1982.}
 
-    \book{Winning Ways for your mathematical plays.}{Elwyn
-R. Berlekamp, John H. Conway, and Richard K. Guy}
-    {London ; Toronto : Academic Press, 1982.}
+\book{Mathematical Carnival.}{Martin Gardner.}{New York : Knopf, c1975.}
 
-    \book{Mathematical Carnival.}{Martin Gardner.}{New York : Knopf, c1975.}
+\book{Elementary Number Theory and its applications.}{Kenneth Rosen.}
+{Reading, Mass. ; Don Mills, Ont. : Addison-Wesley Pub. Co.,
+  c1993. p. 156.}
 
-    \book{Elementary Number Theory and its applications.}{Kenneth Rosen.}
-    {Reading, Mass. ; Don Mills, Ont. : Addison-Wesley Pub. Co., c1993. p. 156.}
-
-
-    \article{Michael Keith and Tom Craver.}{The Ultimate Perpetual Calendar?}
-    {Journal of Recreational Mathematics,}{22:4, pp. 280-282, 19}
+\article{Michael Keith and Tom Craver.}{The Ultimate Perpetual
+  Calendar?}  {Journal of Recreational Mathematics,}{22:4, pp. 280-282,
+  19}

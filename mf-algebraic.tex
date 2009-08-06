@@ -1,396 +1,286 @@
 %Andy de Paoli  e-mail:andrea.depaoli@mail.esrin.esa.it
-% ------------ LaTeX e2 document --------
-% -----
-% ---------------------------------------------------------
-%
-%\documentclass[12pt]{article}
-
-%\begin{document}   
-%\newcommand{\N}{\ensuremath{ \mathbf{N}}}
-%\newcommand{\Z}{\ensuremath{ \mathbf{Z}}}
-%\newcommand{\R}{\ensuremath{ \mathbf{R}}}
-%\newcommand{\Q}{\ensuremath{ \mathbf{Q}}}
-%\newcommand{\C}{\ensuremath{ \mathbf{C}}}
-
-
 \section{Algebraic structures}
 
-We will attempt to give a brief explanation of 
-the following concepts:
+We will attempt to give a brief explanation of the following concepts:
 \begin{itemize}
-\item \N{} is a monoid
-\item \Z{} is an integral domain
-\item \Q{} is a field 
-\item in the field \R{} the order is complete 
-\item the field \C{} is algebraically complete
+  \item \N{} is a monoid
+  \item \Z{} is an integral domain
+  \item \Q{} is a field 
+  \item in the field \R{} the order is complete 
+  \item the field \C{} is algebraically complete
 \end{itemize}
 
+If you have been asked by a child to give them arithmetic problems, so
+they could show off their newly learned skills in addition and
+subtraction I'm sure that after a few problems such as: $2 + 3$, $9 -
+5$, $10 + 2$ and $6 - 4$, you tried tossing them something a little more
+difficult: $4 - 7$ only to be told ``{\it That's not allowed.}''
 
-If you have been asked by a child to give them arithmetic problems,
-so they could show off their newly learned skills in addition and
-subtraction I'm sure that after a few problems such as: $2 + 3$,
-$9 - 5$, $10 + 2$ and $6 - 4$, you tried tossing them
-something a little more difficult: $4 - 7$ 
-only to be told ``{\it That's not allowed.}''
+What you may not have realized is that you and the child did not just
+have different objects in mind (negative numbers) but entirely different
+{\it algebraic systems}. In other words a set of objects (they could be
+natural numbers, integers or reals) and a set of operations, or rules
+regarding how the numbers can be combined.
 
-What you may not have realized is that you and the child
-did not just have different objects in mind (negative numbers)
-but entirely different {\it algebraic systems}. In other
-words a set of objects (they could be natural numbers, integers or
-reals)
-and a set of operations, or rules regarding how the numbers can be
-combined.
-
-We will take a very informal tour of some algebraic systems, but
-before we define some of the terms, let us build a structure which
-will have some necessary properties for examples and counterexamples
-that
-will help us clarify some of the definitions.
+We will take a very informal tour of some algebraic systems, but before
+we define some of the terms, let us build a structure which will have
+some necessary properties for examples and counterexamples that will
+help us clarify some of the definitions.
 
 We know that any number that is divided by six will either leave a
-remainder, 
-or will be divided exactly (which is after all the remainder 0). Let us
-write any number by the 
-remainder $n$ it leaves after division by six, denoting it as 
-$[ n ]$. This means that, $7, 55$ and $1$ will all
-be written $[1]$, which we call the {\it class} to which they all
-belong:
-i.e. $7 \in [1]$, $55 \in [1]$, or,
-a bit more technically, they are all equivalent to 1 modulo 6.
-The complete set of class will contain six elements, and this is called
-partitioning numbers into equivalent classes because it separates 
-(or partitions) all of our numbers into these classes, and any one
-number 
-in a class is equivalent to any other in the same class.
+remainder, or will be divided exactly (which is after all the remainder
+0). Let us write any number by the remainder $n$ it leaves after
+division by six, denoting it as $[ n ]$. This means that, $7, 55$ and
+$1$ will all be written $[1]$, which we call the {\it class} to which
+they all belong: i.e. $7 \in [1]$, $55 \in [1]$, or, a bit more
+technically, they are all equivalent to 1 modulo 6.  The complete set of
+class will contain six elements, and this is called partitioning numbers
+into equivalent classes because it separates (or partitions) all of our
+numbers into these classes, and any one number in a class is equivalent
+to any other in the same class.
 
 
 One interesting thing we can do with these classes is to try to add or
-to
-multiply them. What can $[1] + [3]$ mean? We can, rather naively try
-out
-what they mean in ``normal'' arithmetic: $[1] + [3] = [1+3] = [4]$. 
+to multiply them. What can $[1] + [3]$ mean? We can, rather naively try
+out what they mean in ``normal'' arithmetic: $[1] + [3] = [1+3] = [4]$.
 So far so good, let us try a second example $25 \in [1]$ and $45 \in
-[3]$,
-their sum is $70$ which certainly belongs to $[4]$. Here we see
-what we meant above by equivalence, 25 is equivalent to 1 as far
-as this addition is concerned. Of course
-this is just one example, but fortunately it can be proven that
-the sum of two classes is always the class of the sums. 
+[3]$, their sum is $70$ which certainly belongs to $[4]$. Here we see
+what we meant above by equivalence, 25 is equivalent to 1 as far as this
+addition is concerned. Of course this is just one example, but
+fortunately it can be proven that the sum of two classes is always the
+class of the sums.
 
-Now this is 
-the kind of thing we all do when we add hours for example, 7 (o' clock)
-plus 6 hours is 1 (o' clock), and all we are really doing is adding
-hours 
-(modulo 12).
+Now this is the kind of thing we all do when we add hours for example, 7
+(o' clock) plus 6 hours is 1 (o' clock), and all we are really doing is
+adding hours (modulo 12).
 
 The neat part comes with multiplication, as we will see later on. But
-for now just remember, it can be proven that
-something like $[4] \times [5] = [2]$ will work: the product of two
-classes is the class of the product.
+for now just remember, it can be proven that something like $[4] \times
+[5] = [2]$ will work: the product of two classes is the class of the
+product.
 
 Now for some of the necessary terminology.
 
 \subsection{Monoids and Groups}
 
-We need to define a {\em group}. 
+We need to define a {\em group}.
 
-Let us take a set of objects and a rule 
-(called a binary operation) which allows us to combine any two elements
-of
-this set. Addition is an example from math, or ANDing in some computer
-language. 
+Let us take a set of objects and a rule (called a binary operation)
+which allows us to combine any two elements of this set. Addition is an
+example from math, or ANDing in some computer language.
 
 The set must be closed under the operation. That means that when two
-elements 
-are combined the result must also be in the set. For example the set 
-containing even numbers will always give us an even number when two
-elements 
-are added together. But if we restrict ourselves to odd numbers, their
-sum is not
-an odd number and so we know right off the bat that the set of odd
-numbers
-and addition cannot constitute a group. Some books will consider
-closure
-in the definition of binary operation, and others add it as one of the 
-requirements for a group along with the ones that follow below.
+elements are combined the result must also be in the set. For example
+the set containing even numbers will always give us an even number when
+two elements are added together. But if we restrict ourselves to odd
+numbers, their sum is not an odd number and so we know right off the bat
+that the set of odd numbers and addition cannot constitute a group. Some
+books will consider closure in the definition of binary operation, and
+others add it as one of the requirements for a group along with the ones
+that follow below.
 
 
-The set and the operation is called a group if the binary 
-operation satisfies the following criteria:
+The set and the operation is called a group if the binary operation
+satisfies the following criteria:
 \begin{itemize}
-\item the operation is associative, which means it doesn't matter how
-you
-group the elements you are operating on, for example in our set of 
-remainders: $[1] + ([3] + [4]) = ([1] + [3]) + [4]$
-\item there is an identity element, meaning: one of the elements
-combined
-with the others in the set doesn't change them in the least. For
-example the zero in addition, or the one in multiplication.
-\item every element has an inverse with respect to that operation. If
-you
-combine an element and its inverse you get the identity (of that
-operation)
-back. 
+  \item the operation is associative, which means it doesn't matter how
+  you group the elements you are operating on, for example in our set of
+  remainders: $[1] + ([3] + [4]) = ([1] + [3]) + [4]$
+  \item there is an identity element, meaning: one of the elements
+  combined with the others in the set doesn't change them in the
+  least. For example the zero in addition, or the one in multiplication.
+  \item every element has an inverse with respect to that operation. If
+  you combine an element and its inverse you get the identity (of that
+  operation) back.
 \end{itemize}
 
-
 (Be careful with this last one, $-3$ is the inverse of $3$ in addition,
-since they give us 0 when added, but $1/3$ is the inverse of 3
-with respect to multiplication, since $3 \times 1/3 = 1$ the identity
-under
+since they give us 0 when added, but $1/3$ is the inverse of 3 with
+respect to multiplication, since $3 \times 1/3 = 1$ the identity under
 multiplication.)
-
 
 So we can see that the set of natural numbers \N (with the operation of
 addition) is not even a group, since there is no inverse for 5, for
-example. 
-(In other words there is no natural
-number which added to 5 will give us zero.) And so the third rule for
-our
-operation is violated. 
+example.  (In other words there is no natural number which added to 5
+will give us zero.) And so the third rule for our operation is violated.
 But it still has {\em some} structure, even if it is not as rich as the
-ones we'll see later on. 
+ones we'll see later on.
 
-Sets with an
-associative operation (the first condition above) are called
-semigroups, 
-and if they also have an identity element (the second condition) then
-they
-are called monoids. 
+Sets with an associative operation (the first condition above) are
+called semigroups, and if they also have an identity element (the second
+condition) then they are called monoids.
 
-Our set of natural numbers under addition is then
-an example of a monoid, a structure that is not quite a group because
-it
-is missing the requirement that every element have an inverse under the
-operation (Which is why in elementary school $4 - 7$ is not allowed.)
+Our set of natural numbers under addition is then an example of a
+monoid, a structure that is not quite a group because it is missing the
+requirement that every element have an inverse under the operation
+(Which is why in elementary school $4 - 7$ is not allowed.)
 
-What about the set of integers, is it a group? 
+What about the set of integers, is it a group?
 
-By itself this question is nonsensical. Why? Well, we have not
-mentioned under
-what operation. OK, let us say: the set of integers with addition.
+By itself this question is nonsensical. Why? Well, we have not mentioned
+under what operation. OK, let us say: the set of integers with addition.
 
-Now, addition is
-associative, the zero does not change any number when added to it, and
-for
-every number $n$ we can add $-n$ and get zero. So it's a group all
-right.
+Now, addition is associative, the zero does not change any number when
+added to it, and for every number $n$ we can add $-n$ and get zero. So
+it's a group all right.
 
-In fact it is a special kind of group. When we can perform the
-operation
-on the two elements in any order (e.g $a + b = b + a$) then the group
-is called commutative, or {\em Abelian} in honor of Abel. Not
-every operation is commutative, for example three minus two is
-certainly 
-{\em not} the same as two minus three. Our set of integers under
-addition
-is then an  Abelian group.
+In fact it is a special kind of group. When we can perform the operation
+on the two elements in any order (e.g $a + b = b + a$) then the group is
+called commutative, or {\em Abelian} in honor of Abel. Not every
+operation is commutative, for example three minus two is certainly {\em
+  not} the same as two minus three. Our set of integers under addition
+is then an Abelian group.
+
 
 \subsection{Rings}
 
-
 If we take an Abelian group (remember: a set with a binary operation)
-and we
-define a second operation on it we get a bit more of a structure than
-we
-had with just a group. 
+and we define a second operation on it we get a bit more of a structure
+than we had with just a group.
 
-If the second operation is associative, and
-it is distributive over the first then we have a ring. Note that the
-second
-operation may not have an identity element, nor do we need to find an
-inverse
-for every element with respect to this second operation. As for
-what distributive means, intuitively it is what we do in math when
-perform
-the following change: $a \times (b + c) =  (a \times b) + (a \times
-c)$.
+If the second operation is associative, and it is distributive over the
+first then we have a ring. Note that the second operation may not have
+an identity element, nor do we need to find an inverse for every element
+with respect to this second operation. As for what distributive means,
+intuitively it is what we do in math when perform the following change:
+$a \times (b + c) = (a \times b) + (a \times c)$.
 
 If the second operation is also commutative then we have what is called
 a commutative ring. The set of integers (with addition and
-multiplication)
-is a commutative ring (with even an identity - called unit element -
-for 
-multiplication).
+multiplication) is a commutative ring (with even an identity---called
+unit element---for multiplication).
 
-Now let us go back to our set of remainders. What happens if we
-multiply
+Now let us go back to our set of remainders. What happens if we multiply
 $[5] \times [1]$? We see that we get $[5]$, in fact we can see a number
 of things according to our definitions above, $[5]$ is its own inverse,
-and
-$[1]$ is the multiplicative element. We can also show easily enough (by
-creating a complete multiplication table) that it is commutative. But
-notice 
-that if we take $[3]$ and $[2]$, neither of which are equal to the
-class
-that the zero belongs to $[0]$, and we multiply them, we get $[3]
-\times
-[2] = [0]$.  This bring us to the next definition. In a commutative
-ring,
-let us take an element which is not equal to zero and call 
-it  $a$. If we can find a non-zero element, say $b$ that combined with
-$a$ equals zero ( $a \times b = 0$) then $a$ is called a {\it zero
-divisor}.
+and $[1]$ is the multiplicative element. We can also show easily enough
+(by creating a complete multiplication table) that it is
+commutative. But notice that if we take $[3]$ and $[2]$, neither of
+which are equal to the class that the zero belongs to $[0]$, and we
+multiply them, we get $[3] \times [2] = [0]$.  This bring us to the next
+definition. In a commutative ring, let us take an element which is not
+equal to zero and call it $a$. If we can find a non-zero element, say
+$b$ that combined with $a$ equals zero ($a \times b = 0$) then $a$ is
+called a {\it zero divisor}.
 
 A commutative ring is called an integral domain if it has no zero
-divisors.
-Well the set \Z{} with addition and multiplication fullfills all the
-necessary
-requirements, and so it is an integral domain. Notice that our set of
-remainders is not an integral domain, but we can build a similar set
-with
-remainders of division by five, for example, and voil\`a, we have an
-integral
-domain.
+divisors.  Well the set \Z{} with addition and multiplication fullfills
+all the necessary requirements, and so it is an integral domain. Notice
+that our set of remainders is not an integral domain, but we can build a
+similar set with remainders of division by five, for example, and
+voil\`a, we have an integral domain.
 
-Let us take, for example, the set \Q{} of
-rational numbers with addition and multiplication - I'll leave out the 
-proof that it is a ring, but I think you should be able to verify it
-easily
-enough with the above definitions. But to give you a head start, 
-notice the addition of rationals follow all the requirements for an
-abelian group. If we remove the zero we will have another abelian
-group,
-and that implies that we have something more than a ring, in fact, as
-we will see in the next section.
+Let us take, for example, the set \Q{} of rational numbers with addition
+and multiplication - I'll leave out the proof that it is a ring, but I
+think you should be able to verify it easily enough with the above
+definitions. But to give you a head start, notice the addition of
+rationals follow all the requirements for an abelian group. If we remove
+the zero we will have another abelian group, and that implies that we
+have something more than a ring, in fact, as we will see in the next
+section.
 
 \subsection{Fields}
 
-
 Now we can make one step further. If the elements of a ring, excluding
-the
-zero, form an abelian group (with the second operation) then it is a
-field.
-For example, write the multiplication table of the remainders of
-division 
-by 5, and you will see that it satisfies all the requirements for a
-group:
-(You will probably have noticed that the group does not contain the
-number 
-five itself since $[5] = [0]$.)
+the zero, form an abelian group (with the second operation) then it is a
+field.  For example, write the multiplication table of the remainders of
+division by 5, and you will see that it satisfies all the requirements
+for a group: (You will probably have noticed that the group does not
+contain the number five itself since $[5] = [0]$.)
 \[
 \begin{tabular}{  c  |  c  c  c  c  }
- & 1 & 2 & 3 & 4  \\
-\hline
-1 & 1 & 2 & 3 & 4 \\ 
-2 & 2 & 4 & 1 & 3 \\
-3 & 3 & 1 & 4 & 2 \\
-4 & 4 & 3 & 2 & 1
+    & 1 & 2 & 3 & 4  \\
+    \hline
+  1 & 1 & 2 & 3 & 4 \\ 
+  2 & 2 & 4 & 1 & 3 \\
+  3 & 3 & 1 & 4 & 2 \\
+  4 & 4 & 3 & 2 & 1
 \end{tabular}
 \]
 
-(Why isn't the set of divisors of six - excluding the zero and under 
-multiplication - a group?  That's easy enough, since we have excluded
-the
-zero we do not have the result of $[2] \times [3]$ in our set, so it
-isn't
-closed.)
+(Why isn't the set of divisors of six---excluding the zero and under
+multiplication---a group?  That's easy enough, since we have excluded
+the zero we do not have the result of $[2] \times [3]$ in our set, so it
+isn't closed.)
 
 \subsection{Ordering}
 
 Given a ring, we can say that it is ordered when you have a special
-subset
-of that ring behaves in a very special way. If any two elements of that
-special subset are added or multiplied their sum and their product are
-again
-in the special subset. Take the negative numbers in \R{}, can they be
-that special subset? Well the sum seems to be allright, it is also a
-negative 
-number. But things don't work with the product: it is positive. What
-about
-the positive numbers? Yep, and in fact we call that special subset, the
-set of positive elements. Now, we gave the definition for an ordered
-ring, 
-we can also define an ordered field the same way.
+subset of that ring behaves in a very special way. If any two elements
+of that special subset are added or multiplied their sum and their
+product are again in the special subset. Take the negative numbers in
+\R{}, can they be that special subset? Well the sum seems to be
+allright, it is also a negative number. But things don't work with the
+product: it is positive. What about the positive numbers? Yep, and in
+fact we call that special subset, the set of positive elements. Now, we
+gave the definition for an ordered ring, we can also define an ordered
+field the same way.
 
 But what does a complete ordered field mean? Well the definition looks
-rather nasty: it is complete if every non-empty subset which posesses
-an upper bound has a least upper bound.
+rather nasty: it is complete if every non-empty subset which posesses an
+upper bound has a least upper bound.
 
 Let's translate some of that, trying to lose as little information on
-the
-way. A bound is something that guarantees that all of the elements of
-your
-set are on one side of it (reasonably enough). For example, certainly
-all 
-negative reals are less than 100, so 100 is a bound (it is in fact an
-upper
-bound 'cause all negatives are ``below'' it). But there are lots
-of other bounds, 1, 5, 26 will all do nicely. The question now is, of
-all of these (upper bounds) which is the smallest, that is which one is
-``the
-border'' so to speak? Does it always exists?
+the way. A bound is something that guarantees that all of the elements
+of your set are on one side of it (reasonably enough). For example,
+certainly all negative reals are less than 100, so 100 is a bound (it is
+in fact an upper bound 'cause all negatives are ``below'' it). But there
+are lots of other bounds, 1, 5, 26 will all do nicely. The question now
+is, of all of these (upper bounds) which is the smallest, that is which
+one is ``the border'' so to speak? Does it always exists?
 
 Let's take the rationals, and look at the following numbers:
 \[1.4, \; 1.41, \; 1.414, \; 1.4142, \; 1.41421, \ldots \]
 
 Now each of these is a rational number (it can be written as a
-fraction),
-and they are getting closer and closer to a number we've probably seen
-before (just take out your calculator and find the square root of two).
-So we can write the shorthand for this series as $\sqrt{2}$.
-Certainly we can find an upper bound for this series, $3$ will do
-nicely,
-but so can $1.5$, or $1.42$. But what is the smallest. Well there isn't
-any. Not among the rational at least, because no matter what fraction
-you give I can give you one closer to the square root of two. What
-about the square root of two itself? Well it's not a rational number
-(I'll skip the proof, but it is really rather easy) so you can't use
-it. 
-If you want another series which is really neat look at the section on
-``Euler's formula'' in the FAQ.
+fraction), and they are getting closer and closer to a number we've
+probably seen before (just take out your calculator and find the square
+root of two).  So we can write the shorthand for this series as
+$\sqrt{2}$.  Certainly we can find an upper bound for this series, $3$
+will do nicely, but so can $1.5$, or $1.42$. But what is the
+smallest. Well there isn't any. Not among the rational at least, because
+no matter what fraction you give I can give you one closer to the square
+root of two. What about the square root of two itself? Well it's not a
+rational number (I'll skip the proof, but it is really rather easy) so
+you can't use it.  If you want another series which is really neat look
+at the section on ``Euler's formula'' in the FAQ.
 
 And that is where the reals come in. Any set or reals that is bounded
-you can certainly find the smallest of these bounds. (By the way
-this ``least upper bound'' is abbreviated ``l.u.b.'', or ``sup'' for
-{\it supremum}.) We can also turn things around and talk of lower
-bounds, and of the largest of these etc. but most of that will be
-just a mirror image of what we have dealt with so far.
+you can certainly find the smallest of these bounds. (By the way this
+``least upper bound'' is abbreviated ``l.u.b.'', or ``sup'' for {\it
+  supremum}.) We can also turn things around and talk of lower bounds,
+and of the largest of these etc. but most of that will be just a mirror
+image of what we have dealt with so far.
 
-So that should be it. And for years that did seem to be it, we seemed
-to have all the numbers we'd ever care to have. 
+So that should be it. And for years that did seem to be it, we seemed to
+have all the numbers we'd ever care to have.
 
-There was just one small stick in the works, but most people just sort 
+There was just one small stick in the works, but most people just sort
 of pretended not to notice, and that was that not all polynomials had
-solutions. One simple polynomial of this kind is $x^2 + 1 = 0$.
-It's so simple, yet there's no self respecting number that would 
-solve this polynomial. There were these funny
-answers which seemed like they should be solutions but no one could
-make any sense out of them, so they were considered imaginary
-solutions.
-Which was really too bad because they were given the name of imaginary
-numbers
-and now that the name stuck we realize that they are numbers just as
-good as
-any of the ones we have been using for centuries. And in fact that
-takes us to
-the last great pinnacle in this short excursion. The field of complex
-numbers. 
+solutions. One simple polynomial of this kind is $x^2 + 1 = 0$.  It's so
+simple, yet there's no self respecting number that would solve this
+polynomial. There were these funny answers which seemed like they should
+be solutions but no one could make any sense out of them, so they were
+considered imaginary solutions.  Which was really too bad because they
+were given the name of imaginary numbers and now that the name stuck we
+realize that they are numbers just as good as any of the ones we have
+been using for centuries. And in fact that takes us to the last great
+pinnacle in this short excursion. The field of complex numbers.
 
 We can define an algebraically closed field as a field where every
-nonconstant
-polynomial (i.e. one with an $x$ in it from high school days) has a
-zero
-in the field. Whew! This in short means that as long as the polynomial
-is not a constant number (which is no fun anyways) but something which
-looks like it wants a solution, like $5 x^3 - 2 x^2 + 6 = 0$ it will
-always have one, if you are working with complex numbers and not just
-reals.
+nonconstant polynomial (i.e. one with an $x$ in it from high school
+days) has a zero in the field. Whew! This in short means that as long as
+the polynomial is not a constant number (which is no fun anyways) but
+something which looks like it wants a solution, like $5 x^3 - 2 x^2 + 6
+= 0$ it will always have one, if you are working with complex numbers
+and not just reals.
 
 
-There is another definition which is probably just as good, but may or 
+There is another definition which is probably just as good, but may or
 may not be easier: A field is algebraically closed if every polynomial
-splits
-into linear factors. 
-Linear factors are briefly factors not containing $x$ to any power of
-two or higher, in other words in the form: $ax + b$. For example
-$x^2 + x -6$ can be factored as $(x + 3)(x - 2)$, but if we are in the
-field of reals we cannot factor $x^2 + 1$, but we can in the field of
-complex numbers: $x^2 + 1 = (x - i)(x + i)$, where, you may recall,
-$i^2 = -1$.
-
-
-%\end{document}
-
-
-
+splits into linear factors.  Linear factors are briefly factors not
+containing $x$ to any power of two or higher, in other words in the
+form: $ax + b$. For example $x^2 + x -6$ can be factored as $(x + 3)(x -
+2)$, but if we are in the field of reals we cannot factor $x^2 + 1$, but
+we can in the field of complex numbers: $x^2 + 1 = (x - i)(x + i)$,
+where, you may recall, $i^2 = -1$.

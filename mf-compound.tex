@@ -1,5 +1,4 @@
-Here's a formula which can be used in 123, Excel, Wings and
-    Dynaplan:
+Here's a formula which can be used in 123, Excel, Wings and Dynaplan:
 
 \begin{verbatim}
      ------- Input this data -------------------------------
@@ -37,132 +36,123 @@ Here's a formula which can be used in 123, Excel, Wings and
 
 \end{verbatim}
 
-            Derivation of Compound Interest Rate Formula
+Derivation of Compound Interest Rate Formula
 
-     Suppose you deposited a fixed payment into an interest bearing
-     account at regular intervals, say monthly, at the end of each month.
-     How much money would there be in the account at the end of the nth
-     month (at which point you've made $n$ payments)?
+Suppose you deposited a fixed payment into an interest bearing account
+at regular intervals, say monthly, at the end of each month.  How much
+money would there be in the account at the end of the nth month (at
+which point you've made $n$ payments)?
 
-     \noindent Let $i$ be the monthly interest rate as a fraction of
-        principle.\\
-     Let $x$ be the amount deposited each month.\\
-     Let $n$ be the total number of months.\\
-     Let $p[k]$ be the principle after $k$ months.\\
+\noindent Let $i$ be the monthly interest rate as a fraction of
+principle.\\
+Let $x$ be the amount deposited each month.\\
+Let $n$ be the total number of months.\\
+Let $p[k]$ be the principle after $k$ months.\\
 
-     \noindent So the recursive formula is:
+\noindent So the recursive formula is:
 
-          \[p[n] = x + ( (1 + i)  p[n-1] )                  eq 1\]
+\[p[n] = x + ( (1 + i) p[n-1] ) eq 1\]
 
-     This yields the summation:
+This yields the summation:
 
-\[ p[n]=\sum_{k=0}^{n-1}x  (1 + i)^k \]
+\[ p[n]=\sum_{k=0}^{n-1}x (1 + i)^k \]
 
-     The way to solve this is to multiply through by $(1 + i)$ and
-     subtract the original equation from the resulting equation.
-     Observe that all terms in the summation cancel except the
-     last term of the multiplied equation and the first term of
-     the original equation:
-
-
-          \[\pi  p[n] = x  ( (1 + i)^n - 1)                  \]
-
-     or
-
-          \[p[n] = x  ( (1 + i)^n - 1) / i                  \]
-
-     Now suppose you borrow $p$ at constant interest rate $i$.
-     You make monthly payments of $x$.  It turns out that this problem
-     is identical to taking out a balloon loan of $p$ (that is it's
-     all due at the end of some term) and putting payments of $x$
-     into a savings account.  At the end of the term you use the
-     principle in the savings account to pay off the balance of
-     the loan.  The loan and the savings account, of course, must
-     be at the same interest rate.  So what we want to know is:
-     what monthly payment is needed so that the balance of the
-     savings account will be identical to the balance of the balloon
-     loan after $n$ payments?
-
-     The formula for the principal of the balloon loan at the
-     end of the $n$th month is:
-
-          \[p[n] = p[0]  (1 + i)^n                         \]
-
-     So we set this expression equal to the expression for the
-     the savings account, and we get:
-
- \[          p[0]  (1 + i)^n  =  x  ( (1 + i)^n - 1) / i    \]
-
-     or solving for x:
-
-          \[ x = p[0]  (1 + i)^n  i / ( (1 + i)^n - 1)     \]
+The way to solve this is to multiply through by $(1 + i)$ and subtract
+the original equation from the resulting equation.  Observe that all
+terms in the summation cancel except the last term of the multiplied
+equation and the first term of the original equation:
 
 
-     If $(1 + i)^n$ is large enough (say greater than 5), here
-     is an approximation for determining $n$ from $x$, $p$, and $i$:
+\[\pi p[n] = x ( (1 + i)^n - 1) \]
 
-          \[n \approx -ln( ln(x/(ip) ) ) / ln(1+i)               \]
+or
 
-     The above approximation is based upon the following approximation:
+\[p[n] = x ( (1 + i)^n - 1) / i \]
 
-          \[ ln(y - 1)  \approx  ln y  -  1/y\]
+Now suppose you borrow $p$ at constant interest rate $i$.  You make
+monthly payments of $x$.  It turns out that this problem is identical to
+taking out a balloon loan of $p$ (that is it's all due at the end of
+some term) and putting payments of $x$ into a savings account.  At the
+end of the term you use the principle in the savings account to pay off
+the balance of the loan.  The loan and the savings account, of course,
+must be at the same interest rate.  So what we want to know is: what
+monthly payment is needed so that the balance of the savings account
+will be identical to the balance of the balloon loan after $n$ payments?
 
-    Which is within 2\% for $y \geq  5$.
+The formula for the principal of the balloon loan at the end of the
+$n$th month is:
 
-     For example, a \$100000 loan at 1\% monthly, paying \$1028.61
-     per month should be paid in $360$ months.  The approximation
-     yields $358.9$ payments.
+\[p[n] = p[0] (1 + i)^n \]
 
-     If this were your 30 year mortgage and you were paying \$1028.61
-     per month and you wanted to see the effect of paying \$1050
-     per month, the approximation tells you that it would be paid
-     off in $303.5$ months (25 years and 3.5 months).  If you stick
-     304 months into the equation for $x$, you get \$1051.04, so
-     it is fairly close.  This approximation does not work, though,
-     for very small interest rates or for a small number of payments.
-     The rule is to get a rough idea first of what $(1 + i)^n$ is.
-     If that is greater than 5, the approximation works pretty
-     well.  In the examples given, $(1 + i)^n$ is about 36.
+So we set this expression equal to the expression for the the savings
+account, and we get:
 
+\[ p[0] (1 + i)^n = x ( (1 + i)^n - 1) / i \]
 
-     Finding $i$ given $n$, $x$, and $p$ is not as easy.  If $i$ is less than
-     5\% per payment period, the following equation approximately
-     holds for $i$:
+or solving for x:
 
-      \[    i = -(1/n) ln(1 - ip/x)    \]
+\[ x = p[0] (1 + i)^n i / ( (1 + i)^n - 1) \]
 
-     There is no direct solution to this, but you can do it by
-     Newton-Raphson approximation.  Begin with a guess, $i[0]$.
-     Then apply:
+If $(1 + i)^n$ is large enough (say greater than 5), here is an
+approximation for determining $n$ from $x$, $p$, and $i$:
 
-\[i[k+1] = i[k] -\frac{x(1 - i[k]p/x)  (ni[k] + ln(1 - i[k]p/x))}
-{xn(1 - i[k]p/x)  -  p}\]
+\[n \approx -ln( ln(x/(ip) ) ) / ln(1+i) \]
 
-     You must start with $i$ too big, because the equation for $i$ 
-      has a solution
-     at $i=0$, and that's not the one you want to end up with.
+The above approximation is based upon the following approximation:
 
-     Example:  Let the loan be for $p=\$10000$, $x=\$50$ per week for
-     5 years ($n=260$).  Let $i[0] = 20$\% per annum or 0.3846\%
-     per week.  Since $i$ must be a fraction rather than a percent,
-     $i[0] = 0.003846$.  Then, applying eq 11:
+\[ ln(y - 1) \approx ln y - 1/y\]
+
+Which is within 2\% for $y \geq 5$.
+
+For example, a \$100000 loan at 1\% monthly, paying \$1028.61 per month
+should be paid in $360$ months.  The approximation yields $358.9$
+payments.
+
+If this were your 30 year mortgage and you were paying \$1028.61 per
+month and you wanted to see the effect of paying \$1050 per month, the
+approximation tells you that it would be paid off in $303.5$ months (25
+years and 3.5 months).  If you stick 304 months into the equation for
+$x$, you get \$1051.04, so it is fairly close.  This approximation does
+not work, though, for very small interest rates or for a small number of
+payments.  The rule is to get a rough idea first of what $(1 + i)^n$ is.
+If that is greater than 5, the approximation works pretty well.  In the
+examples given, $(1 + i)^n$ is about 36.
+
+Finding $i$ given $n$, $x$, and $p$ is not as easy.  If $i$ is less than
+5\% per payment period, the following equation approximately holds for
+$i$:
+
+\[ i = -(1/n) ln(1 - ip/x) \]
+
+There is no direct solution to this, but you can do it by Newton-Raphson
+approximation.  Begin with a guess, $i[0]$.  Then apply:
+
+\[i[k+1] = i[k] -\frac{x(1 - i[k]p/x) (ni[k] + ln(1 - i[k]p/x))} {xn(1 -
+  i[k]p/x) - p}\]
+
+You must start with $i$ too big, because the equation for $i$ has a
+solution at $i=0$, and that's not the one you want to end up with.
+
+Example: Let the loan be for $p=\$10000$, $x=\$50$ per week for 5 years
+($n=260$).  Let $i[0] = 20$\% per annum or 0.3846\% per week.  Since $i$
+must be a fraction rather than a percent, $i[0] = 0.003846$.  Then,
+applying eq 11:
 
 \begin{eqnarray*}
-       i[1]&=&0.003077\\
-       i[2]&=&0.002479\\
-       i[3]&=&0.002185\\
-       i[4]&=&0.002118\\
-       i[5]&=&0.002115\\
+  i[1]&=&0.003077\\
+  i[2]&=&0.002479\\
+  i[3]&=&0.002185\\
+  i[4]&=&0.002118\\
+  i[5]&=&0.002115\\
 \end{eqnarray*}
 
-     The series is clearly beginning to converge here.
+The series is clearly beginning to converge here.
 
-     To get $i[5]$ as an annual percentage rate, multiply by 52 weeks
-     in a year and then by 100\%, so $i[5] = 10.997$\% per annum.
-     Substituting $i[5]$ back into eq 7, we get $x = \$50.04$, so it
-     works pretty well.
+To get $i[5]$ as an annual percentage rate, multiply by 52 weeks in a
+year and then by 100\%, so $i[5] = 10.997$\% per annum.  Substituting
+$i[5]$ back into eq 7, we get $x = \$50.04$, so it works pretty well.
 
 \Ref
  
-     \book{The theory of interest.}{Stephen G. Kellison.}{Homewood, Ill., R. D.
-     Irwin, 1970.}
+\book{The theory of interest.}{Stephen G. Kellison.}{Homewood, Ill.,
+  R. D.  Irwin, 1970.}

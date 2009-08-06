@@ -1,23 +1,25 @@
-This is equivalent to the volume of the $N$-1
-    solid which comprises the boundary of an $N$-Sphere.
+This is equivalent to the volume of the $N-1$ solid which comprises the
+boundary of an $N$-Sphere.
 
-The volume of a ball is the easiest formula to remember:  It's 
-$r^N \frac{\pi^{N/2}}{(N/2)!}$.
-     The only hard part is taking the factorial
-    of a half-integer.  The real definition is that $x! = \Gamma(x+1)$, but
-    if you want a formula, it's:
+The volume of a ball is the easiest formula to remember: It's $r^N
+\frac{\pi^{N/2}}{(N/2)!}$.  The only hard part is taking the factorial
+of a half-integer.  The real definition is that $x! = \Gamma(x+1)$, but
+if you want a formula, it's:
 
-    \[(1/2+n)! = \sqrt{\pi} \frac{(2n+2)!}{(n+1)!4^{n+1}}\]
-    To get the surface area, you just differentiate to get
-    $N\frac{\pi^{N/2}}{(N/2)!}r^{N-1}$.
+\[
+(1/2+n)! = \sqrt{\pi} \frac{(2n+2)!}{(n+1)!4^{n+1}}
+\]
 
-    There is a clever way to obtain this formula using Gaussian
-    integrals. First, we note that the integral over the line of
-    $e^{-x^2}$ is $\sqrt{\pi}$.  Therefore the integral over $N$-space of
-    $e^{-x_1^2-x_2^2-...-x_N^2}$ is $\sqrt{\pi}^n$.  Now we change to
-    spherical coordinates.  We get the integral from 0 to infinity
-    of $Vr^{N-1}e^{-r^2}$, where $V$ is the surface volume of a sphere.
-    Integrate by parts repeatedly to get the desired formula.
+To get the surface area, you just differentiate to get
+$N\frac{\pi^{N/2}}{(N/2)!}r^{N-1}$.
 
-    It is possible to derive the volume of the sphere from ``first 
-    principles''.
+There is a clever way to obtain this formula using Gaussian
+integrals. First, we note that the integral over the line of $e^{-x^2}$
+is $\sqrt{\pi}$.  Therefore the integral over $N$-space of
+$e^{-x_1^2-x_2^2-...-x_N^2}$ is $\sqrt{\pi}^n$.  Now we change to
+spherical coordinates.  We get the integral from 0 to infinity of
+$Vr^{N-1}e^{-r^2}$, where $V$ is the surface volume of a sphere.
+Integrate by parts repeatedly to get the desired formula.
+
+It is possible to derive the volume of the sphere from ``first
+principles''.

@@ -1,124 +1,124 @@
 \section{Euler's formula: $e^{i \pi} = - 1 $}
 
 The definition and domain of exponentiation has been changed several
- times.  The original operation $x^y$ was only defined when $y$
-was a positive integer.  The domain of the operation of
-exponentation has been extended, not so much because the original
-definition made sense in the extended domain, but because there were
-(almost) unique ways to extend exponentation which preserved many of
-what seemed to be the ``important'' properties of the original operation.
-So in part, these definitions are only convention, motivated by
-reasons of aesthetics and utility.
+times.  The original operation $x^y$ was only defined when $y$ was a
+positive integer.  The domain of the operation of exponentation has been
+extended, not so much because the original definition made sense in the
+extended domain, but because there were (almost) unique ways to extend
+exponentation which preserved many of what seemed to be the
+``important'' properties of the original operation.  So in part, these
+definitions are only convention, motivated by reasons of aesthetics and
+utility.
 
-The original definition of exponentiation is, of course, that $x^y = 1 * x *
-x * ... * x,$ where $1$ is multiplied by $x$,  $y$ times.  This is only
-a reasonable definition for $y=1, 2, 3, ...$  (It could be argued that it
-is reasonable when $y=0$, but that issue is taken up in a different part
-of the FAQ).  This operation has a number of properties, including
+The original definition of exponentiation is, of course, that $x^y = 1 *
+x * x * ... * x,$ where $1$ is multiplied by $x$, $y$ times.  This is
+only a reasonable definition for $y=1, 2, 3, ...$ (It could be argued
+that it is reasonable when $y=0$, but that issue is taken up in a
+different part of the FAQ).  This operation has a number of properties,
+including
 
 \begin{enumerate}
-\item $x^1 = x$
-\item For any $x$, $n$, $m$,  $x^n x^m = x^{n+m}$.
-\item If $x$ is positive, then $x^n$ is positive.
+  \item $x^1 = x$
+  \item For any $x$, $n$, $m$, $x^n x^m = x^{n+m}$.
+  \item If $x$ is positive, then $x^n$ is positive.
 
+  Now, we can try to see how far we can extend the domain of
+  exponentiation so that the above properties (and others) still hold.
+  This naturally leads to defining the operation $x^y$ on the domain
+  {$x$ positive real; $y$ rational}, by setting $x^{p/q} =$ the $q^{th}$
+  root of $x^p$.  This operation agrees with the original definition of
+  exponentiation on their common domain, and also satisfies (1), (2) and
+  (3).  In fact, it is the unique operation on this domain that does so.
+  This operation also has some other properties:
 
-Now, we can try to see how far we can extend the domain of
-exponentiation so that the above properties (and others) still hold.  This
-naturally leads to defining the operation $x^y$ on the domain {$x$ positive
-real; $y$ rational}, by setting $x^{p/q} =$ the $q^{th}$ root of $x^p$.  This
-operation agrees with the original definition of exponentiation on their
-common domain, and also satisfies (1), (2) and (3).  In fact, it is the
-unique operation on this domain that does so.  This operation also has
-some other properties:
+  \item If $x>1$, then $x^y$ is an increasing function of $y$.
+  \item If $0<x<1$, then $x^y$ is a decreasing function of $y$.
 
-\item If $x>1$, then $x^y$ is an increasing function of $y$.
-\item If $0<x<1$, then $x^y$ is a decreasing function of $y$.
+  Again, we can again see how far we can extend the domain of
+  exponentiation while still preserving properties (1)-(5).  This leads
+  naturally to the following definition of $x^y$ on the domain {$x$
+    positive real; $y$ real}:
 
-Again, we can again see how far we can extend the domain of exponentiation
-while still preserving properties (1)-(5).  This leads naturally to the
-following definition of $x^y$ on the domain {$x$ positive real; $y$ real}:
+  If $x>1$, $x^y$ is defined to be $\sup_q\{ x^q\}$, where $q$ runs over
+  all rationals less than or equal to $y$.
 
-        If $x>1$, $x^y$ is defined to be $\sup_q\{ x^q\}$, where $q$ runs over a
-ll
-rationals less than or equal to $y$.
+  If $x<1$, $x^y$ is defined to be $\inf_q\{ x^q\}$, where $q$ runs over
+  all rationals bigger than or equal to $y$.
 
-        If $x<1$, $x^y$ is defined to be $\inf_q\{ x^q\}$, where $q$ runs over a
-ll
-rationals bigger than or equal to $y$.
+  If $x=1$, $x^y$ is defined to be $1$.
 
-        If $x=1$, $x^y$ is defined to be $1$.
+  Again, this operation satisfies (1)-(5), and is in fact the only
+  operation on this domain to do so.
 
-Again, this operation satisfies (1)-(5), and is in fact the only operation
-on this domain to do so.
+  The next extension is somewhat more complicated.  As can be proved
+  using the methods of calculus or combinatorics, if we define $e$ to be
+  the number
 
-The next extension is somewhat more complicated.  As can be proved using
-the methods of calculus or combinatorics, if we define $e$ to be the number
+  \[e = 1 + 1/1! + 1/2! + 1/3! + ... = 2.71828...\]
 
-\[e = 1 + 1/1! + 1/2! + 1/3! + ... = 2.71828...\]
+  it turns out that for every real number $x$,
 
-it turns out that for every real number $x$,
+  \item $ e^x = 1 + x/1! + x^2/2! + x^3/3! + ...$
 
-\item $ e^x = 1 + x/1! + x^2/2! + x^3/3! + ...$
+  $e^x$ is also denoted $\exp(x)$.  (This series always converges
+  regardless of the value of $x$).
 
-$e^x$ is also denoted $\exp(x)$.  (This series always converges regardless of
-the value of $x$).
+  One can also define an operation $\ln(x)$ on the positive reals, which
+  is the inverse of the operation of exponentiation by $e$.  In other
+  words, $\exp(\ln(x)) = x$ for all positive $x$.  Moreover,
 
-One can also define an operation $\ln(x)$ on the positive reals, which is the
-inverse of the operation of exponentiation by $e$.  In other words, $\exp(\ln(x))
-= x$ for all positive $x$.  Moreover,
+  \item If $x$ is positive, then $x^y$ = $\exp(y \ln(x))$.  Because of
+  this, the natural extension of exponentiation to complex exponents,
+  seems to be to define
 
-\item If $x$ is positive, then $x^y$ = $\exp(y \ln(x))$.
-Because of this, the natural extension of exponentiation to complex
-exponents, seems to be to define
+  \[ exp(z) = 1 + z/1! + z^2/2! + z^3/3! + ...\]
 
-\[ exp(z) = 1 + z/1! + z^2/2! + z^3/3! + ...\]
+  for all complex $z$ (not just the reals, as before), and to define
 
-for all complex $z$ (not just the reals, as before), and to define
+  $x^z = \exp(z \ln(x))$
 
-$x^z = \exp(z \ln(x))$
+  when $x$ is a positive real and $z$ is complex.
 
-when $x$ is a positive real and $z$ is complex.
+  This is the only operation $x^y$ on the domain {$x$ positive real, $y$
+    complex} which satisfies all of (1)-(7).  Because of this and other
+  reasons, it is accepted as the modern definition of exponentiation.
 
-This is the only operation $x^y$ on the domain {$x$ positive real, $y$ complex}
-which satisfies all of (1)-(7).  Because of this and other reasons, it
-is accepted as the modern definition of exponentiation.
+  From the identities
 
-From the identities
+  \[ \sin x = x - x^3/3! + x^5/5! - x^7/7! + ...\]
 
-\[ \sin x = x - x^3/3! + x^5/5! - x^7/7! + ...\]
+  \[ \cos x = 1 - x^2/2! + x^4/4! - x^6/6! + ... \]
 
-\[ \cos x = 1 - x^2/2! + x^4/4! - x^6/6! + ... \]
+  which are the Taylor series expansion of the trigonometric sine and
+  cosine functions respectively.  From this, one sees that, for any real
+  x,
 
-which are the Taylor series expansion of the
-trigonometric sine and cosine functions respectively.
-From this, one sees that, for any real x,
+  \item $ \exp(ix) = \cos x + i \sin x.$
 
-\item $ \exp(ix) = \cos x + i \sin x.$
+  Thus, we get Euler's famous formula
 
-Thus, we get Euler's famous formula
+  \[e^{\pi i} = -1\]
 
-\[e^{\pi i} = -1\]
+  and
 
-and
+  $e^{2\pi i} = e^0 = 1.$
 
-$e^{2\pi i} = e^0 = 1.$
-
-One can also obtain the classical addition formulae for sine and cosine
-from (8) and (1).
+  One can also obtain the classical addition formulae for sine and
+  cosine from (8) and (1).
 \end{enumerate}
 
 All of the above extensions have been restricted to a positive real for
 the base.  When the base $x$ is not a positive real, it is not as
 clear-cut how to extend the definition of exponentiation.  For example,
-$(-1)^{1/2}$ could well be $i$ or $-i$, $(-1)^{1/3}$ could be $-1$, $1/2 +
-\sqrt(3)i/2$, or $1/2 - \sqrt(3)i/2$, and so on.  Some values of $x$ and $y$
- give
-infinitely many candidates for $x^y$, all equally plausible.  And of
-course $x=0$ has its own special problems.  These problems can all be
-traced to the fact that the exp function is not injective on the complex
-plane, so that ln is not well defined outside the real line.  There are
-ways around these difficulties (defining branches of the logarithm, for
-example), but we shall not go into this here.
+$(-1)^{1/2}$ could well be $i$ or $-i$, $(-1)^{1/3}$ could be $-1$, $1/2
++ \sqrt(3)i/2$, or $1/2 - \sqrt(3)i/2$, and so on.  Some values of $x$
+and $y$ give infinitely many candidates for $x^y$, all equally
+plausible.  And of course $x=0$ has its own special problems.  These
+problems can all be traced to the fact that the exp function is not
+injective on the complex plane, so that ln is not well defined outside
+the real line.  There are ways around these difficulties (defining
+branches of the logarithm, for example), but we shall not go into this
+here.
 
 The operation of exponentiation has also been extended to other systems
 like matrices and operators.  The key is to define an exponential
@@ -127,6 +127,4 @@ calculus and/or advanced linear algebra?]
 
 \Ref
 
-\book{Complex Analysis.}
-     {Ahlfors, Lars V.}
-     {McGraw-Hill, 1953.}
+\book{Complex Analysis.}  {Ahlfors, Lars V.}  {McGraw-Hill, 1953.}

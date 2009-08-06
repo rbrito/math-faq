@@ -1,231 +1,237 @@
 \section{The Axiom of Choice}
 
-
- There are several equivalent formulations:
+There are several equivalent formulations:
 
 \begin{itemize}
 
-    \item The Cartesian product of nonempty sets is nonempty, even
-    if the product is of an infinite family of sets.
+  \item The Cartesian product of nonempty sets is nonempty, even if the
+  product is of an infinite family of sets.
 
-    \item Given any set $S$ of mutually disjoint nonempty sets, there is a set $C$
-    containing a single member from each element of $S$.  $C$ can thus be
-    thought of as the result of ``choosing'' a representative from each
-    set in $S$. Hence the name.
+  \item Given any set $S$ of mutually disjoint nonempty sets, there is a
+  set $C$ containing a single member from each element of $S$.  $C$ can
+  thus be thought of as the result of ``choosing'' a representative from
+  each set in $S$. Hence the name.
 \end{itemize}
 
 \subsection{Relevance of the Axiom of Choice}
 THE AXIOM OF CHOICE
 
-There are many equivalent statements of the Axiom of Choice.  The following
-version gave rise to its name:
+There are many equivalent statements of the Axiom of Choice.  The
+following version gave rise to its name:
 \begin{quote}
-  For any set $X$ there is a function $f$, with domain
-  $X\backslash{0}$, so that $f(x)$ is a member of $x$ for every
-  nonempty $x$ in $X$.
+  For any set $X$ there is a function $f$, with domain $X\backslash{0}$,
+  so that $f(x)$ is a member of $x$ for every nonempty $x$ in $X$.
 \end{quote}
-Such an $f$ is called a ``choice function'' on $X$.  [Note that $X\backslash
- {0}$ means
-$X$ with the empty set removed.  Also note that in Zermelo-Fraenkel set
-theory all mathematical objects are sets so each member of $X$ is itself
-a set.]
 
-The Axiom of Choice (AC) is one of the most discussed axioms of mathematics,
-perhaps second only to Euclid's parallel postulate.  The axioms of set theory
-provide a foundation for modern mathematics in the same way that Euclid's five
-postulates provided a foundation for Euclidean geometry, and the questions
-surrounding AC are the same as the questions that surrounded Euclid's Parallel
-Postulate:
+Such an $f$ is called a ``choice function'' on $X$.  [Note that
+$X\backslash {0}$ means $X$ with the empty set removed.  Also note that
+in Zermelo-Fraenkel set theory all mathematical objects are sets so each
+member of $X$ is itself a set.]
+
+The Axiom of Choice (AC) is one of the most discussed axioms of
+mathematics, perhaps second only to Euclid's parallel postulate.  The
+axioms of set theory provide a foundation for modern mathematics in the
+same way that Euclid's five postulates provided a foundation for
+Euclidean geometry, and the questions surrounding AC are the same as the
+questions that surrounded Euclid's Parallel Postulate:
+
 \begin{enumerate}
- \item  Can it be derived from the other axioms?
- \item Is it consistent with the other axioms?
- \item Should we accept it as an axiom?
+  \item Can it be derived from the other axioms?
+  \item Is it consistent with the other axioms?
+  \item Should we accept it as an axiom?
 \end{enumerate}
-For many sets, including any finite set, the first six axioms of set theory
-(abbreviated ZF) are enough to guarantee the existence of a choice function
-but there do exist sets for which AC is {\em required} to show the existence of
-a choice function.  The existence of such sets was proved in 1963 by Paul
-Cohen.  This means that AC cannot be derived from the other six axioms;
-in other words ``AC is independent of ZF.''  This answers question [1] posed
-above.
 
-The question of whether AC is consistent with the other axioms (question [2]
-above) was answered by Goedel in 1938.  Goedel showed that if the other axioms
-are consistent then AC is consistent with them.  This is a ``relative
-consistency'' proof which is the best we can hope for because of Goedel's
-Second Incompleteness Theorem.
+For many sets, including any finite set, the first six axioms of set
+theory (abbreviated ZF) are enough to guarantee the existence of a
+choice function but there do exist sets for which AC is {\em required}
+to show the existence of a choice function.  The existence of such sets
+was proved in 1963 by Paul Cohen.  This means that AC cannot be derived
+from the other six axioms; in other words ``AC is independent of ZF.''
+This answers question [1] posed above.
 
-The third question, ``Should we accept it as an axiom?'', moves us into the
-realm of philosophy.  Today there are three major schools of thought
+The question of whether AC is consistent with the other axioms (question
+[2] above) was answered by Goedel in 1938.  Goedel showed that if the
+other axioms are consistent then AC is consistent with them.  This is a
+``relative consistency'' proof which is the best we can hope for because
+of Goedel's Second Incompleteness Theorem.
+
+The third question, ``Should we accept it as an axiom?'', moves us into
+the realm of philosophy.  Today there are three major schools of thought
 concerning the use of AC:
+
 \begin{enumerate}
-\item Accept it as an axiom and use it without hesitation.
-\item Accept it as an axiom but use it only when you cannot find a proof
-    without it.
-\item AC is unacceptable.
+  \item Accept it as an axiom and use it without hesitation.
+  \item Accept it as an axiom but use it only when you cannot find a
+  proof without it.
+  \item AC is unacceptable.
 \end{enumerate}
+
 Most mathematicians today belong to school A.  Mathematicians who are in
-school B are usually there because of a belief in Occam's Razor (use as few
-assumptions as possible when explaining something) or an interest in
-metamathematics.  There are a growing number of people moving to school C,
-especially computer scientists who work on automated reasoning using
+school B are usually there because of a belief in Occam's Razor (use as
+few assumptions as possible when explaining something) or an interest in
+metamathematics.  There are a growing number of people moving to school
+C, especially computer scientists who work on automated reasoning using
 constructive type theories.
 
-Underlying the schools of thought about the use of AC are views about truth
-and the nature of mathematical objects.  Three major views are platonism,
-constructivism, and formalism.
+Underlying the schools of thought about the use of AC are views about
+truth and the nature of mathematical objects.  Three major views are
+platonism, constructivism, and formalism.
 
-\medskip
-\noindent{\bf \large Platonism}
-\smallskip
+\subsubsection{Platonism}
 
-A platonist believes that mathematical objects exist independent of the human
-mind, and a mathematical statement, such as AC, is objectively either true or
-false.  A platonist accepts AC only if it is objectively true, and probably
-falls into school A or C depending on her belief.  If she isn't sure about
-AC's truth then she may be in school B so that once she finds out the truth
-about AC she will know which theorems are true.
+A platonist believes that mathematical objects exist independent of the
+human mind, and a mathematical statement, such as AC, is objectively
+either true or false.  A platonist accepts AC only if it is objectively
+true, and probably falls into school A or C depending on her belief.  If
+she isn't sure about AC's truth then she may be in school B so that once
+she finds out the truth about AC she will know which theorems are true.
 
-\medskip
-\noindent{\bf \large Constructivism}
-\smallskip
+\subsubsection{Constructivism}
 
-A constructivist believes that the only acceptable mathematical objects are
-ones that can be constructed by the human mind, and the only acceptable proofs
-are constructive proofs.  Since AC gives no method for constructing a choice
-set constructivists belong to school C.
+A constructivist believes that the only acceptable mathematical objects
+are ones that can be constructed by the human mind, and the only
+acceptable proofs are constructive proofs.  Since AC gives no method for
+constructing a choice set constructivists belong to school C.
 
-\medskip
-\noindent{\bf \large Formalism}
-\smallskip
+\subsubsection{Formalism}
 
-A formalist believes that mathematics is strictly symbol manipulation and any
-consistent theory is reasonable to study.  For a formalist the notion of truth
-is confined to the context of mathematical models, e.g., a formalist would say
-``The parallel postulate is false in Riemannian geometry.'' but she wouldn't say
-``The parallel postulate is false.''  A formalist will probably not allign
-herself with any school.  She will comfortably switch between A, B, and C
-depending on her current interests.
+A formalist believes that mathematics is strictly symbol manipulation
+and any consistent theory is reasonable to study.  For a formalist the
+notion of truth is confined to the context of mathematical models, e.g.,
+a formalist would say ``The parallel postulate is false in Riemannian
+geometry.'' but she wouldn't say ``The parallel postulate is false.''  A
+formalist will probably not allign herself with any school.  She will
+comfortably switch between A, B, and C depending on her current
+interests.
 
 
-So: Should you accept the Axiom of Choice?  Here are some arguments
-for and against it.
+So: Should you accept the Axiom of Choice?  Here are some arguments for
+and against it.
 
-\medskip
-\noindent{\bf\large Against}
+\subsubsection{Against}
 
 \begin{itemize}
-\item It's not as simple, aesthetically pleasing, and intuitive as the other
-  axioms.
-\item It is equivalent to many statements which are not intuitive such as ``Every
-  set can be well ordered.''  How, for example, would you well order the reals?
-\item With it you can derive non-intuitive results, such as the existence of a
-  discontinuous additive function, the existence of a non-measurable set of
-  reals, and the Banach-Tarski Paradox (see the next section of the sci.math
-  FAQ).
-\item It is nonconstructive---it conjures up a set without providing any sort of
-  procedure for its construction.
+  \item It's not as simple, aesthetically pleasing, and intuitive as the
+  other axioms.
+  \item It is equivalent to many statements which are not intuitive such
+  as ``Every set can be well ordered.''  How, for example, would you
+  well order the reals?
+  \item With it you can derive non-intuitive results, such as the
+  existence of a discontinuous additive function, the existence of a
+  non-measurable set of reals, and the Banach-Tarski Paradox (see the
+  next section of the sci.math FAQ).
+  \item It is nonconstructive---it conjures up a set without providing
+  any sort of procedure for its construction.
 \end{itemize}
 
-\noindent{\bf\large For}
-\smallskip
+\subsubsection{For}
 
-The acceptance of AC is based on the belief that our intuition about finite
-sets can be extended to infinite sets.  The main argument for accepting it
-is that it is useful.  Many important, intuitively plausible theorems are
-equivalent to it or depend on it.  For example these statements are equivalent
-to AC:
+The acceptance of AC is based on the belief that our intuition about
+finite sets can be extended to infinite sets.  The main argument for
+accepting it is that it is useful.  Many important, intuitively
+plausible theorems are equivalent to it or depend on it.  For example
+these statements are equivalent to AC:
 \begin{itemize}
-\item Every vector space has a basis.
-\item Trichotomy of Cardinals: For any cardinals $k$ and $l$, either $k<l$ or $k=l$ or $k>l$.
-\item Tychonoff's Theorem: The product of compact spaces is compact in the
-  product topology.
-\item Zorn's Lemma: Every nonempty partially ordered set P in which each
-  chain has an upper bound in P has a maximal element.
+  \item Every vector space has a basis.
+  \item Trichotomy of Cardinals: For any cardinals $k$ and $l$, either
+  $k<l$ or $k=l$ or $k>l$.
+  \item Tychonoff's Theorem: The product of compact spaces is compact in
+  the product topology.
+  \item Zorn's Lemma: Every nonempty partially ordered set P in which
+  each chain has an upper bound in P has a maximal element.
 \end{itemize}
+
 And these statements depend on AC (i.e., they cannot be proved in ZF
 without AC):
+
 \begin{itemize}
-\item The union of countably many countable sets is countable.
-\item Every infinite set has a denumerable subset.
-\item The Loewenheim-Skolem Theorem: Any first-order theory which has a model
-  has a denumerable model.
-\item The Baire Category Theorem: The reals are not the union of countably
-  many nowhere dense sets (i.e., the reals are not meager).
-\item The Ultrafilter Theorem: Every Boolean algebra has an ultrafilter on it.
+  \item The union of countably many countable sets is countable.
+  \item Every infinite set has a denumerable subset.
+  \item The Loewenheim-Skolem Theorem: Any first-order theory which has
+  a model has a denumerable model.
+  \item The Baire Category Theorem: The reals are not the union of
+  countably many nowhere dense sets (i.e., the reals are not meager).
+  \item The Ultrafilter Theorem: Every Boolean algebra has an
+  ultrafilter on it.
 \end{itemize}
 
-\noindent{\bf\large Alternatives to AC}
+\subsubsection{Alternatives to AC}
 
 \begin{itemize}
-\item Accept only a weak form of AC such as the Denumerable Axiom of Choice
-  (every denumerable set has a choice function) or the Axiom of Dependent
-  Choice.
-\item Accept an axiom that implies AC such as the Axiom of Constructibility
-  ($V=L$) or the Generalized Continuum Hypothesis (GCH).
-\item Adopt AC as a logical axiom (Hilbert suggested this with his epsilon
-  axiom).  If set theory is done in such a logical formal system the
-  Axiom of Choice will be a theorem.
-\item Accept a contradictory axiom such as the Axiom of Determinacy.
-\item Use a completely different framework for mathematics such as
+  \item Accept only a weak form of AC such as the Denumerable Axiom of
+  Choice (every denumerable set has a choice function) or the Axiom of
+  Dependent Choice.
+  \item Accept an axiom that implies AC such as the Axiom of
+  Constructibility ($V=L$) or the Generalized Continuum Hypothesis
+  (GCH).
+  \item Adopt AC as a logical axiom (Hilbert suggested this with his
+  epsilon axiom).  If set theory is done in such a logical formal system
+  the Axiom of Choice will be a theorem.
+  \item Accept a contradictory axiom such as the Axiom of Determinacy.
+  \item Use a completely different framework for mathematics such as
   Category Theory.  Note that within the framework of Category Theory
   Tychonoff's Theorem can be proved without AC (Johnstone, 1981).
 \end{itemize}
 
-\noindent{\bf\large Test Yourself: When is AC necessary?}
-\smallskip
+\subsubsection{Test Yourself: When is AC necessary?}
 
 If you are working in Zermelo-Fraenkel set theory without the Axiom of
 Choice, can you choose an element from...
 \begin{enumerate}
-\item  a finite set?
- \item an infinite set?
- \item each member of an infinite set of singletons (i.e., one-element sets)?
- \item each member of an infinite set of pairs of shoes?
- \item each member of inifinite set of pairs of socks?
- \item each member of a finite set of sets if each of the members is infinite?
- \item each member of an infinite set of sets if each of the members is infinite?
- \item each member of a denumerable set of sets if each of the members is infinite?
- \item each member of an infinite set of sets of rationals?
-\item each member of a denumerable set of sets if each of the members is
-    denumberable?
-\item each member of an infinite set of sets if each of the members is finite?
-\item each member of an infinite set of finite sets of reals?
-\item each member of an infinite set of sets of reals?
-\item each member of an infinite set of two-element sets whose members are
-    sets of reals?
+  \item a finite set?
+  \item an infinite set?
+  \item each member of an infinite set of singletons (i.e., one-element
+  sets)?
+  \item each member of an infinite set of pairs of shoes?
+  \item each member of inifinite set of pairs of socks?
+  \item each member of a finite set of sets if each of the members is
+  infinite?
+  \item each member of an infinite set of sets if each of the members is
+  infinite?
+  \item each member of a denumerable set of sets if each of the members
+  is infinite?
+  \item each member of an infinite set of sets of rationals?
+  \item each member of a denumerable set of sets if each of the members
+  is denumberable?
+  \item each member of an infinite set of sets if each of the members is
+  finite?
+  \item each member of an infinite set of finite sets of reals?
+  \item each member of an infinite set of sets of reals?
+  \item each member of an infinite set of two-element sets whose members
+  are sets of reals?
 \end{enumerate}
 The answers to these questions with explanations are accessible through
 \url{http://www.jazzie.com/ii/math/index.html}.
 
-
 \Ref
 
-Benacerraf, Paul and Putnam, Hilary.  ``Philosophy of Mathematics: Selected
-Readings'', 2nd edition. Cambridge University Press, 1983.
+Benacerraf, Paul and Putnam, Hilary.  ``Philosophy of Mathematics:
+Selected Readings'', 2nd edition. Cambridge University Press, 1983.
 
-Dauben, Joseph Warren.  ``Georg Cantor: His Mathematics and Philosophy of the
-Infinite.''  Princeton University Press, 1979.
+Dauben, Joseph Warren.  ``Georg Cantor: His Mathematics and Philosophy
+of the Infinite.''  Princeton University Press, 1979.
 
-A. Fraenkel, Y.  Bar-Hillel, and A. Levy with van Dalen, Dirk. ``Foundations
-of Set Theory,'' Second Revised Edition. North-Holland, 1973.
+A. Fraenkel, Y.  Bar-Hillel, and A. Levy with van Dalen, Dirk.
+``Foundations of Set Theory,'' Second Revised Edition.  North-Holland,
+1973.
 
-Johnstone, Peter T.  ``Tychonoff's Theorem without the Axiom of Choice.''
-Fundamenta Mathematica 113: 21-35, 1981.
+Johnstone, Peter T.  ``Tychonoff's Theorem without the Axiom of
+Choice.''  Fundamenta Mathematica 113: 21-35, 1981.
 
-Leisenring, Albert C.  ``Mathematical Logic and Hilbert's Epsilon-Symbol.''
-Gordon and Breach, 1969.
+Leisenring, Albert C.  ``Mathematical Logic and Hilbert's
+Epsilon-Symbol.''  Gordon and Breach, 1969.
 
-Maddy, ``Believing the Axioms, I'', J. Symb. Logic, v. 53, no. 2, June 1988,
-pp. 490-500, and ``Believing the Axioms II'' in v.53, no. 3.
+Maddy, ``Believing the Axioms, I'', J. Symb. Logic, v. 53, no. 2, June
+1988, pp. 490-500, and ``Believing the Axioms II'' in v.53, no. 3.
 
-Moore, Gregory H.  ``Zermelo's Axiom of Choice: Its Origins, Development, and
-Influence.''  Springer-Verlag, 1982.
+Moore, Gregory H.  ``Zermelo's Axiom of Choice: Its Origins,
+Development, and Influence.''  Springer-Verlag, 1982.
 
-Rubin, Herman and Rubin, Jean E.  ``Equivalents of the Axiom of Choice II.''
-North-Holland, 1985.
+Rubin, Herman and Rubin, Jean E.  ``Equivalents of the Axiom of Choice
+II.''  North-Holland, 1985.
 
-This section of the FAQ is Copyright (c) 1994 Nancy McGough.  Send comments
-and or corrections relating to this part to \url{nancym@ii.com}.  The most up to
-date version of this section of the sci.math FAQ is accesible through
+This section of the FAQ is Copyright (c) 1994 Nancy McGough.  Send
+comments and or corrections relating to this part to
+\url{nancym@ii.com}.  The most up to date version of this section of the
+sci.math FAQ is accesible through
 \url{http://www.jazzie.com/ii/math/index.html}.
