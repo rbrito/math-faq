@@ -1,7 +1,6 @@
 Here's a formula which can be used in 123, Excel, Wings and
     Dynaplan:
 
-
 \begin{verbatim}
      ------- Input this data -------------------------------
      principal amount = E9                  ( in dollars )
@@ -108,16 +107,16 @@ Here's a formula which can be used in 123, Excel, Wings and
 
           \[ ln(y - 1)  \approx  ln y  -  1/y\]
 
-    Which is within 2% for $y \geq  5$.
+    Which is within 2\% for $y \geq  5$.
 
      For example, a \$100000 loan at 1\% monthly, paying \$1028.61
-     per month should be paid in 360 months.  The approximation
-     yields 358.9 payments.
+     per month should be paid in $360$ months.  The approximation
+     yields $358.9$ payments.
 
      If this were your 30 year mortgage and you were paying \$1028.61
      per month and you wanted to see the effect of paying \$1050
      per month, the approximation tells you that it would be paid
-     off in 303.5 months (25 years and 3.5 months).  If you stick
+     off in $303.5$ months (25 years and 3.5 months).  If you stick
      304 months into the equation for $x$, you get \$1051.04, so
      it is fairly close.  This approximation does not work, though,
      for very small interest rates or for a small number of payments.
@@ -126,14 +125,14 @@ Here's a formula which can be used in 123, Excel, Wings and
      well.  In the examples given, $(1 + i)^n$ is about 36.
 
 
-     Finding $i$ given $n$, $x$, and $p$ is not as easy.  If i is less than
+     Finding $i$ given $n$, $x$, and $p$ is not as easy.  If $i$ is less than
      5\% per payment period, the following equation approximately
-     holds for i:
+     holds for $i$:
 
       \[    i = -(1/n) ln(1 - ip/x)    \]
 
      There is no direct solution to this, but you can do it by
-     Newton-Raphson approximation.  Begin with a guess, i[0].
+     Newton-Raphson approximation.  Begin with a guess, $i[0]$.
      Then apply:
 
 \[i[k+1] = i[k] -\frac{x(1 - i[k]p/x)  (ni[k] + ln(1 - i[k]p/x))}
@@ -163,9 +162,7 @@ Here's a formula which can be used in 123, Excel, Wings and
      Substituting $i[5]$ back into eq 7, we get $x = \$50.04$, so it
      works pretty well.
 
-
 \Ref
  
      \book{The theory of interest.}{Stephen G. Kellison.}{Homewood, Ill., R. D.
      Irwin, 1970.}
-
