@@ -16,9 +16,6 @@ Informally:
 
 \subsection{Construction of the Number System}
 
-% Credit: mmcadams@cco.caltech.edu (Matt McAdams) 951209
-%         main stream --> mainstream
-
 Formally (following the mainstream in math) the numbers are constructed
 from scratch out of the axioms of Zermelo Fraenkel set theory (a.k.a.\
 ZF set theory) [Enderton77, Henle86, Hrbacek84]. The only things that
@@ -28,26 +25,12 @@ only thing you can derive from the axioms). It doesn't mean that you
 always have to use set notation when you use numbers: just introduce the
 numerals as an abbreviation of the formal counterparts.
 
-% Credit: aaron@mmml.demon.co.uk (Aaron Turner) 950330
-%         He suggested numerals as an alternative for ``informal'' numbers.
-
-% Credit: mcknighl@ix.netcom.com (Lawrence McKnight) 941104
-%         He asked to add rationales to the constructions.
-
 The construction starts with $\N$ and algebraically speaking, $\N$ with
 its operations and order is quite a weak structure. In the following
 constructions the structures will be strengthen one step at the time:
 $\Z$ will be an integral domain, $\Q$ will be a field, for the field
 $\R$ the order will be made complete, and field $\C$ will be made
 algebraically complete.
-% Credit: aaron@mmml.demon.co.uk (Aaron Turner) 950330
-%         He asked for a brief explanation. This is as for as I'll go:
-%
-% [Is there a volunteer in the crowd who likes to write a section that
-% explains these structures and concepts?]
-%
-% Yep, there is: andrea.depaoli@mail.esrin.esa.it (Andy de Paoli) 951102
-% So these lines are removed and Andy's part is added by Alex to the FAQ.
 
 Before we start, first some notational stuff:
 \begin{itemize}
@@ -55,14 +38,11 @@ Before we start, first some notational stuff:
   \item an equivalence class $[a] = \{b | a \equiv b\}$,
   \item the successor of $a$ is $s(a) = a \cup \{a\}$.
 \end{itemize}
-% Credit: aaron@mmml.demon.co.uk (Aaron Turner) 950330
-%         He liked to put a little more stress on the fact that other
-%         definitions are possible (although this is the de facto one.
 
 Although the previous notations and the constructions that follow are
 the de facto standard ones, there are different definitions possible.
 
-\subsection{Construction of \sl $N$}
+\subsection{Construction of \N}
 
 \begin{itemize}
   \item $\{\} \in \N$
@@ -84,7 +64,7 @@ Define $*_n$ as:
   \item $a_n *_n s(b_n) = (a_n *_n b_n) +_n a_n$
 \end{itemize}
 
-\subsection{Construction of \sl Z}
+\subsection{Construction of \Z}
 
 We define an equivalence relation on $\N \times \N$: $(a_n,b_n) \equiv_z
 (c_n,d_n)$ iff $a_n +_n d_n = c_n +_n b_n$. Note that $\equiv_z$
@@ -101,7 +81,7 @@ $embed_n: \N \rightarrow \Z$ such that $embed_n(a_n) =
           b_n)\right)]_z$
 \end{itemize}
 
-\subsection{Construction of \sl Q}
+\subsection{Construction of \Q}
 
 We define an equivalence relation on $\Z \times (\Z \backslash
 \{0_z\})$: $(a_z,b_z) \equiv_q (c_z,d_z)$ iff $a_z *_z d_z = c_z *_z
@@ -119,18 +99,18 @@ $embed_z: \Z \rightarrow \Q$ such that $embed_z(a_z) =
   \item $[(a_z,b_z)]_q *_q [(c_z,d_z)]_q = [(a_z *_z c_z, b_z *_z d_z)]_q$
 \end{itemize}
 
-\subsection{Construction of \sl R}
+\subsection{Construction of \R}
 
 The construction of $\R$ is different (and more awkward to understand)
 because we must ensure that the cardinality of $\R$ is greater than that
 of $\Q$.
 
-Set $c$ is a {\em Dedekind cut} iff
+Set $c$ is a \emph{Dedekind cut} iff
 \begin{itemize}
   \item $\{\} \subset c \subset \Q$ (strict inclusions!)
-  \item $c$ is {\em closed downward}: \\
-  if $a_q \in c$ \mbox{ and } $b_q <_q a_q$ then $b_q \in c$
-  \item $c$ has no {\em largest element}: \\
+  \item $c$ is \emph{closed downward}: \\
+  if $a_q \in c$ and $b_q <_q a_q$ then $b_q \in c$
+  \item $c$ has no \emph{largest element}: \\
       there isn't an element $a_q \in c$ such that $b_q <_q a_q$ for all $b_q
       \neq a_q \in c$
 \end{itemize}
@@ -172,7 +152,7 @@ close to $0_q$ for all sufficiently large $m_n$. $\R = \{ [s]_r | s
 \mbox{ is a Cauchy sequence}\}$.  Note that this definition is close to
 ``decimal'' expansions.
 
-\subsection{Construction of \sl C}
+\subsection{Construction of \C}
 
 $\C = \R \times \R$. We will refer to the elements of $\C$ by giving
 them a subscript $_c$. The elements of $\R$ can be embedded as follows:
@@ -213,8 +193,6 @@ Well, for some of the more alien parts of math we can extend this
 standard number system with some exotic types of numbers. To name a few:
 \begin{itemize}
   \item Cardinals and ordinals \\
-      % credit: edgar@math.ohio-state.edu (Gerald Edgar) 941104
-      %         He asked to add cardinals and ordinals.
       Both are numbers in ZF set theory [Enderton77, Henle86, Hrbacek84] and
       so they are sets as well. Cardinals are numbers that represent the
       sizes of sets, and ordinals are numbers that represent well ordered
@@ -231,18 +209,10 @@ standard number system with some exotic types of numbers. To name a few:
       used to model rotations in 3 dimensions. Octonions, a.k.a.\ Cayley
       numbers, are just esoteric artifacts :-). Well, if you know where they
       are used for, feel free to contribute to the FAQ.
-      % Credit: jpb@iris85.biosym.com (Jan Bielawski) 950501
-      %         Added the aka for octonions.
   \item Miscellaneous \\
       Just to name some others: algebraic numbers [Shapiro75], $p$-adic
       numbers [Shapiro75], and surreal numbers (a.k.a.\ Conway
       numbers) [Conway76].
-      % Credit: aaron@mmml.demon.co.uk (Aaron Turner) 950330
-      %         He asked to include Conway numbers. I've added the first two.
-      % Credit: jpb@iris85.biosym.com (Jan Bielawski) 950501
-      %         Added the "reverse" aka for Conway numbers.
-      % Credit: jpb@iris85.biosym.com (Jan Bielawski) 950502
-      %         Added reference to Conway. I gave the other ones.
 \end{itemize}
 Cardinals and ordinals are commonly used in math. Most mortals won't
 encounter (let alone use) hyperreals, quaternions, and octonions.
@@ -252,8 +222,6 @@ encounter (let alone use) hyperreals, quaternions, and octonions.
 \book{J.H. Conway.}
      {On Numbers and Games, L.M.S. Monographs, vol. 6.}
      {Academic Press, 1976.}
-     % Credit: jpb@iris85.biosym.com (Jan Bielawski) 950502
-     %         He supplied this reference.
 
 \book{H.B. Enderton.}
      {Elements of Set Theory.}
@@ -275,6 +243,7 @@ encounter (let alone use) hyperreals, quaternions, and octonions.
 \book{L. Shapiro.}
      {Introduction to Abstract Algebra.}
      {McGraw-Hill, 1975.}
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "math-faq"
