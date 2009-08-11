@@ -2,12 +2,12 @@
 
 \subsection{History of Fermat's Last Theorem}
 
-Pierre de Fermat (1601-1665) was a lawyer and amateur mathematician. In
+Pierre de Fermat (1601--1665) was a lawyer and amateur mathematician. In
 about 1637, he annotated his copy (now lost) of Bachet's translation of
 Diophantus' Arithmetika with the following statement:
 
 \begin{quote}
-  {\it Cubum autem in duos cubos, aut quadratoquadratum in duos
+  \emph{Cubum autem in duos cubos, aut quadratoquadratum in duos
     quadratoquadratos, et generaliter nullam in infinitum ultra
     quadratum potestatem in duos ejusdem nominis fas est dividere: cujus
     rei demonstrationem mirabilem sane detexi. Hanc marginis exiguitas
@@ -43,8 +43,8 @@ The proof was presented in Cambridge, UK during a three day seminar to
 an audience which included some of the leading experts in the field.
 The proof was found to be wanting.  In summer 1994, Prof. Wiles
 acknowledged that a gap existed. On October 25th, 1994, Prof. Andrew
-Wiles released two preprints, {\em Modular elliptic curves and Fermat's
-  Last Theorem}, by Andrew Wiles, and {\em Ring theoretic properties of
+Wiles released two preprints, \emph{Modular elliptic curves and Fermat's
+  Last Theorem}, by Andrew Wiles, and \emph{Ring theoretic properties of
   certain Hecke algebras}, by Richard Taylor and Andrew Wiles.  The
 first one (long) announces a proof of, among other things, Fermat's Last
 Theorem, relying on the second one (short) for one crucial step.
@@ -65,10 +65,7 @@ the original one, because of the removal of the Euler system.  (In fact,
 after seeing these manuscripts Faltings has apparently come up with a
 further significant simplification of that part of the argument.)
 
-% As indicated by Dana W. Albrecht dwa@corsair.com. Jul 21/1995.
-% Correction added Aug 21/1995
-
-The papers were published in the May 1995 issue of {\it Annals of
+The papers were published in the May 1995 issue of \emph{Annals of
   Mathematics}.  For single copies of the issues send e-mail to
 \url{jlorder@jhunix.hcf.jhu.edu} for further directions.
 
@@ -81,25 +78,15 @@ it. The immensely complicated geometry has mostly been replaced by
 simpler algebra. The proof is now generally accepted. There was a gap in
 this second proof as well, but it has been filled since October 1994.
 
-%Apparently retired without replacement, as noted by:
-%From: wdr@world.std.com (William D Ricker)
-%Date: Tue, 28 Nov 1995 13:37:56 -0500
-%
-%You may also peruse the AMS site on Fermat's Last Theorem at:
-%
-%\begin{verbatim}
-%gopher://e-math.ams.org/11/lists/fermat
-%\end{verbatim}
-
 \CC{
   \subsection{Wiles' line of attack}
 
-  Here is an outline of the {\bf first, incorrect} proposed proof.  The
-  bits about Euler system are
+  Here is an outline of the \textbf{first, incorrect} proposed proof.
+  The bits about Euler system are
 
   \begin{itemize}
 
-    \item {\bf From Ken Ribet:}
+    \item \textbf{From Ken Ribet:}
 
     Here is a brief summary of what Wiles said in his three lectures.
 
@@ -149,7 +136,7 @@ this second proof as well, but it has been filled since October 1994.
     this chosen rational point of $X$.
     
     
-    \item {\bf From the previous version of the FAQ:}
+    \item \textbf{From the previous version of the FAQ:}
     
     (b) conjectures arising from the study of elliptic curves and
     modular forms. -- The Taniyama-Weil-Shimura conjecture.
@@ -176,7 +163,7 @@ this second proof as well, but it has been filled since October 1994.
     obstruction to the local-global principle [e.g. the Hasse-Minkowski
     theorem].
 
-    \item {\bf From Karl Rubin:}
+    \item \textbf{From Karl Rubin:}
 
     \begin{teo}
       If $E$ is a semistable elliptic curve defined over $Q$, then $E$
@@ -458,11 +445,12 @@ wrote his famous comment.
   viz, $x^4 + y^4 = z^2$ has no non-trivial integer solutions.  It is
   possible and even likely that he had an incorrect proof of FLT using
   this method when he wrote the famous ``theorem''.
+
   \item He had a wrong proof in mind. The following proof, proposed
   first by Lame' was thought to be correct, until Liouville pointed out
   the flaw, and by Kummer which latter became and expert in the field.
-  It is based on the {\em incorrect} assumption that prime decomposition
-  is unique in all domains.
+  It is based on the \emph{incorrect} assumption that prime
+  decomposition is unique in all domains.
 
   The incorrect proof goes something like this:
 
@@ -471,36 +459,35 @@ wrote his famous comment.
   (complex number)
 
   Then the equation is the same as:
-
-  \[(x+y)(x+ry)(x+r^2y)...(x+r^{p-1}y) = z^p\]
+  \[
+  (x+y)(x+ry)(x+r^2y) \cdots (x+r^{p-1}y) = z^p.
+  \]
 
   Now consider the ring of the form:
-
-  \[a_1 + a_2 r + a_3 r^2 + ... + a_{p-1} r^{p-1}\]
-
+  \[
+  a_1 + a_2 r + a_3 r^2 + \cdots + a_{p-1} r^{p-1},
+  \]
   where each $a_i$ is an integer
 
-  Now {\bf if} this ring is a unique factorization ring (UFR), then it
+  Now \emph{if} this ring is a unique factorization ring (UFR), then it
   is true that each of the above factors is relatively prime.
 
   From this it can be proven that each factor is a $p$th power from
   which FLT follows.  This is usually done by considering two cases, the
   first where $p$ divides none of $x$, $y$, $z$; the second where $p$
-  divides some of $x$, $y$, $z$.  For the first case, if $x+yr=u*t^p$,
+  divides some of $x$, $y$, $z$.  For the first case, if $x+yr = ut^p$,
   where $u$ is a unit in $Z[r]$ and $t$ is in $Z[r]$, it follows that
-  $x=y (mod p)$. Writing the original equation as $x^p + (-z)^p =
-  (-y)^p$, it follows in a similar fashion that $x = -z (mod p)$.  Thus
-  $2*x^p = x^p + y^p = z^p = -x^p (mod p)$ which implies $3*x^p = 0 (mod
-  p)$ and from there $p$ divides one of $x$ or $3|x$. But $p>3$ and $p$
+  $x=y \pmod p$. Writing the original equation as $x^p + (-z)^p =
+  (-y)^p$, it follows in a similar fashion that $x = -z \pmod p$.  Thus
+  $2x^p = x^p + y^p = z^p = -x^p \pmod p$ which implies $3x^p = 0 \pmod
+  p$ and from there $p$ divides one of $x$ or $3|x$. But $p>3$ and $p$
   does not divides $x$; contradiction.  The second case is harder.
 
-
-  The problem is that the above ring is {\bf not} an UFR in general.
-
+  The problem is that the above ring is \emph{not} an UFR in general.
 \end{itemize}
 
 Another argument for the belief that Fermat had no proof---and,
-furthermore, that he {\bf knew} that he had no proof---is that the only
+furthermore, that he \emph{knew} that he had no proof---is that the only
 place he ever mentioned the result was in that marginal comment in
 Bachet's Diophantus. If he really thought he had a proof, he would have
 announced the result publicly, or challenged some English mathematician
@@ -513,9 +500,9 @@ Some other famous mathematicians have speculated on this question.
 Andre Weil, writes:
 \begin{quote}
   Only on one ill-fated occasion did Fermat ever mention a curve of
-  higher genus $x^n+y^n=z^n$, and then hardly remains any doubt that
-  this was due to some misapprehension on his part [$\ldots$] for a
-  brief moment perhaps [$\ldots$] he must have deluded himself into
+  higher genus $x^n+y^n = z^n$, and then hardly remains any doubt that
+  this was due to some misapprehension on his part [\ldots] for a
+  brief moment perhaps [\ldots] he must have deluded himself into
   thinking he had the principle of a general proof.
 \end{quote}
 
@@ -524,10 +511,10 @@ Winfried Scharlau and Hans Opolka report:
   Whether Fermat knew a proof or not has been the subject of many
   speculations.  The truth seems obvious $\ldots$ [Fermat's marginal
   note] was made at the time of his first letters concerning number
-  theory [1637]$\ldots$ as far as we know he never repeated his general
+  theory [1637] \ldots as far as we know he never repeated his general
   remark, but repeatedly made the statement for the cases $n=3$ and $4$
-  and posed these cases as problems to his correspondents [$\ldots$] he
-  formulated the case $n=3$ in a letter to Carcavi in 1659 [$\ldots$]
+  and posed these cases as problems to his correspondents [\ldots] he
+  formulated the case $n=3$ in a letter to Carcavi in 1659 [\ldots]
   All these facts indicate that Fermat quickly became aware of the
   incompleteness of the [general] ``proof'' of 1637.  Of course, there
   was no reason for a public retraction of his privately made
@@ -545,6 +532,7 @@ still living.
   York, Springer, 1985.}
 
 \book{Basic Number Theory.}{Andre Weil.}{Berlin, Springer, 1967}
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "math-faq"
