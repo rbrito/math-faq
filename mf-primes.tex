@@ -143,7 +143,7 @@ Rumely (1983), also known as the APR test, represents a breakthrough
 because:
 
 \begin{enumerate}
-  \item It is applicable to arbitrary natural numbers N, without
+  \item It is applicable to arbitrary natural numbers $N$, without
   requiring the knowledge of factors of $N - 1$ or $N + 1$.
   \item The running time $t(N)$ is almost polynomial.
   \item The test is justified rigorously, and for the first time ever in
@@ -265,20 +265,29 @@ The following Mersenne primes are known.
 \bigskip
 
 The way to determine if $2^p-1$ is prime is to use the Lucas-Lehmer
-test:
+test, described in Algorithm~\ref{alg:lucaslehmer}.
 
-\begin{verbatim}
-      Lucas_Lehmer_Test(p):
-         u := 4
-         for i from 3 to p do
-            u := u^2-2 mod 2^p-1
-         od
-         if u == 0 then
-            2^p-1 is prime
-         else
-            2^p-1 is composite
-         fi
-\end{verbatim}
+\newcommand{\lucaslehmer}{\ensuremath{\mbox{\sc Lucas-Lehmer}}}
+\begin{algorithm}[H]
+  \caption{$\lucaslehmer(n)$}\label{alg:lucaslehmer}
+  \begin{algorithmic}[1]
+    
+    \REQUIRE A prime integer $p$.
+    \ENSURE Prints if $2^p-1$ is prime or not.
+
+    \smallskip
+    
+    \STATE $u \leftarrow 4$
+    \FOR{$i = 3, \ldots, p$}
+        \STATE $u \leftarrow u^2-2 \bmod 2^p-1$
+    \ENDFOR
+    \IF {$u = 0$}
+       \PRINT $2^p-1$ is prime
+    \ELSE
+       \PRINT $2^p-1$ is composite
+    \ENDIF
+  \end{algorithmic}
+\end{algorithm}
 
 All exponents less than 1,481,800 have now been tested at least once.
 
