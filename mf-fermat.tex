@@ -106,7 +106,7 @@ this second proof as well, but it has been filled since October 1994.
     this come from Flach; and then the proof went on to use Euler
     systems a la Kolyvagin, except in some new geometric guise. [This
     part turned out to be wrong and unnecessary].
-    
+
     If you take an elliptic curve over $Q$, you can look at the
     representation of Gal on the 3-division points of the curve.  If
     you're lucky, this will be known to be modular, because of results
@@ -115,7 +115,7 @@ this second proof as well, but it has been filled since October 1994.
     some hypotheses to check), and then the curve is modular.
     Basically, being lucky means that the image of the representation of
     Galois on 3-division points is $GL(2,Z/3Z)$.
-    
+
     Suppose that you are unlucky, i.e., that your curve $E$ has a
     rational subgroup of order 3.  Basically by inspection, you can
     prove that if it has a rational subgroup of order 5 as well, then it
@@ -134,19 +134,19 @@ this second proof as well, but it has been filled since October 1994.
     non-cuspidal rational point of $X$ over which the covering remains
     irreducible.  You take $E^\prime$ to be the curve corresponding to
     this chosen rational point of $X$.
-    
-    
+
+
     \item \textbf{From the previous version of the FAQ:}
-    
+
     (b) conjectures arising from the study of elliptic curves and
     modular forms. -- The Taniyama-Weil-Shimura conjecture.
-     
+
     There is a very important and well known conjecture known as the
     Taniyama-Weil-Shimura conjecture that concerns elliptic curves.
     This conjecture has been shown by the work of Frey, Serre, Ribet,
     et. al. to imply FLT uniformly, not just asymptotically as with the
     ABC conjecture.
-    
+
     The conjecture basically states that all elliptic curves can be
     parameterized in terms of modular forms.
 
@@ -177,7 +177,7 @@ this second proof as well, but it has been filled since October 1994.
     then the work of Ribet on Serre's conjecture shows that there would
     have to exist a modular form of weight 2 on $\Gamma_0(2)$.  But
     there are no such forms.
-    
+
     To prove the Theorem, start with an elliptic curve $E$, a prime $p$
     and let
     \[\rho_p : Gal(\bar{Q}/Q) \rightarrow GL_2(Z/pZ)\]
@@ -188,13 +188,13 @@ this second proof as well, but it has been filled since October 1994.
     do this by using Mazur's theory of deformations, to show that {\em
       every} lifting which ``looks modular'' in a certain precise sense
     is attached to a modular form.
-    
+
     Fix certain ``lifting data'', such as the allowed ramification,
     specified local behavior at $p$, etc. for the lift. This defines a
     lifting problem, and Mazur proves that there is a universal lift,
     i.e. a local ring $R$ and a representation into $GL_2(R)$ such that
     every lift of the appropriate type factors through this one.
-    
+
     Now suppose that $\rho_p$ is modular, i.e. there is {\em some} lift
     of $\rho_p$ which is attached to a modular form.  Then there is also
     a hecke ring $T$, which is the maximal quotient of $R$ with the
@@ -202,18 +202,18 @@ this second proof as well, but it has been filled since October 1994.
     conjecture of Mazur that $R = T$, and it would follow from this that
     {\em every} lift of $\rho_p$ which ``looks modular'' (in particular
     the one we are interested in) is attached to a modular form.
-    
+
     Thus we need to know 2 things:
 
     \begin{enumerate}
       \item[(a)]  $\rho_p$ is modular
       \item[(b)]  $R = T$.
     \end{enumerate}
-    
+
     It was proved by Tunnell that $\rho_3$ is modular for every elliptic
     curve.  This is because $PGL_2(Z/3Z) = S_4$.  So (a) will be
     satisfied if we take $p=3$.  This is crucial.
-    
+
     Wiles uses (a) to prove (b) under some restrictions on $\rho_p$.
     Using (a) and some commutative algebra (using the fact that $T$ is
     Gorenstein, basically due to Mazur) Wiles reduces the statement $T =
@@ -223,7 +223,7 @@ this second proof as well, but it has been filled since October 1994.
     of Hida) to an $L$-value.  The required inequality, which everyone
     presumes is an instance of the Bloch-Kato conjecture, is what Wiles
     needs to verify.
-    
+
     [This is the part that turned out to be wrong in the first version].
     He does this using a Kolyvagin-type Euler system argument.  This is
     the most technically difficult part of the proof, and is responsible
@@ -235,32 +235,32 @@ this second proof as well, but it has been filled since October 1994.
     In the end, {\em under certain hypotheses} on $\rho_p$ he gets a
     workable Euler system and proves the desired inequality.  Among
     other things, it is necessary that $\rho_p$ is irreducible.
-    
+
     [The new proof replaces the argument above with one using
     commutative algebra and and some clever observations by De Shalit to
     fill in the gap.]
 
     Suppose now that $E$ is semistable.
-    
+
     \noindent Case 1.  $\rho_3$ is irreducible.\\
     \noindent
     Take $p=3.$ By Tunnell's theorem (a) above is true.  Under these
     hypotheses the argument above works for $\rho_3$, so we conclude
     that $E$ is modular.
-    
+
     \noindent Case 2.  $\rho_3$ is reducible.  Take $p=5$.  In this case
     $\rho_5$ must be irreducible, or else $E$ would correspond to a
     rational point on $X_0(15)$.  But $X_0(15)$ has only 4 noncuspidal
     rational points, and these correspond to non-semistable curves.  If
     we knew that $\rho_5$ were modular, then the computation above would
     apply and $E$ would be modular.
-    
+
     We will find a new semistable elliptic curve $E^\prime$ such that
     $\rho_{E,5} = \rho_{E^\prime,5}$ and $\rho_{E^\prime,3}$ is
     irreducible.  Then by Case I, $E^\prime$ is modular.  Therefore
     $\rho_{E,5}= \rho_{E^\prime,5}$ does have a modular lifting and we
     will be done.
-    
+
     We need to construct such an $E^\prime$.  Let $X$ denote the modular
     curve whose points correspond to pairs $(A, C)$ where $A$ is an
     elliptic curve and $C$ is a subgroup of $A$ isomorphic to the group
@@ -282,7 +282,7 @@ this second proof as well, but it has been filled since October 1994.
   1$. The second case is the general case.
 
   \subsubsection{What has been proved}
-   
+
 
   First Case.
 
@@ -409,7 +409,7 @@ Noam Elkies gave a counterexample, namely $2682440^4 + 15365639^4 +
 smallest solution by (more or less) brute force: it is $95800^4 +
 217519^4 + 414560^4 = 422481^4$.  ``Several years'', Math. Comp. 51
 (1988) 825-835.
- 
+
 
 This synopsis is quite brief. A full survey would run too many pages.
 
@@ -533,7 +533,7 @@ still living.
 
 \book{Basic Number Theory.}{Andre Weil.}{Berlin, Springer, 1967}
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "math-faq"
-%%% End: 
+%%% End:

@@ -1,12 +1,12 @@
 \section{Prime Numbers}
-    
+
 \subsection{Largest known Mersenne prime}
 
 Mersenne primes are primes of the form $2^p-1$. For $2^p-1$ to be prime
 we must have that $p$ is prime.
 
 $2^{6972593}-1$ is prime. It was discovered in 1999.
-	
+
 \subsection{Largest known prime}
 
 The largest known prime is the Mersenne prime described above.  The
@@ -18,8 +18,8 @@ Mersenne prime; the period between Brown et al's discovery in August
 1989 and Slowinski \&\ Gage's in March 1992 is one of the few
 exceptions.
 
-%From: Bill Stewart <billstewart@mail.att.net> 
-%Date: Mon, 06 Jan 1997 00:15:11 -0800 
+%From: Bill Stewart <billstewart@mail.att.net>
+%Date: Mon, 06 Jan 1997 00:15:11 -0800
 You can help find more primes. For more information see: The Great
 Internet Mersenne Prime Search home page on
 \url{http://www.mersenne.org}
@@ -28,7 +28,7 @@ Internet Mersenne Prime Search home page on
 
 \article{Brown, Noll, Parady, Smith, Smith, and Zarantonello.}{Letter to
   the editor.}{American Mathematical Monthly,}{vol. 97, 1990, p. 214.}
-	
+
 \subsection{Largest known twin primes}
 
 % From: Karl-Heinz Indlekofer <k-heinz@mathematik.uni-paderborn.de>
@@ -39,9 +39,9 @@ The two largest known twin primes are $361700055 * 2^39020 \pm 1$.  with
 11755 digits, found by Lifchitz in 1999.
 %From Warut Roonguthai <kamala@chulkn.car.chula.ac.th>
 %Date: Sat, 30 Dec 1995 23:07:07 +0700 (BKK)
-%They are also the first known gigantic twin primes (primes with at 
+%They are also the first known gigantic twin primes (primes with at
 %least 10,000 digits).
-	
+
 %Recent record holders are:
 %
 %\begin{itemize}
@@ -49,12 +49,12 @@ The two largest known twin primes are $361700055 * 2^39020 \pm 1$.  with
 %		 Warut Roonguthai <kamala@chulkn.car.chula.ac.th>
 %Date: Thu, 7 Dec 1995 15:42:55 +0700 (BKK)
 %\item $190116*3003*10^{5120} \pm 1$, with 5129 digits, by Harvey Dubner.
-%\item $697053813 * 2^{16352} \pm 1$, with 4932 digits, found by Indlekofer 
+%\item $697053813 * 2^{16352} \pm 1$, with 4932 digits, found by Indlekofer
 %and Ja'rai in 1994.
 %\item $1691232 * 1001 * 10^{4020} \pm 1$  with 4030 digits, found by H. Dubner.
 %\item $4650828 * 1001 * 10^{3429}\pm 1$.  Found by H. Dubner as well.
 %\end{itemize}
- 
+
 Same as Harvey Dubner above.  The two largest Sophie Germain primes
 (i.e. $p$ and $2p+1$ are both primes) are $p=2687145 * 3003 * 10^{5072}
 - 1$ and $q=2p + 1$, found by Harvey Dubner, in October 3, 1995.
@@ -182,7 +182,7 @@ is described in:
 It is a deterministic algorithm that gives a certificate of primality
 for numbers that can be as large as 10**1000 (one thousand).
 
-References 
+References
 
 \begin{verbatim}
 [1] A. O. L. Atkin and F. Morain
@@ -257,7 +257,7 @@ The following Mersenne primes are known.
     36  &      2976221          &         1997 & Spence, Woltman, et. al.\\
     37 & 	3021377		&		1998 & Clarkson, Woltman, Kurowski, GIMPS \\
     38? & 	6972593		&		1999 & Nayan Hajratwala, GIMPS \\
-\hline    
+\hline
 \end{tabular}
 
 
@@ -271,12 +271,12 @@ test, described in Algorithm~\ref{alg:lucaslehmer}.
 \begin{algorithm}[H]
   \caption{$\lucaslehmer(n)$}\label{alg:lucaslehmer}
   \begin{algorithmic}[1]
-    
+
     \REQUIRE A prime integer $p$.
     \ENSURE Prints if $2^p-1$ is prime or not.
 
     \smallskip
-    
+
     \STATE $u \leftarrow 4$
     \FOR{$i = 3, \ldots, p$}
         \STATE $u \leftarrow u^2-2 \bmod 2^p-1$
@@ -295,7 +295,7 @@ All exponents less than 1,481,800 have now been tested at least once.
 
 \book{An introduction to the theory of numbers.}{G.H. Hardy,
   E.M. Wright.}  {Fifth edition, 1979, Oxford.}
- 
+
 \subsection{Formulae to compute prime numbers}
 
 
@@ -366,12 +366,12 @@ summation, factorial, greatest integer function, etc.
   752-754.}
 
 \medskip
-     
+
 \book{Algorithmic Number Theory.}{J.O. Shallit, E. Bach.}  {(to be
   published, MIT Press).}  \book{A Course in Computational Algebraic
   Number Theory.}{Henri Cohen.}{ Springer-Verlag, Graduate Texts in
   Math, 1993.}
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "math-faq"
-%%% End: 
+%%% End:

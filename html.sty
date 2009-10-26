@@ -1,7 +1,7 @@
 % LaTeX2HTML Version 0.5.3: html.sty
 %
 % This file contains definitions of LaTeX commands which are
-% processed in a special way by the translator. 
+% processed in a special way by the translator.
 % For example, there are commands for embedding external hypertext links,
 % for cross-references between documents or for including
 % raw HTML.
@@ -13,10 +13,10 @@
 % This can be used to provide links to arbitrary documents.
 % The first argument should be the text that is going to be
 % highlighted and the second argument a URL.
-% The hyperlink will appear as a hyperlink in the HTML 
+% The hyperlink will appear as a hyperlink in the HTML
 % document and as a footnote in the dvi or ps files.
 %
-\newcommand{\htmladdnormallink}[2]{ #1\footnote{#2}} 
+\newcommand{\htmladdnormallink}[2]{ #1\footnote{#2}}
 
 % This is an alternative definition of the command above which
 % will ignore the URL in the dvi or ps files.
@@ -30,12 +30,12 @@
 
 %%% CROSS-REFERENCES BETWEEN (LOCAL OR REMOTE) DOCUMENTS
 %
-% This can be used to refer to symbolic labels in other Latex 
+% This can be used to refer to symbolic labels in other Latex
 % documents that have already been processed by the translator.
 % The arguments should be:
 % #1 : the URL to the directory containing the external document
 % #2 : the path to the labels.pl file of the external document.
-% If the external document lives on a remote machine then labels.pl 
+% If the external document lives on a remote machine then labels.pl
 % must be copied on the local machine.
 %
 %e.g. \externallabels{http://cbl.leeds.ac.uk/nikos/WWW/doc/tex2html/latex2html}
@@ -125,8 +125,8 @@
 \excludecomment{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% RAW HTML 
-% 
+%%% RAW HTML
+%
 % Enclose raw HTML between a \begin{rawhtml} and \end{rawhtml}.
 % The html environment ignores its body
 %
@@ -134,22 +134,22 @@
 
 %%% HTML ONLY
 %
-% Enclose LaTeX constructs which will only appear in the 
-% HTML output and will be ignored by LaTeX with 
+% Enclose LaTeX constructs which will only appear in the
+% HTML output and will be ignored by LaTeX with
 % \begin{htmlonly} and \end{htmlonly}
 %
 \excludecomment{htmlonly}
 
 %%% LaTeX ONLY
-% Enclose LaTeX constructs which will only appear in the 
-% DVI output and will be ignored by latex2html with 
+% Enclose LaTeX constructs which will only appear in the
+% DVI output and will be ignored by latex2html with
 %\begin{latexonly} and \end{latexonly}
 %
 \newenvironment{latexonly}{}{}
 
-%%% Hyperref 
+%%% Hyperref
 % Suggested by Eric M. Carol <eric@ca.utoronto.utcc.enfm>
-% Similar to \ref but accepts conditional text. 
+% Similar to \ref but accepts conditional text.
 % The first argument is HTML text which will become ``hyperized''
 % (underlined).
 % The second and third arguments are text which will appear only in the paper
