@@ -25,7 +25,7 @@ $(PDF): $(SRCS)
 
 clean:
 	rm -f *.dvi *.ps *.ps.gz *.prn *.aux *.log *.bbl *.blg *~ *.toc *.idx \
-	      *.ilg *.ind *.loa *.lof *.lot *.pdf *.out *.brf *ps_pages .DS_Store *.eps
+	      *.ilg *.ind *.loa *.lof *.lot *.pdf *.out *.brf *ps_pages .DS_Store *.eps *.xdv
 
 cleanall: clean
 	-[ -d figs ] && make -C figs clean
