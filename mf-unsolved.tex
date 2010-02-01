@@ -14,41 +14,41 @@ shown that there are no odd perfect numbers $< 10^{300}$.
 
 \subsection{Collatz Problem}
 
+\newcommand{\collatz}{\ensuremath{\mbox{\sc Collatz}}}
+\begin{algorithm}[H]
+  \caption{$\collatz(n)$}\label{alg:collatz}
+  \begin{algorithmic}[1]
 
-Take any natural number $m > 0$.\\
-$n:=m;$\\
-repeat\\
-\hspace{1cm}  if ($n$ is odd) then $n:=3*n+1$; else $n:=n/2$;\\
-until ($n==1$)\\
+    \REQUIRE A natural number $m > 0$.
+
+    \smallskip
+
+    \STATE $n \leftarrow m$
+    \REPEAT
+        \IF{$n$ is odd}
+            \STATE $n \leftarrow 3n + 1$
+        \ELSE
+            \STATE $n \leftarrow n/2$
+        \ENDIF
+    \UNTIL{$n = 1$}
+  \end{algorithmic}
+\end{algorithm}
 
 \begin{conj}
-  For all positive integers $m$, the program above terminates.
+  For all positive integers $m$, the Algorithm~\collatz{} terminates.
 \end{conj}
 
-The conjecture has been verified for all numbers up to $5.6 * 10^{13}$.
+The conjecture has been verified for all numbers up to $5.6 \times 10^{13}$.
 
 \Ref
 
-\book{Unsolved Problems in Number Theory.}  {Richard K Guy.}  {Springer,
+\book{Unsolved Problems in Number Theory.}{Richard K Guy.}{Springer,
   Problem E16.}
 
-\book{Elementary Number Theory.}  {Underwood Dudley.}  {2nd ed.}
+\book{Elementary Number Theory.}{Underwood Dudley.}{2nd ed.}
 
-\article{G.T. Leavens and M. Vermeulen} {3x+1 search programs}]
-{Comput. Math. Appl.}  {vol. 24 n. 11 (1992), 79-99.}
-
-%From: Saouter Yannick <Yannick.Saouter@irisa.fr>
-%Date: Wed, 04 Dec 1996 17:18:45 +0100
-%
-%@Article{Leavens,
-  %author =      {G.T. Leavens and M. Vermeulen},
-  %title =       {3x+1 search programs},
-  %journal =     {Comput. Math. Appl.},
-  %year =        {1992},
-  %volume =      {24},
-  %number =      {11},
-  %pages =       {79-99}
-%}
+\article{G.T. Leavens and M. Vermeulen} {3x+1 search
+  programs}{Comput. Math. Appl.}{vol. 24 n. 11 (1992), 79-99.}
 
 \subsection{Goldbach's conjecture}
 
