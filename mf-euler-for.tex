@@ -10,13 +10,12 @@ exponentation which preserved many of what seemed to be the
 definitions are only convention, motivated by reasons of aesthetics and
 utility.
 
-The original definition of exponentiation is, of course, that $x^y = 1 *
-x * x * ... * x,$ where $1$ is multiplied by $x$, $y$ times.  This is
-only a reasonable definition for $y=1, 2, 3, ...$ (It could be argued
-that it is reasonable when $y=0$, but that issue is taken up in a
-different part of the FAQ).  This operation has a number of properties,
-including
-
+The original definition of exponentiation is, of course, that $x^y = 1
+\times x \times x \times \cdots \times x,$ where $1$ is multiplied by
+$x$, $y$ times.  This is only a reasonable definition for $y=1, 2, 3,
+\dots$ (It could be argued that it is reasonable when $y=0$, but that
+issue is taken up in a different part of the FAQ).  This operation has a
+number of properties, including
 \begin{enumerate}
   \item $x^1 = x$
   \item For any $x$, $n$, $m$, $x^n x^m = x^{n+m}$.
@@ -39,68 +38,67 @@ including
   naturally to the following definition of $x^y$ on the domain {$x$
     positive real; $y$ real}:
 
-  If $x>1$, $x^y$ is defined to be $\sup_q\{ x^q\}$, where $q$ runs over
-  all rationals less than or equal to $y$.
+  If $x > 1$, $x^y$ is defined to be $\sup_q\{x^q\}$, where $q$ runs
+  over all rationals less than or equal to $y$.
 
-  If $x<1$, $x^y$ is defined to be $\inf_q\{ x^q\}$, where $q$ runs over
-  all rationals bigger than or equal to $y$.
+  If $x < 1$, $x^y$ is defined to be $\inf_q\{x^q\}$, where $q$ runs
+  over all rationals bigger than or equal to $y$.
 
-  If $x=1$, $x^y$ is defined to be $1$.
+  If $x = 1$, $x^y$ is defined to be $1$.
 
-  Again, this operation satisfies (1)-(5), and is in fact the only
+  Again, this operation satisfies (1)--(5), and is in fact the only
   operation on this domain to do so.
 
   The next extension is somewhat more complicated.  As can be proved
   using the methods of calculus or combinatorics, if we define $e$ to be
   the number
-
-  \[e = 1 + 1/1! + 1/2! + 1/3! + ... = 2.71828...\]
-
+  \[
+  e = 1 + 1/1! + 1/2! + 1/3! + \cdots = 2.71828...
+  \]
   it turns out that for every real number $x$,
 
-  \item $ e^x = 1 + x/1! + x^2/2! + x^3/3! + ...$
+  \item $ e^x = 1 + x/1! + x^2/2! + x^3/3! + \cdots$
 
   $e^x$ is also denoted $\exp(x)$.  (This series always converges
   regardless of the value of $x$).
 
-  One can also define an operation $\ln(x)$ on the positive reals, which
+  One can also define an operation $\ln x$ on the positive reals, which
   is the inverse of the operation of exponentiation by $e$.  In other
-  words, $\exp(\ln(x)) = x$ for all positive $x$.  Moreover,
+  words, $\exp(\ln x) = x$ for all positive $x$.  Moreover,
 
-  \item If $x$ is positive, then $x^y$ = $\exp(y \ln(x))$.  Because of
+  \item If $x$ is positive, then $x^y$ = $\exp(y \ln x)$.  Because of
   this, the natural extension of exponentiation to complex exponents,
   seems to be to define
-
-  \[ exp(z) = 1 + z/1! + z^2/2! + z^3/3! + ...\]
+  \[
+  \exp(z) = 1 + z/1! + z^2/2! + z^3/3! + \cdots
+  \]
 
   for all complex $z$ (not just the reals, as before), and to define
 
-  $x^z = \exp(z \ln(x))$
+  $x^z = \exp(z \ln x)$
 
   when $x$ is a positive real and $z$ is complex.
 
   This is the only operation $x^y$ on the domain {$x$ positive real, $y$
-    complex} which satisfies all of (1)-(7).  Because of this and other
+    complex} which satisfies all of (1)--(7).  Because of this and other
   reasons, it is accepted as the modern definition of exponentiation.
 
   From the identities
-
-  \[ \sin x = x - x^3/3! + x^5/5! - x^7/7! + ...\]
-
-  \[ \cos x = 1 - x^2/2! + x^4/4! - x^6/6! + ... \]
-
+  \begin{align}
+    \sin x &= x - x^3/3! + x^5/5! - x^7/7! + \cdots\\
+    \cos x &= 1 - x^2/2! + x^4/4! - x^6/6! + \cdots
+  \end{align}
   which are the Taylor series expansion of the trigonometric sine and
   cosine functions respectively.  From this, one sees that, for any real
-  x,
+  $x$,
 
-  \item $ \exp(ix) = \cos x + i \sin x.$
+  \item $\exp(i x) = \cos x + i \sin x.$
 
   Thus, we get Euler's famous formula
-
-  \[e^{\pi i} = -1\]
-
+  \[
+  e^{\pi i} = -1
+  \]
   and
-
   $e^{2\pi i} = e^0 = 1.$
 
   One can also obtain the classical addition formulae for sine and
@@ -111,7 +109,7 @@ All of the above extensions have been restricted to a positive real for
 the base.  When the base $x$ is not a positive real, it is not as
 clear-cut how to extend the definition of exponentiation.  For example,
 $(-1)^{1/2}$ could well be $i$ or $-i$, $(-1)^{1/3}$ could be $-1$, $1/2
-+ \sqrt(3)i/2$, or $1/2 - \sqrt(3)i/2$, and so on.  Some values of $x$
++ \sqrt 3 i/2$, or $1/2 - \sqrt 3 i/2$, and so on.  Some values of $x$
 and $y$ give infinitely many candidates for $x^y$, all equally
 plausible.  And of course $x=0$ has its own special problems.  These
 problems can all be traced to the fact that the exp function is not
