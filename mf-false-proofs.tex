@@ -1,0 +1,47 @@
+\section{A Few Words on ``False'' Proofs}
+
+It is quite frequent for one to be presented with some false proof where
+one absurd or obviously wrong fact is derived. The intention of this
+section is to alert that it is easy to write a wrong proof for a false
+statement, as is frequently the case when certain discussions come up.
+
+For instance, if one were allowed to divide by zero, then we could prove
+that $1 = 2$, in just a few steps:
+\begin{align}
+  x^2 - x^2 &= x^2 - x^2 \rightarrow \\
+  x(x-x) &= (x+x)(x-x) \rightarrow \\
+  x &= x+x \rightarrow \\
+  x &= 2x \rightarrow \\
+  1 &= 2
+\end{align}
+
+Similar ``proofs'' abound using unsound arguments, like using the false
+fact that if the square of two real numbers is the same, then the
+squared numbers are the same.
+
+\subsection{False Also Implies True}
+
+In fact, it is also possible to present a wrong ``proof'' for a true
+fact, as is the case presented on many public forums where proofs are
+shown. This, by the way, highlights the need to be skeptical when
+reading such proofs, especially when ``miraculous'' conclusions are
+drawn from ``clever arguments''.
+
+Let's suppose that $1 = 2$. Then, of course, $2 = 1$. Summing each
+equation sidewise, we obtain $3 = 3$. This shows that a false hypothesis
+can lead to a true conclusion. In other words, when devising a proof to
+a fact, care must be taken to ensure that every single step is sound or,
+otherwise, the \emph{whole} argument is flawed.
+
+This is a particular fact of the truth table of implication, shown
+below, for some given statements:
+\begin{tabular}{c|c|c}
+  $p$ & $q$ & $p \Rightarrow q$\\
+  \hline
+  true & true & true\\
+  true & false & false\\
+  false & true & false\\
+  false & false & false
+\end{tabular}
+
+A manner to read the table above is, for the first line...
