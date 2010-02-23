@@ -15,21 +15,21 @@ while ($filename = <SECT>) {
      # chop($filename);
      # `cp $filename $newf`;
    }
-    
-sub ext { 
+
+sub ext {
      @aa = split(/_|\./, $a);
      @bb = split(/_|\./, $b);
      # print $aa[0], "aaaaaaa", $a;
      # print $bb[0], "bbbbbbb", $b;
      $i = 0;
-     while ($aa[$i] == $bb[$i]) 
+     while ($aa[$i] == $bb[$i])
       { #print $aa[$i], "==", $bb[$i];
  $i++; }
      if ($aa[$i] eq "html")
-        { -1; } 
+        { -1; }
      elsif ($bb[$i] eq "html")
         { 1; }
-     else 
+     else
        { $aa[$i] <=> $bb[$i]; }
    }
 @sortfiles = sort ext @files;
@@ -45,58 +45,58 @@ while($i <= $#sortfiles) {
 	@xx = split(/\./, $sortfiles[$i]);
 	@yy = split(/\./, $sortfiles[$i+1]);
      	if ($yy[0] =~ /$xx[0]/) {
-	    #print $sortfiles[$i], "<= ", $sortfiles[$i+1]; 
-	    $i++; 
+	    #print $sortfiles[$i], "<= ", $sortfiles[$i+1];
+	    $i++;
 	}
      	else {
 	    open(FLE, $sortfiles[$i]) || die "Couldn't open $sortfiles[$i]: $!\n";
 	    open(FLO, ">e".$sortfiles[$i]) || die "Couldn't open e$sortfiles[$i]: $!\n";
 	    while (<FLE>) {
 		while (/[^^\n]/)  {
-		    if(/ALT=""(\sSRC="_\d+_tex2html_wrap\d+\.xbm)/) { 
+		    if(/ALT=""(\sSRC="_\d+_tex2html_wrap\d+\.xbm)/) {
 			print FLO $`, "ALT=\"",  $equation, "\"", $1;
 			$temp = $';
-			# print $`, "ALT=\"",  $equation, "\"", $1, "\n"; 
+			# print $`, "ALT=\"",  $equation, "\"", $1, "\n";
 			# print "ALT=\"\"", $1;
-              		$equation = <MATHTEX>; 
-			chop($equation); 
+              		$equation = <MATHTEX>;
+			chop($equation);
 			$_ = $temp;
 		    } # if
                     elsif (/ALT=""(\sSRC="_\d+_eqnarray\*\d+\.xbm)/) {
       			print FLO $`, "ALT=\"",  $equation, "\"", $1;
 			$temp = $';
-			# print $`, "ALT=\"",  $equation, "\"", $1, "\n"; 
+			# print $`, "ALT=\"",  $equation, "\"", $1, "\n";
 			# print "ALT=\"\"", $1;
-              		$equation = <MATHTEX>; 
-			chop($equation); 
+              		$equation = <MATHTEX>;
+			chop($equation);
 			$_ = $temp;
                     }
 		    else {
-			print FLO ; 
-			$_ = "\n"; 
+			print FLO ;
+			$_ = "\n";
 		    } # else ALT
 		} # while /[^^
 	    } # while <FLE
 	    $i++;
 	} # else $yy
     }
-    else { 
+    else {
 	open(FLE, $sortfiles[$i]) || die "Couldn't open $sortfiles[$i]: $!\n";
 	open(FLO, ">e".$sortfiles[$i]) || die "Couldn't open e$sortfiles[$i]: $!\n";
 	while (<FLE>) {
 	    while (/[^""]/)  {
-		if(/ALT=""(\sSRC="_\d+_tex2html_wrap\d+\.xbm)|eqnarray/) { 
+		if(/ALT=""(\sSRC="_\d+_tex2html_wrap\d+\.xbm)|eqnarray/) {
 		    print FLO $`, "ALT=\"",  $equation, "\"", $1;
 		    $temp = $';
-		    # print $`, "ALT=\"",  $equation, "\"", $1, "\n"; 
+		    # print $`, "ALT=\"",  $equation, "\"", $1, "\n";
 		    # print "ALT=\"\"", $1;
-              	    $equation = <MATHTEX>; 
-		    chop($equation); 
+              	    $equation = <MATHTEX>;
+		    chop($equation);
 		    $_ = $temp;
 		} # if
 		else {
-		    print FLO ; 
-		    $_ = ""; 
+		    print FLO ;
+		    $_ = "";
 		} # else ALT
 	    } # while /[^^
 	} # while <FLE

@@ -11,4 +11,4 @@ while ($filename = <SECT>)
      chop($filename);
      `cp $filename $newf`;
    }
-    
+

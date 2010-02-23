@@ -4,19 +4,19 @@
 
 $MAX_SPLIT_DEPTH = 2;	# Stop making separate files at this depth
 
-$MAX_LINK_DEPTH = 4;    # Stop showing child nodes at this depth   
+$MAX_LINK_DEPTH = 4;    # Stop showing child nodes at this depth
 
 $NOLATEX = 0;           # 1 = do not pass unknown environments to Latex
 
-$EXTERNAL_IMAGES = 0;   # 1 = leave the images outside the document 
+$EXTERNAL_IMAGES = 0;   # 1 = leave the images outside the document
 
 $ASCII_MODE = 0;        # 1 = do not use any icons or internal images
 
-$BIG_IMAGES_AS_GIFS = 1;      # 0 = all images will be X bitmaps 
+$BIG_IMAGES_AS_GIFS = 1;      # 0 = all images will be X bitmaps
 
-$TITLE = $default_title;      # The default is "No Title" 
+$TITLE = $default_title;      # The default is "No Title"
 
-$DESTDIR = '.';         # Put the result in this directory 
+$DESTDIR = '.';         # Put the result in this directory
 
 # Supply your own string if you don't like the default (whoami@domainname)
 $ADDRESS = "<I>$address_data[0]@$address_data[1] <BR>\n$address_data[2]</I>";
@@ -24,10 +24,10 @@ $ADDRESS = "<I>$address_data[0]@$address_data[1] <BR>\n$address_data[2]</I>";
 $NO_NAVIGATION = 0;	# 1 = do not put a navigation panel at the top of each page
 
 # 1 = put a navigation panel at the top of each page (default is at the top)
-$TOP_NAVIGATION = 1;	
+$TOP_NAVIGATION = 1;
 
 # 1 = put a navigation panel at the bottom of each page AS WELL.
-$BOTTOM_NAVIGATION = 0;	
+$BOTTOM_NAVIGATION = 0;
 
 # Put navigation links at the top of each  page.  If  the page  exceeds
 # $WORDS_IN_PAGE  number of words then put one at the bottom of the page.
@@ -46,9 +46,9 @@ $NEXT_PAGE_IN_NAVIGATION = 1;
 $PREVIOUS_PAGE_IN_NAVIGATION = 1;
 
 
-$INFO = 1;              # 0 = do not make a "About this document..." section 
+$INFO = 1;              # 0 = do not make a "About this document..." section
 
-# Do not try to translate these style files. 
+# Do not try to translate these style files.
 # Complex TeX style files may cause the translator to hang.
 # If this occurs add the style file here.
 $DONT_INCLUDE = "psfig:dvipsfig:epsf:a4:memo:makeidx:times:margins:aaii2:" .
@@ -57,37 +57,37 @@ $DONT_INCLUDE = "psfig:dvipsfig:epsf:a4:memo:makeidx:times:margins:aaii2:" .
 # Reuse images generated during previous runs
 $REUSE = 1;
 
-# When this is 1, the section numbers are shown. The section numbers should 
+# When this is 1, the section numbers are shown. The section numbers should
 # then match those that would have bee produced by LaTeX.
-# The correct section numbers are obtained from the $FILE.aux file generated 
+# The correct section numbers are obtained from the $FILE.aux file generated
 # by LaTeX.
-# Hiding the seciton numbers encourages use of particular sections 
-# as standalone documents. In this case the cross reference to a section 
+# Hiding the seciton numbers encourages use of particular sections
+# as standalone documents. In this case the cross reference to a section
 # is shown using the default symbol rather than the section number.
 $SHOW_SECTION_NUMBERS = 0;
 
 ### Other global variables ###############################################
 
 # Separator between the body of text in a page and the child links
-$CHILDLINE = "<HR>\n";		# For display with Mosaic 
+$CHILDLINE = "<HR>\n";		# For display with Mosaic
 
 # This is the line width measured in pixels and it is used to right justify
-# equations and equation arrays; 
-$LINE_WIDTH = 450;		
+# equations and equation arrays;
+$LINE_WIDTH = 450;
 
 # Used in conjunction with AUTO_NAVIGATION
 $WORDS_IN_PAGE = 2000;
 
-# The value of this variable determines how many words to use in each 
+# The value of this variable determines how many words to use in each
 # title that is added to the navigation panel (see below)
-# 
+#
 $WORDS_IN_NAVIGATION_PANEL_TITLES = 4;
 
 ### Navigation Panel ##########################################################
 #
 # The navigation panel is constructed out of buttons and section titles.
-# These can be configured in any combination with arbitrary text and 
-# HTML tags interspersed between them. 
+# These can be configured in any combination with arbitrary text and
+# HTML tags interspersed between them.
 # The buttons available are:
 #
 # $PREVIOUS - points to the previous section
@@ -104,7 +104,7 @@ $WORDS_IN_NAVIGATION_PANEL_TITLES = 4;
 #
 # Also for each of the $PREVIOUS $UP $NEXT $NEXT_GROUP and $PREVIOUS_GROUP
 # buttons there are equivalent $PREVIOUS_TITLE, $UP_TITLE, etc variables
-# which contain the titles of their corresponding sections. 
+# which contain the titles of their corresponding sections.
 # Each title is empty if there is no corresponding section.
 #
 # The subroutine below constructs the navigation panel in each page.
@@ -114,24 +114,24 @@ $WORDS_IN_NAVIGATION_PANEL_TITLES = 4;
 sub navigation_panel {
 
     #  Start with a horizontal rule (3-d dividing line)
-    "<HR> ".			
-    
+    "<HR> ".
+
     # Now add few buttons with a space between them
     "$NEXT $UP $PREVIOUS $CONTENTS $INDEX" .
-	    
+
     "<BR>\n" .		# Line break
-	
+
     # If ``next'' section exists, add its title to the navigation panel
-    ($NEXT_TITLE ? "<B> Next:</B> $NEXT_TITLE\n" : undef) . 
-    
+    ($NEXT_TITLE ? "<B> Next:</B> $NEXT_TITLE\n" : undef) .
+
     # Similarly with the ``up'' title ...
-    ($UP_TITLE ? "<B>Up:</B> $UP_TITLE\n" : undef) . 
- 
+    ($UP_TITLE ? "<B>Up:</B> $UP_TITLE\n" : undef) .
+
     # ... and the ``previous'' title
     ($PREVIOUS_TITLE ? "<B> Previous:</B> $PREVIOUS_TITLE\n" : undef) .
-   
-    #  Horizontal rule (3-d dividing line) and new paragraph  
-    "<HR> <P>\n"		
+
+    #  Horizontal rule (3-d dividing line) and new paragraph
+    "<HR> <P>\n"
 }
 
 1;	# This must be the last line
